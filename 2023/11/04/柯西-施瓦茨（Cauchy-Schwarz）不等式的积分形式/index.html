@@ -13,24 +13,26 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Humuhumu">
+  <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
     <meta name="description" content="柯西-施瓦茨不等式的积分形式的证明及一道例题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式">
-<meta property="og:url" content="http://example.com/2023/11/04/%E6%9F%AF%E8%A5%BF-%E6%96%BD%E7%93%A6%E8%8C%A8%EF%BC%88Cauchy-Schwarz%EF%BC%89%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F/index.html">
-<meta property="og:site_name" content="Humuhumu">
+<meta property="og:url" content="http://hmnkapa.github.io/2023/11/04/%E6%9F%AF%E8%A5%BF-%E6%96%BD%E7%93%A6%E8%8C%A8%EF%BC%88Cauchy-Schwarz%EF%BC%89%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F/index.html">
+<meta property="og:site_name" content="呼姆呼姆">
 <meta property="og:description" content="柯西-施瓦茨不等式的积分形式的证明及一道例题">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hmnkapa.github.io/img/post_img/cauchy-schwarz/cover.png">
 <meta property="article:published_time" content="2023-11-04T03:08:06.000Z">
-<meta property="article:modified_time" content="2024-05-28T16:31:05.172Z">
-<meta property="article:author" content="Humuhumu">
+<meta property="article:modified_time" content="2024-05-29T08:05:09.493Z">
+<meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://hmnkapa.github.io/img/post_img/cauchy-schwarz/cover.png">
   
   
   
-  <title>柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式 - Humuhumu</title>
+  <title>柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式 - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -68,7 +70,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"♡","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"hmnkapa.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"♡","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -81,7 +83,11 @@
 
 
   
-<meta name="generator" content="Hexo 7.2.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head>
 
 
 <body>
@@ -219,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          622 字
+          799 字
         
       </span>
     
@@ -230,7 +236,7 @@
         
         
         
-          6 分钟
+          7 分钟
         
       </span>
     
@@ -272,37 +278,101 @@
             
               <div class="markdown-body">
                 
-                <h2 id="柯西-施瓦茨不等式的积分形式"><a href="#柯西-施瓦茨不等式的积分形式" class="headerlink" title="柯西-施瓦茨不等式的积分形式"></a>柯西-施瓦茨不等式的积分形式</h2><p>假设 $𝑓(𝑥)$ 和 $𝑔(𝑥)$ 在区间 $[𝑎,𝑏]$ 上黎曼可积，那么</p>
-<p>$$<br>\int_𝑎^𝑏𝑓^2(𝑥)\mathrm{d}𝑥⋅\int_𝑎^𝑏𝑔^2(𝑥)\mathrm{d}𝑥≥(\int_𝑎^𝑏𝑓(𝑥)𝑔(𝑥)\mathrm{d}𝑥)^2<br>$$</p>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>柯西不等式：<br>$$<br>(𝑎^2+𝑏^2)(𝑐^2+𝑑^2)≥(𝑎𝑐+𝑏𝑑)^2<br>$$<br>及其一般形式：<br>$$<br>\displaystyle\sum_{𝑖&#x3D;1}^𝑛𝑎<em>𝑖^2\sum</em>{𝑖&#x3D;1}^𝑛𝑏<em>𝑖^2≥(\sum</em>{𝑖&#x3D;1}^𝑛𝑎_𝑖𝑏_𝑖)^2<br>$$<br>极限、微积分基本知识</p>
-<h2 id="柯西-施瓦茨不等式的积分形式的证明"><a href="#柯西-施瓦茨不等式的积分形式的证明" class="headerlink" title="柯西-施瓦茨不等式的积分形式的证明"></a>柯西-施瓦茨不等式的积分形式的证明</h2><p>这个不等式是最近在准备微积分的第一次期中考试时遇到的</p>
-<p>（其实我开始写文章的时候距离考试还有24分钟</p>
-<p>想找浙江某211学校的历年卷做一做</p>
-<p>于是发现了一份号称<a href="www.zhihu.com/question/265940112?utm_medium=social&utm_oi=1650268599276343296&utm_psn=1703111356650299392&utm_source=qq">120年来该校最难的微积分试卷</a></p>
-<p>且不论你浙学生水平，这张卷子最后一题可以使用<strong>柯西-施瓦茨不等式的积分形式</strong>求解</p>
-<p>柯西-施瓦茨不等式的积分形式如下：</p>
-<p>假设 𝑓(𝑥) 和 𝑔(𝑥) 在区间 [𝑎,𝑏] 上黎曼可积，那么</p>
-<p>∫𝑎𝑏𝑓2(𝑥)d𝑥⋅∫𝑎𝑏𝑔2(𝑥)d𝑥≥(∫𝑎𝑏𝑓(𝑥)𝑔(𝑥)d𝑥)2 事实上，说起柯西，在高中课本（习题）上我们已经学习过柯西不等式的二维形式</p>
-<p>(𝑎2+𝑏2)(𝑐2+𝑑2)≥(𝑎𝑐+𝑏𝑑)2 进一步地，柯西不等式的一般形式如下 ∑𝑖&#x3D;1𝑛𝑎𝑖2∑𝑖&#x3D;1𝑛𝑏𝑖2≥(∑𝑖&#x3D;1𝑛𝑎𝑖𝑏𝑖)2既然都叫柯西（</p>
+                <h2 id="柯西-施瓦茨不等式的积分形式">柯西-施瓦茨不等式的积分形式</h2>
+<p>假设 <span class="math inline">\(𝑓(𝑥)\)</span> 和 <span
+class="math inline">\(𝑔(𝑥)\)</span> 在区间 <span
+class="math inline">\([𝑎,𝑏]\)</span> 上黎曼可积，那么</p>
+<p><span class="math display">\[
+\int_𝑎^𝑏𝑓^2(𝑥)\mathrm{d}𝑥⋅\int_𝑎^𝑏𝑔^2(𝑥)\mathrm{d}𝑥≥(\int_𝑎^𝑏𝑓(𝑥)𝑔(𝑥)\mathrm{d}𝑥)^2
+\]</span></p>
+<h2 id="前置知识">前置知识</h2>
+<p>柯西不等式 <span class="math display">\[
+(𝑎^2+𝑏^2)(𝑐^2+𝑑^2)≥(𝑎𝑐+𝑏𝑑)^2
+\]</span> 及其一般形式 <span class="math display">\[
+\displaystyle\sum_{𝑖=1}^𝑛𝑎_𝑖^2\sum_{𝑖=1}^𝑛𝑏_𝑖^2≥(\sum_{𝑖=1}^𝑛𝑎_𝑖𝑏_𝑖)^2
+\]</span> 极限、微积分基本知识</p>
+<h2
+id="柯西-施瓦茨不等式的积分形式的证明">柯西-施瓦茨不等式的积分形式的证明</h2>
+<p>事实上，说起柯西，在高中课本（习题）上我们已经学习过柯西不等式的二维形式</p>
+<p><span class="math display">\[
+(𝑎^2+𝑏^2)(𝑐^2+𝑑^2)≥(𝑎𝑐+𝑏𝑑)^2
+\]</span> 进一步地，柯西不等式的一般形式如下 <span
+class="math display">\[
+\displaystyle\sum_{𝑖=1}^𝑛𝑎_𝑖^2\sum_{𝑖=1}^𝑛𝑏_𝑖^2≥(\sum_{𝑖=1}^𝑛𝑎_𝑖𝑏_𝑖)^2
+\]</span> 既然都叫柯西（</p>
 <p>我们考虑使用柯西不等式的一般形式来证明柯西-施瓦茨不等式的积分形式</p>
-<p>由定积分的定义，柯西-施瓦茨不等式的积分形式等价于 lim𝑛→∞∑𝑖&#x3D;1𝑛𝑓2(𝑥𝑖)Δ𝑥⋅lim𝑛→∞∑𝑖&#x3D;1𝑛𝑔2(𝑥𝑖)Δ𝑥≥(lim𝑛→∞∑𝑖&#x3D;1𝑛𝑓(𝑥𝑖)𝑔(𝑥𝑖)Δ𝑥)2此处 Δ𝑥&#x3D;𝑏−𝑎𝑛 ， 𝑥𝑖&#x3D;𝑎+𝑖Δ𝑥 </p>
-<p>由极限的运算法则，上式等价于lim𝑛→∞[∑𝑖&#x3D;1𝑛𝑓2(𝑥𝑖)⋅∑𝑖&#x3D;1𝑛𝑔2(𝑥𝑖)−(∑𝑖&#x3D;1𝑛𝑓(𝑥𝑖)𝑔(𝑥𝑖))2]Δ2𝑥≥0 由极限的保号性并约去 Δ2𝑥 ，有 ∑𝑖&#x3D;1𝑛𝑓2(𝑥𝑖)⋅∑𝑖&#x3D;1𝑛𝑔2(𝑥𝑖)−(∑𝑖&#x3D;1𝑛𝑓(𝑥𝑖)𝑔(𝑥𝑖))2≥0 即 ∑𝑖&#x3D;1𝑛𝑓2(𝑥𝑖)⋅∑𝑖&#x3D;1𝑛𝑔2(𝑥𝑖)≥(∑𝑖&#x3D;1𝑛𝑓(𝑥𝑖)𝑔(𝑥𝑖))2 此即柯西不等式的一般形式，证毕</p>
-<p>所谓“120年来最难的微积分试卷”，最后一题原题如下：</p>
+<p>由定积分的定义，柯西-施瓦茨不等式的积分形式等价于 <span
+class="math display">\[
+\lim_{n\to\infty}\sum_{i=1}^nf^2(x_i)\Delta{x} \cdot
+\lim_{n\to\infty}\sum_{i=1}^ng^2(x_i)\Delta{x} \geq \left(
+\lim_{n\to\infty}\sum_{i=1}^nf(x_i)g(x_i)\Delta{x} \right)^2\\
+\]</span> 此处<span
+class="math inline">\(\Delta{x}=\frac{b-a}{n}\)</span>，<span
+class="math inline">\(x_i=a+i\Delta{x}\)</span></p>
+<p>由极限的运算法则，上式等价于 <span class="math display">\[
+\lim_{n\to\infty} \left[ \sum_{i=1}^nf^2(x_i) \cdot \sum_{i=1}^ng^2(x_i)
+- \left( \sum_{i=1}^nf(x_i)g(x_i) \right)^2 \right] \Delta^2{x} \geq0\\
+\]</span> 由极限的保号性并约去<span
+class="math inline">\(\Delta^2{x}\)</span>，有 <span
+class="math display">\[
+\sum_{i=1}^nf^2(x_i) \cdot \sum_{i=1}^ng^2(x_i) - \left(
+\sum_{i=1}^nf(x_i)g(x_i) \right)^2 \geq0\\
+\]</span> 即 <span class="math display">\[
+\sum_{i=1}^nf^2(x_i) \cdot \sum_{i=1}^ng^2(x_i) \geq \left(
+\sum_{i=1}^nf(x_i)g(x_i) \right)^2 \\
+\]</span> 此即柯西不等式的一般形式.</p>
+<p>柯西不等式的一般形式的取等条件为<span
+class="math inline">\(\frac{a_1}{b_1}=\frac{a_2}{b_2}=...=\frac{a_n}{b_n}\)</span>
+，因此对于柯西-施瓦茨不等式的一般形式，</p>
+<p>当且仅当 <span class="math display">\[
+f(x)=\lambda g(x)
+\]</span> 时，等号成立，式中<span
+class="math inline">\(\lambda\)</span>为一实数.</p>
+<h2 id="一道例题">一道例题</h2>
+<p>这个不等式是最近在准备微积分的第一次期中考试时遇到的</p>
+<p>（其实我开始写文章的时候距离考试还有24分钟</p>
+<p>想找一些卷子做一做</p>
+<p>于是发现了一份浙江某211大学号称<a
+href="www.zhihu.com/question/265940112?utm_medium=social&amp;utm_oi=1650268599276343296&amp;utm_psn=1703111356650299392&amp;utm_source=qq">120年来最难的微积分试卷</a></p>
+<p>其最后一题原题如下：</p>
 <blockquote>
-<ol start="12">
-<li>设 𝑓(𝑥) 在 [0,1] 上连续且可导，当 𝑥∈[0,1] 时， ∫𝑥1𝑓(𝑡)d𝑡≥1−𝑥32 ，证明： ∫01[𝑓(𝑥)]2d𝑥&gt;512</li>
+<ol start="12" type="1">
+<li>设 <span class="math inline">\(𝑓(𝑥)\)</span> 在 <span
+class="math inline">\([0,1]\)</span> 上连续且可导，当 <span
+class="math inline">\(𝑥∈[0,1]\)</span> 时， <span
+class="math inline">\(\displaystyle
+\int_𝑥^1𝑓(𝑡)\mathrm{d}𝑡≥\frac{1-x^3}{2}\)</span> ，证明： <span
+class="math display">\[
+\displaystyle \int_0^1\,[f(x)]^2\mathrm{d}x&gt;\frac{5}{12}\\
+\]</span></li>
 </ol>
 </blockquote>
-<p>今晚压根没考这个</p>
-<p>气死我了</p>
-<p>不想写了</p>
-<p>lk</p>
-<p>2023&#x2F;11&#x2F;4</p>
-<p>我们继续来看这道题</p>
-<p>令 𝐹(𝑥)&#x3D;∫𝑥1𝑓(𝑡)d𝑡&#x3D;−∫1𝑥𝑓(𝑡)d𝑡 ，则 𝐹′(𝑥)&#x3D;−𝑓(𝑥) </p>
-<p>由 𝐹(𝑥)≥1−𝑥32 可得 ∫01𝐹(𝑥)d𝑥≥∫011−𝑥32d𝑥&#x3D;38 下面运用分部积分法来计算 ∫01𝐹(𝑥)d𝑥∫01𝐹(𝑥)d𝑥&#x3D;𝑥𝐹(𝑥)]01−∫01𝑥d𝐹(𝑥)&#x3D;𝐹(1)+∫01𝑥𝑓(𝑥)d𝑥&#x3D;∫01𝑥𝑓(𝑥)d𝑥</p>
-<p>于是，我们有 ∫01𝑥𝑓(𝑥)d𝑥≥38 由柯西-施瓦茨不等式</p>
-<p>∫01𝑓2(𝑥)d𝑥⋅∫01𝑥2d𝑥≥(∫01𝑥𝑓(𝑥)d𝑥)2≥964 ∫01𝑥2d𝑥 是好积的，故∫01𝑓2(𝑥)d𝑥≥2764&gt;512</p>
+<p>令<span class="math inline">\(\displaystyle
+F(x)=\int_x^1\,f(t)\mathrm{d}t=-\int_1^x\,f(t)\mathrm{d}t\)</span> ，则
+<span class="math inline">\(\displaystyle F^\prime(x)=-f(x)\)</span></p>
+<p>由 <span class="math inline">\(\displaystyle
+F(x)\geq\frac{1-x^3}{2}\)</span> 可得 <span class="math display">\[
+\int_0^1\,F(x)\mathrm{d}x \geq
+\int_0^1\frac{1-x^3}{2}\mathrm{d}x=\frac{3}{8}\\
+\]</span> 下面运用分部积分法来计算 <span
+class="math inline">\(\displaystyle \int_0^1\,F(x)\mathrm{d}x\)</span>
+<span class="math display">\[
+\begin{align} \int_0^1\,F(x)\mathrm{d}x
+&amp;=xF(x)\Big]_0^1-\int_0^1x\mathrm{d}F(x)\\
+&amp;=F(1)+\int_0^1xf(x)\mathrm{d}x\\ &amp;=\int_0^1xf(x)\mathrm{d}x\\
+\end{align} \\
+\]</span></p>
+<p>于是，我们有 <span class="math display">\[
+\int_0^1xf(x)\mathrm{d}x \geq \frac{3}{8} \\
+\]</span> 由柯西-施瓦茨不等式 <span class="math display">\[
+\int_0^1\,f^2(x)\mathrm{d}x\cdot\int_0^1\,x^2\mathrm{d}x \geq \left(
+\int_0^1\,xf(x)\mathrm{d}x \right)^2 \geq \frac{9}{64} \\
+\]</span> <span class="math inline">\(\displaystyle
+\int_0^1\,x^2\mathrm{d}x\)</span>是好积的，其结果为 <span
+class="math inline">\(\frac{1}{3}\)</span> ，故 <span
+class="math display">\[
+\int_0^1\,f^2(x)\mathrm{d}x \geq \frac{27}{64}&gt;\frac{5}{12}\\
+\]</span></p>
 
                 
               </div>
@@ -321,13 +391,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式</div>
-      <div>http://example.com/2023/11/04/柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式/</div>
+      <div>http://hmnkapa.github.io/2023/11/04/柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Humuhumu</div>
+          <div>呼姆奴库</div>
         </div>
       
       
@@ -421,6 +491,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -614,6 +690,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
