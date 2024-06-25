@@ -16,23 +16,19 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="柯西-施瓦茨不等式的积分形式的证明及一道例题">
-<meta property="og:type" content="article">
-<meta property="og:title" content="柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式">
-<meta property="og:url" content="http://hmnkapa.github.io/2023/11/04/%E6%9F%AF%E8%A5%BF-%E6%96%BD%E7%93%A6%E8%8C%A8%EF%BC%88Cauchy-Schwarz%EF%BC%89%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="page">
+<meta property="og:url" content="http://hmnkapa.github.io/2024/06/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="柯西-施瓦茨不等式的积分形式的证明及一道例题">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://hmnkapa.github.io/img/post_img/cauchy-schwarz/cover.png">
-<meta property="article:published_time" content="2023-11-04T03:08:06.000Z">
-<meta property="article:modified_time" content="2024-05-29T08:38:45.163Z">
+<meta property="article:published_time" content="2024-06-25T13:03:42.000Z">
+<meta property="article:modified_time" content="2024-06-25T13:03:42.392Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://hmnkapa.github.io/img/post_img/cauchy-schwarz/cover.png">
   
   
   
-  <title>柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式 - 呼姆呼姆</title>
+  <title>page - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式"></span>
+            <span id="subtitle" data-typed-text="page"></span>
           
         </div>
 
@@ -213,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-04 11:08" pubdate>
-          2023年11月4日 上午
+        <time datetime="2024-06-25 21:03" pubdate>
+          2024年6月25日 晚上
         </time>
       </span>
     
@@ -225,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          799 字
+          0 字
         
       </span>
     
@@ -236,7 +232,7 @@
         
         
         
-          7 分钟
+          1 分钟
         
       </span>
     
@@ -273,106 +269,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式</h1>
+            <h1 id="seo-header">page</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="柯西-施瓦茨不等式的积分形式">柯西-施瓦茨不等式的积分形式</h2>
-<p>假设 <span class="math inline">\(𝑓(𝑥)\)</span> 和 <span
-class="math inline">\(𝑔(𝑥)\)</span> 在区间 <span
-class="math inline">\([𝑎,𝑏]\)</span> 上黎曼可积，那么</p>
-<p><span class="math display">\[
-\int_𝑎^𝑏𝑓^2(𝑥)\mathrm{d}𝑥⋅\int_𝑎^𝑏𝑔^2(𝑥)\mathrm{d}𝑥≥(\int_𝑎^𝑏𝑓(𝑥)𝑔(𝑥)\mathrm{d}𝑥)^2
-\]</span></p>
-<h2 id="前置知识">前置知识</h2>
-<p>柯西不等式 <span class="math display">\[
-(𝑎^2+𝑏^2)(𝑐^2+𝑑^2)≥(𝑎𝑐+𝑏𝑑)^2
-\]</span> 及其一般形式 <span class="math display">\[
-\displaystyle\sum_{𝑖=1}^𝑛𝑎_𝑖^2\sum_{𝑖=1}^𝑛𝑏_𝑖^2≥(\sum_{𝑖=1}^𝑛𝑎_𝑖𝑏_𝑖)^2
-\]</span> 极限、微积分基本知识</p>
-<h2
-id="柯西-施瓦茨不等式的积分形式的证明">柯西-施瓦茨不等式的积分形式的证明</h2>
-<p>事实上，说起柯西，在高中课本（习题）上我们已经学习过柯西不等式的二维形式</p>
-<p><span class="math display">\[
-(𝑎^2+𝑏^2)(𝑐^2+𝑑^2)≥(𝑎𝑐+𝑏𝑑)^2
-\]</span> 进一步地，柯西不等式的一般形式如下 <span
-class="math display">\[
-\displaystyle\sum_{𝑖=1}^𝑛𝑎_𝑖^2\sum_{𝑖=1}^𝑛𝑏_𝑖^2≥(\sum_{𝑖=1}^𝑛𝑎_𝑖𝑏_𝑖)^2
-\]</span> 既然都叫柯西（</p>
-<p>我们考虑使用柯西不等式的一般形式来证明柯西-施瓦茨不等式的积分形式</p>
-<p>由定积分的定义，柯西-施瓦茨不等式的积分形式等价于 <span
-class="math display">\[
-\lim_{n\to\infty}\sum_{i=1}^nf^2(x_i)\Delta{x} \cdot
-\lim_{n\to\infty}\sum_{i=1}^ng^2(x_i)\Delta{x} \geq \left(
-\lim_{n\to\infty}\sum_{i=1}^nf(x_i)g(x_i)\Delta{x} \right)^2\\
-\]</span> 此处<span
-class="math inline">\(\Delta{x}=\frac{b-a}{n}\)</span>，<span
-class="math inline">\(x_i=a+i\Delta{x}\)</span></p>
-<p>由极限的运算法则，上式等价于 <span class="math display">\[
-\lim_{n\to\infty} \left[ \sum_{i=1}^nf^2(x_i) \cdot \sum_{i=1}^ng^2(x_i)
-- \left( \sum_{i=1}^nf(x_i)g(x_i) \right)^2 \right] \Delta^2{x} \geq0\\
-\]</span> 由极限的保号性并约去<span
-class="math inline">\(\Delta^2{x}\)</span>，有 <span
-class="math display">\[
-\sum_{i=1}^nf^2(x_i) \cdot \sum_{i=1}^ng^2(x_i) - \left(
-\sum_{i=1}^nf(x_i)g(x_i) \right)^2 \geq0\\
-\]</span> 即 <span class="math display">\[
-\sum_{i=1}^nf^2(x_i) \cdot \sum_{i=1}^ng^2(x_i) \geq \left(
-\sum_{i=1}^nf(x_i)g(x_i) \right)^2 \\
-\]</span> 此即柯西不等式的一般形式.</p>
-<p>柯西不等式的一般形式的取等条件为<span
-class="math inline">\(\frac{a_1}{b_1}=\frac{a_2}{b_2}=...=\frac{a_n}{b_n}\)</span>
-，因此对于柯西-施瓦茨不等式的一般形式，</p>
-<p>当且仅当 <span class="math display">\[
-f(x)=\lambda g(x)
-\]</span> 时，等号成立，式中<span
-class="math inline">\(\lambda\)</span>为一实数.</p>
-<h2 id="一道例题">一道例题</h2>
-<p>这个不等式是最近在准备微积分的第一次期中考试时遇到的</p>
-<p>（其实我开始写文章的时候距离考试还有24分钟</p>
-<p>想找一些卷子做一做</p>
-<p>于是发现了一份浙江某211大学号称<a
-target="_blank" rel="noopener" href="https://www.zhihu.com/question/265940112?utm_medium=social&amp;utm_oi=1650268599276343296&amp;utm_psn=1703111356650299392&amp;utm_source=qq">120年来最难的微积分试卷</a></p>
-<p>其最后一题原题如下：</p>
-<blockquote>
-<ol start="12" type="1">
-<li>设 <span class="math inline">\(𝑓(𝑥)\)</span> 在 <span
-class="math inline">\([0,1]\)</span> 上连续且可导，当 <span
-class="math inline">\(𝑥∈[0,1]\)</span> 时， <span
-class="math inline">\(\displaystyle
-\int_𝑥^1𝑓(𝑡)\mathrm{d}𝑡≥\frac{1-x^3}{2}\)</span> ，证明： <span
-class="math display">\[
-\displaystyle \int_0^1\,[f(x)]^2\mathrm{d}x&gt;\frac{5}{12}\\
-\]</span></li>
-</ol>
-</blockquote>
-<p>令<span class="math inline">\(\displaystyle
-F(x)=\int_x^1\,f(t)\mathrm{d}t=-\int_1^x\,f(t)\mathrm{d}t\)</span> ，则
-<span class="math inline">\(\displaystyle F^\prime(x)=-f(x)\)</span></p>
-<p>由 <span class="math inline">\(\displaystyle
-F(x)\geq\frac{1-x^3}{2}\)</span> 可得 <span class="math display">\[
-\int_0^1\,F(x)\mathrm{d}x \geq
-\int_0^1\frac{1-x^3}{2}\mathrm{d}x=\frac{3}{8}\\
-\]</span> 下面运用分部积分法来计算 <span
-class="math inline">\(\displaystyle \int_0^1\,F(x)\mathrm{d}x\)</span>
-<span class="math display">\[
-\begin{align} \int_0^1\,F(x)\mathrm{d}x
-&amp;=xF(x)\Big]_0^1-\int_0^1x\mathrm{d}F(x)\\
-&amp;=F(1)+\int_0^1xf(x)\mathrm{d}x\\ &amp;=\int_0^1xf(x)\mathrm{d}x\\
-\end{align} \\
-\]</span></p>
-<p>于是，我们有 <span class="math display">\[
-\int_0^1xf(x)\mathrm{d}x \geq \frac{3}{8} \\
-\]</span> 由柯西-施瓦茨不等式 <span class="math display">\[
-\int_0^1\,f^2(x)\mathrm{d}x\cdot\int_0^1\,x^2\mathrm{d}x \geq \left(
-\int_0^1\,xf(x)\mathrm{d}x \right)^2 \geq \frac{9}{64} \\
-\]</span> <span class="math inline">\(\displaystyle
-\int_0^1\,x^2\mathrm{d}x\)</span>是好积的，其结果为 <span
-class="math inline">\(\frac{1}{3}\)</span> ，故 <span
-class="math display">\[
-\int_0^1\,f^2(x)\mathrm{d}x \geq \frac{27}{64}&gt;\frac{5}{12}\\
-\]</span></p>
+                
 
                 
               </div>
@@ -390,8 +292,8 @@ class="math display">\[
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式</div>
-      <div>http://hmnkapa.github.io/2023/11/04/柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式/</div>
+      <div>page</div>
+      <div>http://hmnkapa.github.io/2024/06/25/深度学习与计算机视觉/</div>
     </div>
     <div class="license-meta">
       
@@ -403,7 +305,7 @@ class="math display">\[
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月4日</div>
+          <div>2024年6月25日</div>
         </div>
       
       
@@ -435,15 +337,15 @@ class="math display">\[
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="page">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">page</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/11/04/%E6%9F%AF%E8%A5%BF-%E6%96%BD%E7%93%A6%E8%8C%A8%EF%BC%88Cauchy-Schwarz%EF%BC%89%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F/" title="柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式">
+                        <span class="hidden-mobile">柯西-施瓦茨（Cauchy-Schwarz）不等式的积分形式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -497,12 +399,6 @@ class="math display">\[
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -702,49 +598,6 @@ class="math display">\[
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
