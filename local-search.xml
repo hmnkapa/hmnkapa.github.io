@@ -8,7 +8,7 @@
     <link href="/2024/06/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     <url>/2024/06/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="写在前面">写在前面</h2><p>这是一篇Umich的EECS498-007课程的学习笔记，开始阅读之前您需要学习过这门课程或已经掌握了深度学习与计算机视觉的基本知识。本篇旨在复习课程要点，不适合初学者作为tutorial学习。</p><h2 id="关于umich-eecs-498-007">关于Umich EECS 498-007</h2><p>来自<ahref="https://csdiy.wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/EECS498-007/">csdiy</a>的课程简介</p><blockquote><p>UMich 的 Computer Vision课，课程视频和作业质量极高，涵盖的主题非常全，同时 Assignments的难度由浅及深，覆盖了 CV 主流模型发展的全阶段，是一门非常好的 ComputerVision 入门课。</p></blockquote><p>本篇笔记基于Fall2019的课程，课程链接：https://www.youtube.com/playlist?list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r</p><p>与此同时，该课程的assignments（含答案）已上传至<ahref="https://github.com/hmnkapa/eecs598">github</a>，答案是我自己做的，仅供参考</p><p>Assignments来自Fall 2020的<ahref="https://web.eecs.umich.edu/~justincj/teaching/eecs498/FA2020/">课程主页</a></p>]]></content>
     
     
     
