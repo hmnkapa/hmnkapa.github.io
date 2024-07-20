@@ -16,21 +16,21 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="图像分类器及其基础算法">
+    <meta name="description" content="线性分类器，包括评分函数、损失函数和正则化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像分类 Image Classification">
-<meta property="og:url" content="http://hmnkapa.github.io/2024/06/30/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/index.html">
+<meta property="og:title" content="线性分类器 Linear Classifier">
+<meta property="og:url" content="http://hmnkapa.github.io/2024/07/02/%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="图像分类器及其基础算法">
+<meta property="og:description" content="线性分类器，包括评分函数、损失函数和正则化">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-30T03:35:29.000Z">
-<meta property="article:modified_time" content="2024-06-30T06:00:30.246Z">
+<meta property="article:published_time" content="2024-07-02T12:26:35.000Z">
+<meta property="article:modified_time" content="2024-07-20T13:44:30.168Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>图像分类 Image Classification - 呼姆呼姆</title>
+  <title>线性分类器 Linear Classifier - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="图像分类 Image Classification"></span>
+            <span id="subtitle" data-typed-text="线性分类器 Linear Classifier"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-30 11:35" pubdate>
-          2024年6月30日 中午
+        <time datetime="2024-07-02 20:26" pubdate>
+          2024年7月2日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          413 字
+          830 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          4 分钟
+          7 分钟
         
       </span>
     
@@ -271,49 +271,118 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">图像分类 Image Classification</h1>
+            <h1 id="seo-header">线性分类器 Linear Classifier</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="图像分类-image-classification">1. 图像分类 Image
-Classification</h1>
-<h2 id="图像分类器">1.1 图像分类器</h2>
-<p>图像分类的算法难以用如下的函数进行硬编码(hard-code)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">classify_image</span>(<span class="hljs-params">image</span>):<br>	<span class="hljs-comment"># Some magic here?</span><br>	<span class="hljs-keyword">return</span> class_label<br></code></pre></td></tr></table></figure>
-<p>所以通常采用机器学习，即Data-Driven的方式</p>
-<p>先用包含图像与标签的数据集训练分类器，再评估分类器在分类新图片的表现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">train</span>(<span class="hljs-params">images, labels</span>):<br>	<span class="hljs-comment"># Machine learning!</span><br>	<span class="hljs-keyword">return</span> model<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">model, test_images</span>):<br>	<span class="hljs-comment"># Use model to predict labels</span><br>	<span class="hljs-keyword">return</span> test_labels<br></code></pre></td></tr></table></figure>
-<h2 id="常见数据集">1.2 常见数据集</h2>
-<p>MNIST</p>
-<p>CIFAR10</p>
-<p>CIFAR100</p>
-<p>ImageNet</p>
-<p>MIT Places</p>
-<h2 id="邻近算法-nearest-neighbor">1.3 邻近算法 Nearest Neighbor</h2>
-<ol type="1">
-<li>记忆数据集中所有的图像和对应的标签</li>
-<li>与数据集中最相似的图像的标签即为新图像的标签</li>
-</ol>
-<p>使用<strong>距离度量</strong>比较图像，以下是常见的两种距离度量：</p>
-<p>L1 距离（曼哈顿距离 Manhattan distance）: <span
-class="math display">\[
-d_1(I_1, I_2) = \sum_p |I_1^p - I_2^p|
-\]</span> L2 距离（欧拉距离 Euclidean distance）： <span
-class="math display">\[
-d_2(I_1, I_2) = \sqrt{\sum_p (I_1^p - I_2^p)^2}
+                <h1 id="线性分类器-linear-classifier">2. 线性分类器 Linear
+Classifier</h1>
+<h2 id="评分函数-score-function">2.1 评分函数 Score Function</h2>
+<p><strong>评分函数（score function）</strong> 是<span
+class="math inline">\(\mathbb{R}^D \to
+\mathbb{R}^C\)</span>的线性映射，即一张图片在每个标签上所得到的评分：
+<span class="math display">\[
+f(x, W) = Wx+b,
+x\in \mathbb{R}^D, W\in \mathbb{R}^{C\times D}, b\in \mathbb{R}^D
 \]</span></p>
-<h2 id="k近邻算法-k-nearest-neighbors">1.4 K近邻算法 K-Nearest
-Neighbors</h2>
-<p>若 𝑘 个最相似的图像中的大多数为某一个标签，则该图像也属于这个标签</p>
-<p>当训练的样本足够多时，K近邻算法可以表示任何函数</p>
-<h2 id="超参数-hyperparameter">1.5 超参数 Hyperparameter</h2>
-<p>从数据集中无法通过训练得到的参数为<strong>超参数</strong>
-，超参数需要在学习之前设定</p>
-<p>例如K邻近算法中的K就是超参数</p>
-<p>超参数的设定方法：</p>
-<p>将数据集分为train、validate和test三部分，选择超参数的值在train上训练，并在validate中验证，只在最后使用test上查看效果</p>
-<p>如果条件允许，可以将数据集分割成许多部分，每次选择不同的部分作为validate，剩下的部分作为train，同样的只在最后在test上检验</p>
+<p>式中<span
+class="math inline">\(x\)</span>是将图像数据拉长（flatten）得到的<span
+class="math inline">\(D\)</span>维列向量，<span
+class="math inline">\(W\)</span>是<strong>参数（parameter）</strong>
+或称<strong>权重（weight）</strong> ，<span
+class="math inline">\(b\)</span>为<strong>偏差向量（bias
+vector）</strong></p>
+<p><span class="math inline">\(C\)</span>为待分类的标签个数，<span
+class="math inline">\(f(x,W)\)</span>即为该图像对于每个标签的评分</p>
+<h2 id="损失函数-loss-function">2.2 损失函数 Loss Function</h2>
+<p><strong>损失函数（loss funtion）</strong>
+量化了线性分类器的效果，其值越高，则线性分类器效果越差，又被称为目标函数（objective
+function）、代价函数（cost function）</p>
+<p>对于一个数据集： <span class="math display">\[
+\{(x_i, y_i)\}_{i=1}^N
+\]</span> 式中<span class="math inline">\(x_i\)</span>是图像，<span
+class="math inline">\(y_i\)</span>是该图像对应的正确标签</p>
+<p>则对于单个的一张图像的损失为： <span class="math display">\[
+L_i(f(x_i, W), y_i)
+\]</span> 对于数据集来说，损失是每张图像损失的平均值： <span
+class="math display">\[
+L=\frac1N\sum_iL_i(f(x_i,W),y_i)
+\]</span> <span class="math inline">\(L_i\)</span>即为损失函数</p>
+<h2 id="多类支持向量机损失-multiclass-svm-loss">2.3 多类支持向量机损失
+Multiclass SVM Loss</h2>
+<p>朴素的想法是，正确的标签的评分应当比其他标签的评分要高</p>
+<p>所以，对于给定的一张图像<span class="math inline">\(x_i,
+y_i\)</span>，其评分<span class="math inline">\(s=f(x_i,
+W)\)</span>，则SVM损失有如下形式： <span class="math display">\[
+L_i = \sum_{j\neq y_i}\max(0,s_j-s_{y_i}+1)
+\]</span> 当评分均为很小的随机值时，损失应当接近<span
+class="math inline">\(C-1\)</span>，<span
+class="math inline">\(C\)</span>为待分类的总标签数，此性质可作为debug的依据</p>
+<h2 id="正则化-regularization">2.4 正则化 Regularization</h2>
+<p>使上述的损失<span class="math inline">\(L\)</span>最小的<span
+class="math inline">\(W\)</span>并不唯一</p>
+<p>若<span class="math inline">\(W\)</span>可使损失<span
+class="math inline">\(L\)</span>最小，则<span
+class="math inline">\(\lambda W\)</span>也可使<span
+class="math inline">\(L\)</span>最小</p>
+<p>于是，我们在损失函数的表达式中引入一项<span
+class="math inline">\(\lambda R(W)\)</span> : <span
+class="math display">\[
+L=\frac1N\sum_iL_i(f(x_i,W),y_i)+\lambda R(W)
+\]</span> 式中<span
+class="math inline">\(\lambda\)</span>为<strong>正则化强度（regularization
+strength）</strong> ，为超参数</p>
+<p>正则化的好处：</p>
+<ol type="1">
+<li><p>进一步地筛选<span
+class="math inline">\(W\)</span>，使所选定的<span
+class="math inline">\(W\)</span>拥有除最小化损失以外的其他功能</p></li>
+<li><p>避免<strong>过拟合（overfitting）</strong></p></li>
+<li><p>通过增加曲率以提高<strong>优化（optimization）</strong>
+效果</p></li>
+</ol>
+<p>常用的正则化有：</p>
+<p>L2正则化 <span class="math display">\[
+R(W) = \sum_k \sum_l W_{k,l}^2
+\]</span> L1正则化 <span class="math display">\[
+R(W)= \sum_k \sum_l \left| W_{k,l}^2 \right |
+\]</span> 或者将二者联系起来： <span class="math display">\[
+R(W) = \sum_k \sum_l \beta W_{k,l}^2 + \left |W_{k,l}^2 \right |
+\]</span> 其他还有dropout、Batch
+normalization、Cutout、Mixup、Stochastic depth等等</p>
+<h2 id="交叉熵损失-cross-entropy-loss">2.5 交叉熵损失 Cross-Entropy
+Loss</h2>
+<p>另一种损失函函数使用<strong>归一化指数函数（softmax
+function）</strong> 将评分用概率来描述
+，被称为<strong>交叉熵损失（Cross- Entropy Loss）</strong>
+或者<strong>多元逻辑回归（Multinomial Logistic Regression）</strong></p>
+<p>对于一个评分函数<span
+class="math inline">\(s=f(x_i,W)\)</span>，其softmax function的形式为：
+<span class="math display">\[
+P(Y = k|X = x_i) = \frac{e^{s_k}}{\sum_j e^{s_j}}
+\]</span> 我们假设真实的概率分布为<span
+class="math inline">\(P\)</span>，训练得到的概率分布为<span
+class="math inline">\(Q\)</span>，我们使用<span
+class="math inline">\(Q\)</span>来拟合<span
+class="math inline">\(P\)</span>，则交叉熵为： <span
+class="math display">\[
+H(P, Q) = H(P) + D_{KL}(P||Q)
+\]</span> 式中<span
+class="math inline">\(D_{KL}(P||Q)\)</span>为<strong>相对熵（Kullback-Leibler
+Divergence）</strong> ： <span class="math display">\[
+D_{KL}(P||Q) = \sum_{i=1}^n P(x_i)\log \frac{P(x_i)}{Q(x_i)}
+\]</span> 由于真实的概率分布不变，即<span
+class="math inline">\(H(P)\)</span>不变，则若交叉熵<span
+class="math inline">\(H(P,Q)\)</span>最小，只需相对熵<span
+class="math inline">\(D_{KL}(P||Q)\)</span>最小即可</p>
+<p>当单张图片的损失具有如下形式时，交叉熵最小： <span
+class="math display">\[
+L_i = - \log P(Y=y_i|X = x_i)
+\]</span> 所以交叉熵损失的具体形式为： <span class="math display">\[
+L = \frac1N \sum_i\left(-\log
+\left(\frac{e^{s_{y_i}}}{\sum_je^{s_j}}\right)\right)+\lambda R(W)
+\]</span></p>
 
                 
               </div>
@@ -331,8 +400,8 @@ Neighbors</h2>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>图像分类 Image Classification</div>
-      <div>http://hmnkapa.github.io/2024/06/30/图像分类/</div>
+      <div>线性分类器 Linear Classifier</div>
+      <div>http://hmnkapa.github.io/2024/07/02/线性分类器/</div>
     </div>
     <div class="license-meta">
       
@@ -344,7 +413,7 @@ Neighbors</h2>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月30日</div>
+          <div>2024年7月2日</div>
         </div>
       
       
@@ -376,18 +445,12 @@ Neighbors</h2>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/02/%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8/" title="线性分类器 Linear Classifier">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性分类器 Linear Classifier</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="深度学习与计算机视觉">
-                        <span class="hidden-mobile">深度学习与计算机视觉</span>
+                      <a href="/2024/06/30/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" title="图像分类 Image Classification">
+                        <span class="hidden-mobile">图像分类 Image Classification</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
