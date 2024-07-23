@@ -24,7 +24,7 @@
 <meta property="og:description" content="一些常见的优化器">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-20T13:46:43.000Z">
-<meta property="article:modified_time" content="2024-07-22T08:44:36.153Z">
+<meta property="article:modified_time" content="2024-07-23T06:15:50.663Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -311,16 +311,19 @@ class="math inline">\(L\)</span>视作关于<span
 class="math inline">\(x\)</span>、<span
 class="math inline">\(y\)</span>的joint probability distribution</p>
 <p>那么loss就可以看做该分布的期望，即 <span class="math display">\[
-L(W) = \mathbb E(L) +\lambda R(W)\\
+L(W) = \mathbb E(L) +\lambda R(W)
+\]</span> <span class="math display">\[
 \nabla _W L(W) = \nabla_W\mathbb E(L) + \lambda \nabla_WR(W)
-\]</span> 为了方便计算<span class="math inline">\(\mathbb
+\]</span></p>
+<p>为了方便计算<span class="math inline">\(\mathbb
 E(L)\)</span>，可以采用蒙特卡洛方法进行采样估计： <span
 class="math display">\[
-L(W) \approx \frac1n \sum_{i=1}^n L_i(x_i, y_i, W) + \lambda R(W)\\
+L(W) \approx \frac1n \sum_{i=1}^n L_i(x_i, y_i, W) + \lambda R(W)
+\]</span> <span class="math display">\[
 \nabla_WL(W) \approx \frac1n \sum _{i=1}^n \nabla_WL_i(x_i, y_i, W) +
 \lambda \nabla _WR(W)
-\]</span>
-所以我们会从整个数据集中采样出minibatch来估计梯度，称为<strong>随机梯度下降法（stochastic
+\]</span></p>
+<p>所以我们会从整个数据集中采样出minibatch来估计梯度，称为<strong>随机梯度下降法（stochastic
 gradient descent）</strong>，minibatch的大小通常为32、64或128</p>
 <p>代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Stochastic gradient descent</span><br>w = initialize_weights()<br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    minibatch = sample_data(data, batch_size)<br>    dw = compute_gradient(loss_fn, minibatch, w)<br>    w -= learning_rate * dw<br></code></pre></td></tr></table></figure>
@@ -329,9 +332,11 @@ gradient descent）</strong>，minibatch的大小通常为32、64或128</p>
 <p>当loss function有局部最小值（local minimum）或鞍点（saddle
 point）时，SGD方法会立即停止，我们引入”速度向量“来模拟一个小球沿斜坡下滚的过程：
 <span class="math display">\[
-v_{t+1} = \rho v_t + \nabla f(x_t)\\
+v_{t+1} = \rho v_t + \nabla f(x_t)
+\]</span> <span class="math display">\[
 x_{t+1} = x_t - \alpha v_{t+1}
-\]</span> 速度向量的实质就是梯度的累计，函数将沿累计的梯度方向下降</p>
+\]</span></p>
+<p>速度向量的实质就是梯度的累计，函数将沿累计的梯度方向下降</p>
 <p>代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Stochastic gradient descent with momentum</span><br>v = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    dw = compute_gradient(w)<br>    v = rho * v + dw<br>    w -= learning_rate * v<br></code></pre></td></tr></table></figure>
 <p>同时由于速度向量的引入，我们引入了一个新的hyperparameter
@@ -339,22 +344,28 @@ x_{t+1} = x_t - \alpha v_{t+1}
 <h2 id="nesterov-momentum">3.5 Nesterov Momentum</h2>
 <p>在累计梯度时，我们选择不累计当前的梯度，而是假设小球以当前的速度运动一小段距离后，累计运动后小球处的梯度，这种方法被称为<strong>Nesterov
 momentum</strong>： <span class="math display">\[
-v_{t+1} = \rho v_t - \alpha \nabla f(x_t + \rho v_t)\\
+v_{t+1} = \rho v_t - \alpha \nabla f(x_t + \rho v_t)
+\]</span> <span class="math display">\[
 x_{t+1} = x_t + v_{t+1}
-\]</span> 通常为了计算方便，我们令<span class="math inline">\(\tilde x =
-x_t + \rho v_t\)</span>，于是有： <span class="math display">\[
-v_{t+1} = \rho v_t - \alpha \nabla f(\tilde x_t)\\
+\]</span></p>
+<p>通常为了计算方便，我们令<span class="math inline">\(\tilde x = x_t +
+\rho v_t\)</span>，于是有： <span class="math display">\[
+v_{t+1} = \rho v_t - \alpha \nabla f(\tilde x_t)
+\]</span> <span class="math display">\[
 \tilde x_{t+1} = \tilde x_t + v_{t+1} +\rho ( v_{t+1} - v_t)
-\]</span> 代码思路如下：</p>
+\]</span></p>
+<p>代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Nesterov momentum</span><br>v = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    dw = compute_gradient(w)<br>    old_v = v<br>    v = rho * v - learning_rate * dw<br>    w -= rho * old_v - (<span class="hljs-number">1</span> + rho) * v<br></code></pre></td></tr></table></figure>
 <h2 id="adagrad">3.6 AdaGrad</h2>
 <p>在梯度下降法中，由于learning
 rate是固定的，梯度大小不同的方向下降的速度是相同的</p>
 <p>但是我们希望在梯度较大的方向减缓下降速度以防震荡，梯度较小的方向加快下降速度，于是我们用<strong>AdaGrad</strong>使learning
 rate自适应大小： <span class="math display">\[
-S_{t+1} = S_t + \nabla_W^2 \\
+S_{t+1} = S_t + \nabla_W^2
+\]</span> <span class="math display">\[
 x_{t+1} = x_t - \alpha \frac{\nabla_W}{\sqrt{S_{t+1}+\varepsilon}}
-\]</span> 式中平方和除法均指矩阵按元素操作，<span
+\]</span></p>
+<p>式中平方和除法均指矩阵按元素操作，<span
 class="math inline">\(\varepsilon\)</span>是一个极小的数字以增强数值稳定性，防止出现分母为0的情况</p>
 <p>代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># AdaGrad</span><br>grad_squared = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    dw = compute_gradient(w)<br>    grad_squared += dw * dw<br>    w -= learning_rate * dw / (grad_sqruared.sqrt() + <span class="hljs-number">1e-7</span>)<br></code></pre></td></tr></table></figure>
@@ -364,9 +375,11 @@ rate过小而不能产生有效迭代</p>
 <p><strong>RMSProp</strong>效仿SGD+Momentum引入摩擦系数<span
 class="math inline">\(\rho\)</span>保证小球最终停止的想法，引入“摩擦“以防止梯度平方的累积过大：
 <span class="math display">\[
-S_{t+1} = \rho S_t + (1-\rho)\nabla_W^2 \\
+S_{t+1} = \rho S_t + (1-\rho)\nabla_W^2
+\]</span> <span class="math display">\[
 x_{t+1} = x_t - \alpha \frac{\nabla_W}{\sqrt{S_{t+1}+\varepsilon}}
-\]</span> 式中平方和除法均指矩阵按元素操作，<span
+\]</span></p>
+<p>式中平方和除法均指矩阵按元素操作，<span
 class="math inline">\(\varepsilon\)</span>是一个极小的数字以增强数值稳定性，防止出现分母为0的情况</p>
 <p>代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># RMSProp</span><br>grad_squared = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    dw = compute_gradient(w)<br>    grad_squared = decay_rate * grad_squared + (<span class="hljs-number">1</span> - decay_rate) * dw * dw<br>    w -= learning_rate * dw / (grad_squared.sqrt() + <span class="hljs-number">1e-7</span>)<br></code></pre></td></tr></table></figure>
@@ -374,10 +387,14 @@ class="math inline">\(\varepsilon\)</span>是一个极小的数字以增强数�
 <h2 id="adam">3.8 Adam</h2>
 <p>将RMSProp和momentum的思想结合起来，我们就得到了<strong>Adam</strong>：
 <span class="math display">\[
-v_{t+1} = \rho_1 v_t + (1 - \rho_1)\nabla _W\\
-S_{t+1} = \rho_2 S_t + (1-\rho_2)\nabla_W^2\\
+v_{t+1} = \rho_1 v_t + (1 - \rho_1)\nabla _W
+\]</span> <span class="math display">\[
+S_{t+1} = \rho_2 S_t + (1-\rho_2)\nabla_W^2
+\]</span></p>
+<p><span class="math display">\[
 x_{t+1} = x_t - \alpha \frac{v_{t+1}}{\sqrt{S_{t+1}+\varepsilon}}
-\]</span> 式中平方和除法均指矩阵按元素操作，<span
+\]</span></p>
+<p>式中平方和除法均指矩阵按元素操作，<span
 class="math inline">\(\varepsilon\)</span>是一个极小的数字以增强数值稳定性，防止出现分母为0的情况</p>
 <p>代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Adam</span><br>moment1 = <span class="hljs-number">0</span><br>moment2 = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    dw = compute_gradient(w)<br>    moment1 = beta1 * moment1 + (<span class="hljs-number">1</span> - beta1) * dw<br>    moment2 = beta2 * moment2 + (<span class="hljs-number">1</span> - beta2) * dw * dw<br>    w -= learning_rate * moment1 / (moment2.sqrt() + <span class="hljs-number">1e-7</span>)<br></code></pre></td></tr></table></figure>
@@ -388,11 +405,15 @@ class="math inline">\(S_1\)</span>和<span
 class="math inline">\(S_2\)</span>通常会趋近于0，导致第一次迭代的跨度会非常大，容易产生不好的结果，所以我们在Adam中会加入<strong>bias
 correction</strong>来修正： <span class="math display">\[
 v_{t+1} = \frac{\rho_1 v_t + (1 - \rho_1)\nabla
-_W}{\sqrt{1-\rho_1^{t+1}}}\\
+_W}{\sqrt{1-\rho_1^{t+1}}}
+\]</span> <span class="math display">\[
 S_{t+1} = \frac{\rho_2 S_t +
-(1-\rho_2)\nabla_W^2}{\sqrt{1-\rho_2^{t+1}}}\\
+(1-\rho_2)\nabla_W^2}{\sqrt{1-\rho_2^{t+1}}}
+\]</span></p>
+<p><span class="math display">\[
 x_{t+1} = x_t - \alpha \frac{v_{t+1}}{\sqrt{S_{t+1}+\varepsilon}}
-\]</span> 修正后的代码思路如下：</p>
+\]</span></p>
+<p>修正后的代码思路如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Adam with bias correction</span><br>moment1 = <span class="hljs-number">0</span><br>moment2 = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_steps):<br>    dw = compute_gradient(w)<br>    moment1 = beta1 * moment1 + (<span class="hljs-number">1</span> - beta1) * dw<br>    moment2 = beta2 * moment2 + (<span class="hljs-number">1</span> - beta2) * dw * dw<br>    moment1_unbias = moment1 / (<span class="hljs-number">1</span> - beta1 ** t)<br>    moment2_unbias = moment2 / (<span class="hljs-number">1</span> - beta2 ** t)<br>    w -= learning_rate * moment1 / (moment2.sqrt() + <span class="hljs-number">1e-7</span>)<br></code></pre></td></tr></table></figure>
 <p><code>beta1</code>通常取0.9，<code>beta2</code>通常取0.999，<code>learning_rate</code>通常取1e-3、5e-4、1e-4</p>
 <h2 id="二阶优化-second-order-optimization">3.9 二阶优化 Second-Order
