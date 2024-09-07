@@ -24,7 +24,7 @@
 <meta property="og:description" content="反向传播算法和向量求导的公式及例子">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-23T05:59:30.000Z">
-<meta property="article:modified_time" content="2024-07-23T07:33:44.386Z">
+<meta property="article:modified_time" content="2024-07-23T11:05:18.965Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -292,7 +292,8 @@ class="math display">\[
 \frac{\partial L}{\partial x} = \frac{\partial z}{\partial
 x}\frac{\partial L}{\partial z}
 \]</span> 如此反复便能得到每一个参数的梯度</p>
-<h2 id="向量求导">5.2 向量求导</h2>
+<h2 id="向量求导-vector-derivatives">5.2 向量求导 Vector
+Derivatives</h2>
 <p><span class="math display">\[
 x \in \mathbb R,y\in \mathbb R, \frac{\partial y}{\partial x}\in \mathbb
 R
@@ -331,7 +332,7 @@ z=Wx+b
 \]</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Backpropagation of ReLU function</span><br><span class="hljs-keyword">import</span> torch<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ReLU</span>(<span class="hljs-title class_ inherited__">object</span>):<br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">backward</span>(<span class="hljs-params">dout, cache</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    Input:</span><br><span class="hljs-string">    - dout: Upstream derivatives, of any shape</span><br><span class="hljs-string">    - cache: Input x, of same shape as dout</span><br><span class="hljs-string">    Returns:</span><br><span class="hljs-string">    - dx: Gradient with respect to x</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    x = cache    <br>    dx = dout * (x &gt; <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">return</span> dx<br></code></pre></td></tr></table></figure>
 <h3 id="dropout">Dropout</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Backpropagation of dropout</span><br><span class="hljs-keyword">import</span> torch<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">dropout</span>(<span class="hljs-title class_ inherited__">obkect</span>):<br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">backward</span>(<span class="hljs-params">dout, cache</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    Inputs:</span><br><span class="hljs-string">    - dout: Upstream derivatives, of any shape</span><br><span class="hljs-string">    - cache: (dropout_param, mask) from Dropout.forward.</span><br><span class="hljs-string">    Returns:</span><br><span class="hljs-string">    - dx: Gradient with respect to x</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    mask = cache  <br>    dx = dout * mask<br>    <span class="hljs-keyword">return</span> dx<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Backpropagation of dropout</span><br><span class="hljs-keyword">import</span> torch<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">dropout</span>(<span class="hljs-title class_ inherited__">object</span>):<br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">backward</span>(<span class="hljs-params">dout, cache</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    Inputs:</span><br><span class="hljs-string">    - dout: Upstream derivatives, of any shape</span><br><span class="hljs-string">    - cache: (dropout_param, mask) from Dropout.forward.</span><br><span class="hljs-string">    Returns:</span><br><span class="hljs-string">    - dx: Gradient with respect to x</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    mask = cache  <br>    dx = dout * mask<br>    <span class="hljs-keyword">return</span> dx<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -393,6 +394,12 @@ z=Wx+b
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/09/07/IPv4%E4%B8%8EIPv6%E7%8E%AF%E5%A2%83%E4%B8%8BShadowsocks%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="IPv4与IPv6环境下Shadowsocks的搭建与使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">IPv4与IPv6环境下Shadowsocks的搭建与使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
