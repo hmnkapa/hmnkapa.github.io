@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>page</title>
+    <link href="/2025/03/17/%E8%B4%A5%E5%AE%B6%E6%97%A5%E8%AE%B0/"/>
+    <url>/2025/03/17/%E8%B4%A5%E5%AE%B6%E6%97%A5%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[&lt;% var positions = site.data.positions; %&gt;<h2>我的 OKX 持仓</h2><pre><%= JSON.stringify(positions, null, 2) %></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>最大似然学习 Maximum Likelihood Learning</title>
     <link href="/2024/11/22/%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E5%AD%A6%E4%B9%A0/"/>
     <url>/2024/11/22/%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E5%AD%A6%E4%B9%A0/</url>
