@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>page</title>
+    <title>败家日记</title>
     <link href="/2025/03/17/%E8%B4%A5%E5%AE%B6%E6%97%A5%E8%AE%B0/"/>
     <url>/2025/03/17/%E8%B4%A5%E5%AE%B6%E6%97%A5%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[&lt;% var positions = site.data.positions; %&gt;<h2>我的 OKX 持仓</h2><pre><%= JSON.stringify(positions, null, 2) %></pre>]]></content>
+    <content type="html"><![CDATA[<div id="main" style="width: 100%; height: 400px;"></div><script>  // 读取 total_position.json 数据  fetch('/total_position.json')  // Hexo 会把 `source/total_position.json` 复制到 `public/`    .then(response => response.json())    .then(data => {      // 解析 JSON 数据      let xAxisData = []; // 存放时间      let yAxisData = []; // 存放资产值      data.forEach(entry => {        entry.data.forEach(point => {          let timestamp = point[0];          let assetValue = parseFloat(point[1]); // 转换为数值              xAxisData.push(new Date(timestamp).toLocaleString()); // 转换为可读时间          yAxisData.push(assetValue);        });      });          // 初始化 ECharts      var myChart = echarts.init(document.getElementById('main'));          // ECharts 配置      var option = {        title: { text: '总资产折线图' },        tooltip: { trigger: 'axis' },        xAxis: {          type: 'category',          data: xAxisData,          axisLabel: { rotate: 30 }  // 避免标签重叠        },        yAxis: { type: 'value' },        series: [{          name: '总资产',          type: 'line',          data: yAxisData        }]      };          myChart.setOption(option);    })    .catch(error => console.error('加载 JSON 数据失败:', error));</script>]]></content>
     
     
     

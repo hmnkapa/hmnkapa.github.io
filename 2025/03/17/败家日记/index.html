@@ -16,21 +16,21 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="&lt;% var positions &#x3D; site.data.positions; %&gt;  我的 OKX 持仓">
+    <meta name="description" content="&#x2F;&#x2F; 读取 total_position.json 数据   fetch(&#39;&#x2F;total_position.json&#39;)  &#x2F;&#x2F; Hexo 会把 &#96;source&#x2F;total_position.json&#96; 复制到 &#96;public&#x2F;&#96;     .then(response &#x3D;&gt; response.json())     .then(data &#x3D;&gt; {       &#x2F;&#x2F; 解析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="page">
+<meta property="og:title" content="败家日记">
 <meta property="og:url" content="http://hmnkapa.github.io/2025/03/17/%E8%B4%A5%E5%AE%B6%E6%97%A5%E8%AE%B0/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="&lt;% var positions &#x3D; site.data.positions; %&gt;  我的 OKX 持仓">
+<meta property="og:description" content="&#x2F;&#x2F; 读取 total_position.json 数据   fetch(&#39;&#x2F;total_position.json&#39;)  &#x2F;&#x2F; Hexo 会把 &#96;source&#x2F;total_position.json&#96; 复制到 &#96;public&#x2F;&#96;     .then(response &#x3D;&gt; response.json())     .then(data &#x3D;&gt; {       &#x2F;&#x2F; 解析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-17T13:10:23.000Z">
-<meta property="article:modified_time" content="2025-03-17T13:10:54.191Z">
+<meta property="article:modified_time" content="2025-03-19T04:54:28.834Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>page - 呼姆呼姆</title>
+  <title>败家日记 - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="page"></span>
+            <span id="subtitle" data-typed-text="败家日记"></span>
           
         </div>
 
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11 字
+          137 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -271,16 +271,57 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">page</h1>
+            <h1 id="seo-header">败家日记</h1>
             
             
               <div class="markdown-body">
                 
-                &lt;% var positions = site.data.positions; %&gt;
-<h2>
-我的 OKX 持仓
-</h2>
-<pre><%= JSON.stringify(positions, null, 2) %></pre>
+                <div id="main" style="width: 100%; height: 400px;">
+
+</div>
+<script>
+  // 读取 total_position.json 数据
+  fetch('/total_position.json')  // Hexo 会把 `source/total_position.json` 复制到 `public/`
+    .then(response => response.json())
+    .then(data => {
+      // 解析 JSON 数据
+      let xAxisData = []; // 存放时间
+      let yAxisData = []; // 存放资产值
+
+      data.forEach(entry => {
+        entry.data.forEach(point => {
+          let timestamp = point[0];
+          let assetValue = parseFloat(point[1]); // 转换为数值
+    
+          xAxisData.push(new Date(timestamp).toLocaleString()); // 转换为可读时间
+          yAxisData.push(assetValue);
+        });
+      });
+    
+      // 初始化 ECharts
+      var myChart = echarts.init(document.getElementById('main'));
+    
+      // ECharts 配置
+      var option = {
+        title: { text: '总资产折线图' },
+        tooltip: { trigger: 'axis' },
+        xAxis: {
+          type: 'category',
+          data: xAxisData,
+          axisLabel: { rotate: 30 }  // 避免标签重叠
+        },
+        yAxis: { type: 'value' },
+        series: [{
+          name: '总资产',
+          type: 'line',
+          data: yAxisData
+        }]
+      };
+    
+      myChart.setOption(option);
+    })
+    .catch(error => console.error('加载 JSON 数据失败:', error));
+</script>
 
                 
               </div>
@@ -298,7 +339,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>page</div>
+      <div>败家日记</div>
       <div>http://hmnkapa.github.io/2025/03/17/败家日记/</div>
     </div>
     <div class="license-meta">
