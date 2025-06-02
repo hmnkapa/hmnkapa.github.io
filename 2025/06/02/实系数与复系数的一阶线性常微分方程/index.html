@@ -16,15 +16,15 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="实系数与复习书的一阶ODE的通解与特解、实系数方程的复化方法">
+    <meta name="description" content="实系数复系数一阶线性ODE的特解与通解、实系数ODE的复化方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实系数与复系数的一阶线性常微分方程">
-<meta property="og:url" content="http://hmnkapa.github.io/2025/05/22/%E5%AE%9E%E7%B3%BB%E6%95%B0%E4%B8%8E%E5%A4%8D%E7%B3%BB%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E7%BA%BF%E6%80%A7%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
+<meta property="og:url" content="http://hmnkapa.github.io/2025/06/02/%E5%AE%9E%E7%B3%BB%E6%95%B0%E4%B8%8E%E5%A4%8D%E7%B3%BB%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E7%BA%BF%E6%80%A7%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="实系数与复习书的一阶ODE的通解与特解、实系数方程的复化方法">
+<meta property="og:description" content="实系数复系数一阶线性ODE的特解与通解、实系数ODE的复化方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-05-21T16:23:55.000Z">
-<meta property="article:modified_time" content="2025-06-02T08:47:20.613Z">
+<meta property="article:published_time" content="2025-06-02T12:31:12.000Z">
+<meta property="article:modified_time" content="2025-06-02T13:00:02.117Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-22 00:23" pubdate>
-          2025年5月22日 凌晨
+        <time datetime="2025-06-02 20:31" pubdate>
+          2025年6月2日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.5k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          12 分钟
+          13 分钟
         
       </span>
     
@@ -276,215 +276,227 @@
             
               <div class="markdown-body">
                 
-                <h2
+                <h1
+id="实系数与复系数的一阶线性常微分方程">实系数与复系数的一阶线性常微分方程</h1>
+<h2
 id="一阶线性微分方程first-order-linear-ode">一阶线性微分方程（First-Order
 Linear ODE）</h2>
-<p>一阶线性常微分方程是形如： <span class="math display">\[
-\displaystyle y&#39; = a(t)y + b(t)
-\]</span> 的方程，其中 <span class="math inline">\(\displaystyle y&#39;
-= \frac{dy}{dt}\)</span>，并且 <span class="math inline">\(\displaystyle
-a(t)\)</span> 和 <span class="math inline">\(\displaystyle b(t)\)</span>
-是 <span class="math inline">\(\displaystyle t\)</span> 的函数</p>
+<p>一阶线性常微分方程是形如：</p>
+<p><span class="math display">\[
+\displaystyle y^{\prime}=a(t)y+b(t)\\
+\]</span> 的方程，其中 <span class="math inline">\(\displaystyle
+y^{\prime}=\frac{dy}{dt}，\)</span>并且 <span
+class="math inline">\(\displaystyle a(t)\)</span> 和 <span
+class="math inline">\(\displaystyle b(t)\)</span> 是 <span
+class="math inline">\(\displaystyle t\)</span> 的函数</p>
 <ul>
-<li><p>如果 <span class="math inline">\(\displaystyle b(t) \equiv
-0\)</span>（意味着对于所有 <span class="math inline">\(\displaystyle
-t\)</span>，<span class="math inline">\(\displaystyle b(t)\)</span>
-均为零），该 ODE 称为 <strong>齐次的 (homogeneous)</strong></p></li>
-<li><p>如果对于至少一个 <span class="math inline">\(\displaystyle
-t\)</span> 值，<span class="math inline">\(\displaystyle b(t) \neq
-0\)</span>，该 ODE 称为 <strong>非齐次的
-(inhomogeneous)</strong></p></li>
+<li>如果 <span class="math inline">\(\displaystyle b(t)\equiv0\)</span>
+（意味着对于所有 <span class="math inline">\(\displaystyle t\)</span>，
+<span class="math inline">\(\displaystyle b(t)\)</span>
+均为零），该ODE称为<strong>齐次的（homogeneous）</strong></li>
+<li>如果对于至少一个值， <span class="math inline">\(\displaystyle
+b(t)\ne0\)</span>，该ODE称为<strong>非齐次的（inhomogeneous）</strong></li>
 </ul>
-<p>这些 ODE 的解通常在 <span class="math inline">\(\displaystyle
+<p>这些ODE 的解通常在 <span class="math inline">\(\displaystyle
 a(t)\)</span> 和 <span class="math inline">\(\displaystyle b(t)\)</span>
 有定义的任何地方都存在，并且具有显式形式（explicit form）</p>
-<p>它们通常形成一个单参数的解族，并且与它们相关的初值问题 (IVP)
-具有唯一的解</p>
+<p>它们通常形成一个单参数的解族，并且与它们相关的初值问题（IVP）具有唯一的解</p>
 <h2 id="实系数一阶线性ode">实系数一阶线性ODE</h2>
 <h3 id="齐次情况">齐次情况</h3>
 <p>对于齐次一阶线性 ODE：</p>
 <p><span class="math display">\[
-\displaystyle y&#39; = a(t)y
+\displaystyle y^{\prime}=a(t)y\\
 \]</span> 如果 <span class="math inline">\(\displaystyle a(t)\)</span>
 连续，其通解由下式给出：</p>
 <p><span class="math display">\[
-\displaystyle y(t) = c \cdot e^{\int_{t_0}^{t} a(s) ds}
+\displaystyle y(t)=c\cdot e^{\int_{t_{0}}^{t}a(s)ds}\\
 \]</span> 其中 <span class="math inline">\(\displaystyle c\)</span>
 是一个任意常数（通常由初始条件 <span class="math inline">\(\displaystyle
-y(t_0)\)</span> 确定）</p>
+y(t_{0})\)</span> 确定）</p>
 <p><span class="math inline">\(\displaystyle y(t)\)</span> 的定义域与
 <span class="math inline">\(\displaystyle a(t)\)</span> 的定义域相同</p>
 <h3 id="非齐次情况">非齐次情况</h3>
 <p>对于非齐次一阶线性 ODE：</p>
 <p><span class="math display">\[
-\displaystyle y&#39; = a(t)y + b(t)
-\]</span> 解是通过一种称为<strong>参数变易法 (variation of
-parameters)</strong> 的技术找到的</p>
-<p>其思想是采用齐次解 <span class="math inline">\(\displaystyle y_h(t) =
-c e^{A(t)}\)</span> 的形式，并允许“常数”<span
-class="math inline">\(\displaystyle c\)</span> 成为 <span
+\displaystyle y^{\prime}=a(t)y+b(t)\\
+\]</span> 解是通过一种称为<strong>参数变易法（variation of
+parameters）</strong>的技术找到的</p>
+<p>其思想是采用齐次解 <span class="math inline">\(\displaystyle
+y_{h}(t)=ce^{A(t)}\)</span> 的形式，并允许“常数”成为 <span
 class="math inline">\(\displaystyle t\)</span> 的函数，即 <span
 class="math inline">\(\displaystyle c(t)\)</span></p>
-<p>令 <span class="math inline">\(\displaystyle y_p(t) =
-c(t)e^{A(t)}\)</span> 为一个特解，其中 <span
-class="math inline">\(\displaystyle A(t) = \int_{t_0}^{t} a(s)
-ds\)</span></p>
+<p>令 <span class="math inline">\(\displaystyle
+y_{p}(t)=c(t)e^{A(t)}\)</span> 为一个特解，其中 <span
+class="math inline">\(\displaystyle
+A(t)=\int_{t_{0}}^{t}a(s)ds\)</span></p>
 <p>将其代入 ODE：</p>
 <p><span class="math display">\[
-\displaystyle y_p&#39;(t) = c&#39;(t)e^{A(t)} + c(t)a(t)e^{A(t)}
-\]</span> 所以， <span class="math display">\[
-\displaystyle c&#39;(t)e^{A(t)} + c(t)a(t)e^{A(t)} = a(t)c(t)e^{A(t)} +
-b(t)
+\displaystyle y_{p}^{\prime}(t)=c^{\prime}(t)e^{A(t)}+c(t)a(t)e^{A(t)}\\
+\]</span> 所以，</p>
+<p><span class="math display">\[
+\displaystyle
+c^{\prime}(t)e^{A(t)}+c(t)a(t)e^{A(t)}=a(t)c(t)e^{A(t)}+b(t)\\
 \]</span> 简化为 <span class="math inline">\(\displaystyle
-c&#39;(t)e^{A(t)} = b(t)\)</span>，或 <span
-class="math inline">\(\displaystyle c&#39;(t) =
-b(t)e^{-A(t)}\)</span></p>
-<p>对 <span class="math inline">\(\displaystyle c&#39;(t)\)</span>
-积分得到 <span class="math display">\[
-\displaystyle c(t) = \int_{t_0}^{t} b(s)e^{-A(s)} ds
+c^{\prime}(t)e^{A(t)}=b(t)\)</span> 或 <span
+class="math inline">\(\displaystyle
+c^{\prime}(t)=b(t)e^{-A(t)}\)</span></p>
+<p>对 <span class="math inline">\(\displaystyle c^{\prime}(t)\)</span>
+积分得到</p>
+<p><span class="math display">\[
+\displaystyle c(t)=\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
 \]</span> 因此，一个特解是：</p>
 <p><span class="math display">\[
-\displaystyle y_p(t) = e^{A(t)} \int_{t_0}^{t} b(s)e^{-A(s)} ds
-\]</span> 非齐次 ODE 的<strong>通解</strong> <span
-class="math inline">\(\displaystyle y(t)\)</span> 是齐次 ODE 的通解
-<span class="math inline">\(\displaystyle y_h(t) = C
-e^{A(t)}\)</span>（其中 <span class="math inline">\(\displaystyle
-C\)</span> 是任意常数）与特解 <span class="math inline">\(\displaystyle
-y_p(t)\)</span> 的和：</p>
+\displaystyle y_{p}(t)=e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
+\]</span> 非齐次 ODE 的通解 <span class="math inline">\(\displaystyle
+y(t)\)</span> 是齐次ODE的通解 <span class="math inline">\(\displaystyle
+y_{h}(t)=Ce^{A(t)}\)</span> （其中<span
+class="math inline">\(C\)</span>是任意常数）与特解 <span
+class="math inline">\(\displaystyle y_{p}(t)\)</span> 的和：</p>
 <p><span class="math display">\[
-\displaystyle y(t) = C e^{A(t)} + e^{A(t)} \int_{t_0}^{t} b(s)e^{-A(s)}
-ds
+\displaystyle y(t)=Ce^{A(t)}+e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
 \]</span> 如果给定初始条件 <span class="math inline">\(\displaystyle
-y(t_0)=y_0\)</span>，则 <span class="math inline">\(\displaystyle C
-e^{A(t_0)} = y_0\)</span>（因为根据积分限的选择，<span
-class="math inline">\(\displaystyle A(t_0)=0\)</span> 且 <span
-class="math inline">\(\displaystyle y_p(t_0)=0\)</span>）</p>
-<p>所以 <span class="math inline">\(\displaystyle C=y_0\)</span>，得到：
-<span class="math display">\[
-\displaystyle y(t) = y(t_0)e^{A(t)} + e^{A(t)} \int_{t_0}^{t}
-b(s)e^{-A(s)} ds
+y(t_{0})=y_{0}\)</span>，则 <span class="math inline">\(\displaystyle
+Ce^{A(t_{0})}=y_{0}\)</span> （因为根据积分限的选择， <span
+class="math inline">\(\displaystyle A(t_{0})=0\)</span> 且 <span
+class="math inline">\(\displaystyle y_{p}(t_{0})=0\)</span>）</p>
+<p>所以 <span class="math inline">\(\displaystyle
+C=y_{0}\)</span>，得到：</p>
+<p><span class="math display">\[
+\displaystyle
+y(t)=y(t_{0})e^{A(t)}+e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
 \]</span> 解的最大定义域是 <span class="math inline">\(\displaystyle
 a(t)\)</span> 和 <span class="math inline">\(\displaystyle b(t)\)</span>
 定义域的交集</p>
-<p>特解 <span class="math inline">\(\displaystyle y_p(t)\)</span>
-的另一种表示有时很有用：</p>
-<p><span class="math display">\[
-\displaystyle y_p(t) = \int_{t_0}^{t} b(s) e^{A(t)-A(s)} ds =
-\int_{t_0}^{t} G(s,t)b(s) ds
-\]</span> 其中 <span class="math inline">\(\displaystyle G(s,t) =
-\exp\left(\int_{s}^{t} a(\tau) d\tau\right)\)</span></p>
+<p>特解 <span class="math inline">\(\displaystyle y_{p}(t)\)</span>
+的另一种表示有时很有用： <span class="math display">\[
+\displaystyle
+y_{p}(t)=\int_{t_{0}}^{t}b(s)e^{A(t)-A(s)}ds=\int_{t_{0}}^{t}G(s，t)b(s)ds\\
+\]</span> 其中<span class="math display">\[\displaystyle
+G(s，t)=\exp\left(\int_{s}^{t}a(\tau)d\tau\right)\\\]</span></p>
 <h3 id="积分因子integrating-factors">积分因子（Integrating
 Factors）</h3>
-<p>解 <span class="math inline">\(\displaystyle y&#39; = a(t)y +
-b(t)\)</span> 的另一种方法是使用积分因子</p>
-<p>将 ODE 改写为 <span class="math display">\[
-\displaystyle y&#39; - a(t)y = b(t)
+<p>解 <span class="math inline">\(\displaystyle
+y^{\prime}=a(t)y+b(t)\)</span> 的另一种方法是使用积分因子</p>
+<p>将ODE改写为</p>
+<p><span class="math display">\[
+\displaystyle y^{\prime}-a(t)y=b(t)\\
 \]</span> 两边乘以一个函数 <span class="math inline">\(\displaystyle
 m(t)\)</span>，即积分因子：</p>
 <p><span class="math display">\[
-\displaystyle m(t)y&#39; - m(t)a(t)y = m(t)b(t)
+\displaystyle m(t)y^{\prime}-m(t)a(t)y=m(t)b(t)\\
 \]</span> 我们希望左边是乘积的导数，具体来说是 <span
-class="math inline">\(\displaystyle \frac{d}{dt}(m(t)y(t)) = m(t)y&#39;
-+ m&#39;(t)y\)</span></p>
-<p>比较 <span class="math inline">\(\displaystyle m(t)y&#39; -
-m(t)a(t)y\)</span> 和 <span class="math inline">\(\displaystyle
-m(t)y&#39; + m&#39;(t)y\)</span>，我们需要 <span
-class="math inline">\(\displaystyle m&#39;(t) = -a(t)m(t)\)</span></p>
+class="math inline">\(\displaystyle
+\frac{d}{dt}(m(t)y(t))=m(t)y^{\prime}+m^{\prime}(t)y\)</span></p>
+<p>比较 <span class="math inline">\(\displaystyle
+m(t)y^{\prime}-m(t)a(t)y\)</span> 和 <span
+class="math inline">\(\displaystyle
+m(t)y^{\prime}+m^{\prime}(t)y，\)</span> 我们需要 <span
+class="math inline">\(\displaystyle m^{\prime}(t)=-a(t)m(t)\)</span></p>
 <p>这是一个关于 <span class="math inline">\(\displaystyle m(t)\)</span>
-的可分离 ODE： <span class="math display">\[
-\displaystyle \frac{dm}{m} = -a(t)dt
-\]</span> 积分得到 <span class="math display">\[
-\displaystyle \ln|m(t)| = -\int a(t) dt = -A(t)
-\]</span> 所以 <span class="math inline">\(\displaystyle m(t) =
-e^{-A(t)}\)</span> (我们可以选择积分常数为 1)</p>
+的可分离ODE：</p>
+<p><span class="math display">\[
+\displaystyle \frac{dm}{m}=-a(t)dt\\
+\]</span> 积分得到</p>
+<p><span class="math display">\[
+\displaystyle \ln|m(t)|=-\int a(t)dt=-A(t)\\
+\]</span> 所以 <span class="math inline">\(\displaystyle
+m(t)=e^{-A(t)}\)</span> （我们可以选择积分常数为1）</p>
 <p>有了这个 <span class="math inline">\(\displaystyle
 m(t)\)</span>，方程变为：</p>
 <p><span class="math display">\[
-\displaystyle \frac{d}{dt}(e^{-A(t)}y(t)) = e^{-A(t)}b(t)
+\displaystyle \frac{d}{dt}(e^{-A(t)}y(t))=e^{-A(t)}b(t)\\
 \]</span> 两边积分：</p>
 <p><span class="math display">\[
-\displaystyle e^{-A(t)}y(t) = \int e^{-A(t)}b(t) dt + C
+\displaystyle e^{-A(t)}y(t)=\int e^{-A(t)}b(t)dt+C\\
 \]</span></p>
 <p><span class="math display">\[
-\displaystyle y(t) = e^{A(t)} \left( \int e^{-A(t)}b(t) dt + C \right)
+\displaystyle y(t)=e^{A(t)}\left(\int e^{-A(t)}b(t)dt+C\right)\\
 \]</span></p>
 <p>这与通过参数变易法得到的通解相同</p>
-<h2 id="复系数一阶线性-ode">复系数一阶线性 ODE</h2>
-<p>显式复系数一阶线性 ODE 具有以下形式：</p>
+<h2 id="复系数一阶线性ode">复系数一阶线性ODE</h2>
+<p>显式复系数一阶线性 ODE具有以下形式：</p>
 <p><span class="math display">\[
-\displaystyle z&#39;(t) = a(t)z(t) + b(t)
-\]</span> 其中 <span class="math inline">\(\displaystyle z(t)\)</span>
-是实变量 <span class="math inline">\(\displaystyle t\)</span>
-的复值函数，也就是说 <span class="math inline">\(\displaystyle z(t) =
-x(t) + iy(t)\)</span></p>
-<p><span class="math inline">\(\displaystyle a(t), b(t)\)</span>
-是复值函数 <span class="math inline">\(\displaystyle D \to
-\mathbb{C}\)</span>，令 <span class="math inline">\(\displaystyle a(t) =
-a_1(t) + ia_2(t)\)</span> 和 <span class="math inline">\(\displaystyle
-b(t) = b_1(t) + ib_2(t)\)</span></p>
+\displaystyle z^{\prime}(t)=a(t)z(t)+b(t)\\
+\]</span> <span class="math inline">\(\displaystyle z(t)\)</span>
+是实变量的复值函数，也就是说 <span class="math inline">\(\displaystyle
+z(t)=x(t)+iy(t)\)</span></p>
+<p><span class="math inline">\(\displaystyle a(t)\)</span>，<span
+class="math inline">\(b(t)\)</span> 是复值函数 <span
+class="math inline">\(\displaystyle D\rightarrow\mathbb{C}，\)</span> 令
+<span class="math inline">\(\displaystyle
+a(t)=a_{1}(t)+ia_{2}(t)\)</span> 和 <span
+class="math inline">\(\displaystyle b(t)=b_{1}(t)+ib_{2}(t)\)</span></p>
 <p>将这些代入 ODE 得到：</p>
 <p><span class="math display">\[
-\displaystyle x&#39;(t) + iy&#39;(t) = (a_1(t)+ia_2(t))(x(t)+iy(t)) +
-(b_1(t)+ib_2(t))
+\displaystyle
+x^{\prime}(t)+iy^{\prime}(t)=(a_{1}(t)+ia_{2}(t))(x(t)+iy(t))+(b_{1}(t)+ib_{2}(t))\\
 \]</span></p>
 <p><span class="math display">\[
-\displaystyle x&#39;(t) + iy&#39;(t) = (a_1x - a_2y + b_1) + i(a_2x +
-a_1y + b_2)
+\displaystyle
+x^{\prime}(t)+iy^{\prime}(t)=(a_{1}x-a_{2}y+b_{1})+i(a_{2}x+a_{1}y+b_{2})\\
 \]</span></p>
-<p>令实部和虚部分别相等，得到一个由两个实系数一阶线性 ODE
-组成的系统：</p>
+<p>令实部和虚部分别相等，得到一个由两个实系数一阶线性
+ODE组成的系统：</p>
 <p><span class="math display">\[
-\displaystyle x&#39;(t) = a_1(t)x(t) - a_2(t)y(t) + b_1(t)
+\displaystyle x^{\prime}(t)=a_{1}(t)x(t)-a_{2}(t)y(t)+b_{1}(t)\\
 \]</span></p>
 <p><span class="math display">\[
-\displaystyle y&#39;(t) = a_2(t)x(t) + a_1(t)y(t) + b_2(t)
+\displaystyle y^{\prime}(t)=a_{2}(t)x(t)+a_{1}(t)y(t)+b_{2}(t)\\
 \]</span></p>
-<p>矩阵形式为： <span class="math display">\[
-\displaystyle \begin{pmatrix} x&#39;(t) \\ y&#39;(t) \end{pmatrix} =
-\begin{pmatrix} a_1(t) &amp; -a_2(t) \\ a_2(t) &amp; a_1(t)
-\end{pmatrix} \begin{pmatrix} x(t) \\ y(t) \end{pmatrix} +
-\begin{pmatrix} b_1(t) \\ b_2(t) \end{pmatrix}
+<p>矩阵形式为：</p>
+<p><span class="math display">\[
+\displaystyle \begin{pmatrix}x^{\prime}(t)\\
+y^{\prime}(t)\end{pmatrix}=\begin{pmatrix}a_{1}(t)&amp;-a_{2}(t)\\
+a_{2}(t)&amp;a_{1}(t)\end{pmatrix}\begin{pmatrix}x(t)\\
+y(t)\end{pmatrix}+\begin{pmatrix}b_{1}(t)\\ b_{2}(t)\end{pmatrix}\\
 \]</span></p>
 <h3 id="通解">通解</h3>
 <p>求解方法与实数情况类似</p>
-<p>通解为 <span class="math display">\[
-\displaystyle z(t) = Z_0 e^{A(t)} + z_p(t)
-\]</span> 其中 <span class="math inline">\(\displaystyle Z_0 \in
-\mathbb{C}\)</span> 是任意复常数，并且<span
-class="math inline">\(\displaystyle A(t) = \int_{t_0}^t a(s) ds\)</span>
-(这现在是一个复值积分)，此外： <span class="math display">\[
-\displaystyle z_p(t) = e^{A(t)} \int_{t_0}^t b(s) e^{-A(s)} ds
+<p>通解为：</p>
+<p><span class="math display">\[
+\displaystyle z(t)=Z_{0}e^{A(t)}+z_{p}(t)\\
+\]</span> 其中 <span class="math inline">\(\displaystyle
+Z_{0}\in\mathbb{C}\)</span> 是任意复常数，并且 <span
+class="math inline">\(\displaystyle A(t)=\int_{t_{0}}^{t}a(s)ds\)</span>
+（这现在是一个复值积分），此外：</p>
+<p><span class="math display">\[
+\displaystyle z_{p}(t)=e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
 \]</span> 证明依赖于实变量复值函数的微分和积分是逐分量进行的，并且 <span
-class="math inline">\(\displaystyle \frac{d}{dt}e^{A(t)} =
-A&#39;(t)e^{A(t)}\)</span> 对于复值 <span
+class="math inline">\(\displaystyle
+\frac{d}{dt}e^{A(t)}=A^{\prime}(t)e^{A(t)}\)</span> 对于复值 <span
 class="math inline">\(\displaystyle A(t)\)</span> 也成立</p>
-<p>对于 IVP <span class="math inline">\(\displaystyle z(t_0) =
-z_0\)</span>，唯一解是 <span class="math inline">\(\displaystyle z(t) =
-z_0 e^{A(t)} + z_p(t)\)</span> (由于选择 <span
-class="math inline">\(\displaystyle t_0\)</span> 作为积分下限，<span
-class="math inline">\(\displaystyle A(t_0)=0, z_p(t_0)=0\)</span>)</p>
+<p>对于 IVP <span class="math inline">\(\displaystyle
+z(t_{0})=z_{0}，\)</span> 唯一解是 <span
+class="math inline">\(\displaystyle z(t)=z_{0}e^{A(t)}+z_{p}(t)\)</span>
+（由于选择 <span class="math inline">\(\displaystyle t_{0}\)</span>
+作为积分下限， <span class="math inline">\(\displaystyle A(t_{0})=0，
+z_{p}(t_{0})=0\)</span>）</p>
 <h3 id="实系数-ode-的复化complexification">实系数 ODE
 的复化（Complexification）</h3>
-<p>为了解实系数 ODE <span class="math display">\[
-\displaystyle y&#39;(t) = a(t)y(t) + b(t)
+<p>为了解实系数 ODE</p>
+<p><span class="math display">\[
+\displaystyle y^{\prime}(t)=a(t)y(t)+b(t)\\
 \]</span> 其中 <span class="math inline">\(\displaystyle a(t)\)</span>
 是实数，如果 <span class="math inline">\(\displaystyle b(t)\)</span>
 例如是 <span class="math inline">\(\displaystyle \sin(\omega
 t)\)</span>，我们可以使用<strong>复化（Complexification）</strong>方法</p>
-<p>令 <span class="math inline">\(\displaystyle b(t) =
-\text{Im}(B(t))\)</span>，其中 <span class="math inline">\(\displaystyle
-B(t)\)</span> 是一个复函数 (例如，如果 <span
-class="math inline">\(\displaystyle b(t) = \sin(\omega
-t)\)</span>，可以选择 <span class="math inline">\(\displaystyle B(t) =
-e^{i\omega t}\)</span> ，因为 <span class="math inline">\(\displaystyle
-\text{Im}(e^{i\omega t}) = \sin(\omega t)\)</span>)</p>
-<p>解复系数 ODE <span class="math display">\[
-\displaystyle z&#39;(t) = a(t)z(t) + B(t)
-\]</span> 那么 <span class="math inline">\(\displaystyle y(t) =
-\text{Im}(z(t))\)</span> 将是原始实系数 ODE 的一个解</p>
-<p>类似地，如果 <span class="math inline">\(\displaystyle b(t) =
-\text{Re}(B(t))\)</span>，那么 <span class="math inline">\(\displaystyle
-y(t) = \text{Re}(z(t))\)</span> 是解</p>
+<p>令 <span class="math inline">\(\displaystyle
+b(t)=\text{Im}(B(t))\)</span>，其中 <span
+class="math inline">\(\displaystyle B(t)\)</span>
+是一个复函数(例如，如果 <span class="math inline">\(\displaystyle
+b(t)=\sin(\omega t)\)</span> 可以选择 <span
+class="math inline">\(\displaystyle B(t)=e^{i\omega t}\)</span>，因为
+<span class="math inline">\(\displaystyle \text{Im}(e^{i\omega
+t})=\sin(\omega t))\)</span></p>
+<p>解复系数 ODE</p>
+<p><span class="math display">\[
+\displaystyle z^{\prime}(t)=a(t)z(t)+B(t)\\
+\]</span> 那么 <span class="math inline">\(\displaystyle
+y(t)=\text{Im}(z(t))\)</span> 将是原始实系数 ODE 的一个解</p>
+<p>类似地，如果 <span class="math inline">\(\displaystyle
+b(t)=\text{Re}(B(t))\)</span>，那么 <span
+class="math inline">\(\displaystyle y(t)=\text{Re}(z(t))\)</span>
+是解</p>
 
                 
               </div>
@@ -503,7 +515,7 @@ y(t) = \text{Re}(z(t))\)</span> 是解</p>
   <div class="license-box my-3">
     <div class="license-title">
       <div>实系数与复系数的一阶线性常微分方程</div>
-      <div>http://hmnkapa.github.io/2025/05/22/实系数与复系数的一阶线性常微分方程/</div>
+      <div>http://hmnkapa.github.io/2025/06/02/实系数与复系数的一阶线性常微分方程/</div>
     </div>
     <div class="license-meta">
       
@@ -515,7 +527,7 @@ y(t) = \text{Re}(z(t))\)</span> 是解</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年5月22日</div>
+          <div>2025年6月2日</div>
         </div>
       
       
