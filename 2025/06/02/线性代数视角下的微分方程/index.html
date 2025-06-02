@@ -16,21 +16,21 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="实系数复系数一阶线性ODE的特解与通解、实系数ODE的复化方法">
+    <meta name="description" content="函数空间与线性微分方程解集的代数结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实系数与复系数的一阶线性常微分方程">
-<meta property="og:url" content="http://hmnkapa.github.io/2025/06/02/%E5%AE%9E%E7%B3%BB%E6%95%B0%E4%B8%8E%E5%A4%8D%E7%B3%BB%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E7%BA%BF%E6%80%A7%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
+<meta property="og:title" content="线性代数视角下的微分方程">
+<meta property="og:url" content="http://hmnkapa.github.io/2025/06/02/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="实系数复系数一阶线性ODE的特解与通解、实系数ODE的复化方法">
+<meta property="og:description" content="函数空间与线性微分方程解集的代数结构">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-02T12:31:12.000Z">
-<meta property="article:modified_time" content="2025-06-02T13:00:02.117Z">
+<meta property="article:published_time" content="2025-06-02T14:50:00.000Z">
+<meta property="article:modified_time" content="2025-06-02T15:24:34.630Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>实系数与复系数的一阶线性常微分方程 - 呼姆呼姆</title>
+  <title>线性代数视角下的微分方程 - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="实系数与复系数的一阶线性常微分方程"></span>
+            <span id="subtitle" data-typed-text="线性代数视角下的微分方程"></span>
           
         </div>
 
@@ -211,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-02 20:31" pubdate>
+        <time datetime="2025-06-02 22:50" pubdate>
           2025年6月2日 晚上
         </time>
       </span>
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.8k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          13 分钟
+          15 分钟
         
       </span>
     
@@ -271,232 +271,267 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">实系数与复系数的一阶线性常微分方程</h1>
+            <h1 id="seo-header">线性代数视角下的微分方程</h1>
             
             
               <div class="markdown-body">
                 
-                <h1
-id="实系数与复系数的一阶线性常微分方程">实系数与复系数的一阶线性常微分方程</h1>
-<h2
-id="一阶线性微分方程first-order-linear-ode">一阶线性微分方程（First-Order
-Linear ODE）</h2>
-<p>一阶线性常微分方程是形如：</p>
-<p><span class="math display">\[
-\displaystyle y^{\prime}=a(t)y+b(t)\\
-\]</span> 的方程，其中 <span class="math inline">\(\displaystyle
-y^{\prime}=\frac{dy}{dt}，\)</span>并且 <span
-class="math inline">\(\displaystyle a(t)\)</span> 和 <span
-class="math inline">\(\displaystyle b(t)\)</span> 是 <span
-class="math inline">\(\displaystyle t\)</span> 的函数</p>
+                <h1 id="线性代数视角下的微分方程">线性代数视角下的微分方程</h1>
+<p>在微分方程的研究中，视函数为向量空间中的元素，可以更深刻地理解线性微分方程解的结构</p>
+<h2 id="函数空间-displaystylemathbbri">函数空间 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span></h2>
+<p>给定一个定义域 <span class="math inline">\(\displaystyle
+I\)</span>（通常是一个区间），所有定义在 <span
+class="math inline">\(\displaystyle I\)</span> 上的实值函数 <span
+class="math inline">\(\displaystyle f: I \rightarrow \mathbb{R}\)</span>
+的集合，记作 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span></p>
+<p>对于任意函数 <span class="math inline">\(\displaystyle f, g \in
+\mathbb{R}^{I}\)</span> 和任意实数 <span
+class="math inline">\(\displaystyle c \in
+\mathbb{R}\)</span>，我们定义“逐点”（point-wise）的加法和标量乘法：</p>
 <ul>
-<li>如果 <span class="math inline">\(\displaystyle b(t)\equiv0\)</span>
-（意味着对于所有 <span class="math inline">\(\displaystyle t\)</span>，
-<span class="math inline">\(\displaystyle b(t)\)</span>
-均为零），该ODE称为<strong>齐次的（homogeneous）</strong></li>
-<li>如果对于至少一个值， <span class="math inline">\(\displaystyle
-b(t)\ne0\)</span>，该ODE称为<strong>非齐次的（inhomogeneous）</strong></li>
+<li><p><strong>函数加法</strong>： <span
+class="math inline">\(\displaystyle (f+g)(t) = f(t) +
+g(t)\)</span></p></li>
+<li><p><strong>标量乘法</strong>： <span
+class="math inline">\(\displaystyle (cf)(t) = c \cdot
+f(t)\)</span></p></li>
 </ul>
-<p>这些ODE 的解通常在 <span class="math inline">\(\displaystyle
-a(t)\)</span> 和 <span class="math inline">\(\displaystyle b(t)\)</span>
-有定义的任何地方都存在，并且具有显式形式（explicit form）</p>
-<p>它们通常形成一个单参数的解族，并且与它们相关的初值问题（IVP）具有唯一的解</p>
-<h2 id="实系数一阶线性ode">实系数一阶线性ODE</h2>
-<h3 id="齐次情况">齐次情况</h3>
-<p>对于齐次一阶线性 ODE：</p>
-<p><span class="math display">\[
-\displaystyle y^{\prime}=a(t)y\\
-\]</span> 如果 <span class="math inline">\(\displaystyle a(t)\)</span>
-连续，其通解由下式给出：</p>
-<p><span class="math display">\[
-\displaystyle y(t)=c\cdot e^{\int_{t_{0}}^{t}a(s)ds}\\
-\]</span> 其中 <span class="math inline">\(\displaystyle c\)</span>
-是一个任意常数（通常由初始条件 <span class="math inline">\(\displaystyle
-y(t_{0})\)</span> 确定）</p>
-<p><span class="math inline">\(\displaystyle y(t)\)</span> 的定义域与
-<span class="math inline">\(\displaystyle a(t)\)</span> 的定义域相同</p>
-<h3 id="非齐次情况">非齐次情况</h3>
-<p>对于非齐次一阶线性 ODE：</p>
-<p><span class="math display">\[
-\displaystyle y^{\prime}=a(t)y+b(t)\\
-\]</span> 解是通过一种称为<strong>参数变易法（variation of
-parameters）</strong>的技术找到的</p>
-<p>其思想是采用齐次解 <span class="math inline">\(\displaystyle
-y_{h}(t)=ce^{A(t)}\)</span> 的形式，并允许“常数”成为 <span
-class="math inline">\(\displaystyle t\)</span> 的函数，即 <span
-class="math inline">\(\displaystyle c(t)\)</span></p>
-<p>令 <span class="math inline">\(\displaystyle
-y_{p}(t)=c(t)e^{A(t)}\)</span> 为一个特解，其中 <span
-class="math inline">\(\displaystyle
-A(t)=\int_{t_{0}}^{t}a(s)ds\)</span></p>
-<p>将其代入 ODE：</p>
-<p><span class="math display">\[
-\displaystyle y_{p}^{\prime}(t)=c^{\prime}(t)e^{A(t)}+c(t)a(t)e^{A(t)}\\
-\]</span> 所以，</p>
-<p><span class="math display">\[
-\displaystyle
-c^{\prime}(t)e^{A(t)}+c(t)a(t)e^{A(t)}=a(t)c(t)e^{A(t)}+b(t)\\
-\]</span> 简化为 <span class="math inline">\(\displaystyle
-c^{\prime}(t)e^{A(t)}=b(t)\)</span> 或 <span
-class="math inline">\(\displaystyle
-c^{\prime}(t)=b(t)e^{-A(t)}\)</span></p>
-<p>对 <span class="math inline">\(\displaystyle c^{\prime}(t)\)</span>
-积分得到</p>
-<p><span class="math display">\[
-\displaystyle c(t)=\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
-\]</span> 因此，一个特解是：</p>
-<p><span class="math display">\[
-\displaystyle y_{p}(t)=e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
-\]</span> 非齐次 ODE 的通解 <span class="math inline">\(\displaystyle
-y(t)\)</span> 是齐次ODE的通解 <span class="math inline">\(\displaystyle
-y_{h}(t)=Ce^{A(t)}\)</span> （其中<span
-class="math inline">\(C\)</span>是任意常数）与特解 <span
-class="math inline">\(\displaystyle y_{p}(t)\)</span> 的和：</p>
-<p><span class="math display">\[
-\displaystyle y(t)=Ce^{A(t)}+e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
-\]</span> 如果给定初始条件 <span class="math inline">\(\displaystyle
-y(t_{0})=y_{0}\)</span>，则 <span class="math inline">\(\displaystyle
-Ce^{A(t_{0})}=y_{0}\)</span> （因为根据积分限的选择， <span
-class="math inline">\(\displaystyle A(t_{0})=0\)</span> 且 <span
-class="math inline">\(\displaystyle y_{p}(t_{0})=0\)</span>）</p>
-<p>所以 <span class="math inline">\(\displaystyle
-C=y_{0}\)</span>，得到：</p>
-<p><span class="math display">\[
-\displaystyle
-y(t)=y(t_{0})e^{A(t)}+e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
-\]</span> 解的最大定义域是 <span class="math inline">\(\displaystyle
-a(t)\)</span> 和 <span class="math inline">\(\displaystyle b(t)\)</span>
-定义域的交集</p>
-<p>特解 <span class="math inline">\(\displaystyle y_{p}(t)\)</span>
-的另一种表示有时很有用： <span class="math display">\[
-\displaystyle
-y_{p}(t)=\int_{t_{0}}^{t}b(s)e^{A(t)-A(s)}ds=\int_{t_{0}}^{t}G(s，t)b(s)ds\\
-\]</span> 其中<span class="math display">\[\displaystyle
-G(s，t)=\exp\left(\int_{s}^{t}a(\tau)d\tau\right)\\\]</span></p>
-<h3 id="积分因子integrating-factors">积分因子（Integrating
-Factors）</h3>
-<p>解 <span class="math inline">\(\displaystyle
-y^{\prime}=a(t)y+b(t)\)</span> 的另一种方法是使用积分因子</p>
-<p>将ODE改写为</p>
-<p><span class="math display">\[
-\displaystyle y^{\prime}-a(t)y=b(t)\\
-\]</span> 两边乘以一个函数 <span class="math inline">\(\displaystyle
-m(t)\)</span>，即积分因子：</p>
-<p><span class="math display">\[
-\displaystyle m(t)y^{\prime}-m(t)a(t)y=m(t)b(t)\\
-\]</span> 我们希望左边是乘积的导数，具体来说是 <span
-class="math inline">\(\displaystyle
-\frac{d}{dt}(m(t)y(t))=m(t)y^{\prime}+m^{\prime}(t)y\)</span></p>
-<p>比较 <span class="math inline">\(\displaystyle
-m(t)y^{\prime}-m(t)a(t)y\)</span> 和 <span
-class="math inline">\(\displaystyle
-m(t)y^{\prime}+m^{\prime}(t)y，\)</span> 我们需要 <span
-class="math inline">\(\displaystyle m^{\prime}(t)=-a(t)m(t)\)</span></p>
-<p>这是一个关于 <span class="math inline">\(\displaystyle m(t)\)</span>
-的可分离ODE：</p>
-<p><span class="math display">\[
-\displaystyle \frac{dm}{m}=-a(t)dt\\
-\]</span> 积分得到</p>
-<p><span class="math display">\[
-\displaystyle \ln|m(t)|=-\int a(t)dt=-A(t)\\
-\]</span> 所以 <span class="math inline">\(\displaystyle
-m(t)=e^{-A(t)}\)</span> （我们可以选择积分常数为1）</p>
-<p>有了这个 <span class="math inline">\(\displaystyle
-m(t)\)</span>，方程变为：</p>
-<p><span class="math display">\[
-\displaystyle \frac{d}{dt}(e^{-A(t)}y(t))=e^{-A(t)}b(t)\\
-\]</span> 两边积分：</p>
-<p><span class="math display">\[
-\displaystyle e^{-A(t)}y(t)=\int e^{-A(t)}b(t)dt+C\\
-\]</span></p>
-<p><span class="math display">\[
-\displaystyle y(t)=e^{A(t)}\left(\int e^{-A(t)}b(t)dt+C\right)\\
-\]</span></p>
-<p>这与通过参数变易法得到的通解相同</p>
-<h2 id="复系数一阶线性ode">复系数一阶线性ODE</h2>
-<p>显式复系数一阶线性 ODE具有以下形式：</p>
-<p><span class="math display">\[
-\displaystyle z^{\prime}(t)=a(t)z(t)+b(t)\\
-\]</span> <span class="math inline">\(\displaystyle z(t)\)</span>
-是实变量的复值函数，也就是说 <span class="math inline">\(\displaystyle
-z(t)=x(t)+iy(t)\)</span></p>
-<p><span class="math inline">\(\displaystyle a(t)\)</span>，<span
-class="math inline">\(b(t)\)</span> 是复值函数 <span
-class="math inline">\(\displaystyle D\rightarrow\mathbb{C}，\)</span> 令
-<span class="math inline">\(\displaystyle
-a(t)=a_{1}(t)+ia_{2}(t)\)</span> 和 <span
-class="math inline">\(\displaystyle b(t)=b_{1}(t)+ib_{2}(t)\)</span></p>
-<p>将这些代入 ODE 得到：</p>
-<p><span class="math display">\[
-\displaystyle
-x^{\prime}(t)+iy^{\prime}(t)=(a_{1}(t)+ia_{2}(t))(x(t)+iy(t))+(b_{1}(t)+ib_{2}(t))\\
-\]</span></p>
-<p><span class="math display">\[
-\displaystyle
-x^{\prime}(t)+iy^{\prime}(t)=(a_{1}x-a_{2}y+b_{1})+i(a_{2}x+a_{1}y+b_{2})\\
-\]</span></p>
-<p>令实部和虚部分别相等，得到一个由两个实系数一阶线性
-ODE组成的系统：</p>
-<p><span class="math display">\[
-\displaystyle x^{\prime}(t)=a_{1}(t)x(t)-a_{2}(t)y(t)+b_{1}(t)\\
-\]</span></p>
-<p><span class="math display">\[
-\displaystyle y^{\prime}(t)=a_{2}(t)x(t)+a_{1}(t)y(t)+b_{2}(t)\\
-\]</span></p>
-<p>矩阵形式为：</p>
-<p><span class="math display">\[
-\displaystyle \begin{pmatrix}x^{\prime}(t)\\
-y^{\prime}(t)\end{pmatrix}=\begin{pmatrix}a_{1}(t)&amp;-a_{2}(t)\\
-a_{2}(t)&amp;a_{1}(t)\end{pmatrix}\begin{pmatrix}x(t)\\
-y(t)\end{pmatrix}+\begin{pmatrix}b_{1}(t)\\ b_{2}(t)\end{pmatrix}\\
-\]</span></p>
-<h3 id="通解">通解</h3>
-<p>求解方法与实数情况类似</p>
-<p>通解为：</p>
-<p><span class="math display">\[
-\displaystyle z(t)=Z_{0}e^{A(t)}+z_{p}(t)\\
-\]</span> 其中 <span class="math inline">\(\displaystyle
-Z_{0}\in\mathbb{C}\)</span> 是任意复常数，并且 <span
-class="math inline">\(\displaystyle A(t)=\int_{t_{0}}^{t}a(s)ds\)</span>
-（这现在是一个复值积分），此外：</p>
-<p><span class="math display">\[
-\displaystyle z_{p}(t)=e^{A(t)}\int_{t_{0}}^{t}b(s)e^{-A(s)}ds\\
-\]</span> 证明依赖于实变量复值函数的微分和积分是逐分量进行的，并且 <span
-class="math inline">\(\displaystyle
-\frac{d}{dt}e^{A(t)}=A^{\prime}(t)e^{A(t)}\)</span> 对于复值 <span
-class="math inline">\(\displaystyle A(t)\)</span> 也成立</p>
-<p>对于 IVP <span class="math inline">\(\displaystyle
-z(t_{0})=z_{0}，\)</span> 唯一解是 <span
-class="math inline">\(\displaystyle z(t)=z_{0}e^{A(t)}+z_{p}(t)\)</span>
-（由于选择 <span class="math inline">\(\displaystyle t_{0}\)</span>
-作为积分下限， <span class="math inline">\(\displaystyle A(t_{0})=0，
-z_{p}(t_{0})=0\)</span>）</p>
-<h3 id="实系数-ode-的复化complexification">实系数 ODE
-的复化（Complexification）</h3>
-<p>为了解实系数 ODE</p>
-<p><span class="math display">\[
-\displaystyle y^{\prime}(t)=a(t)y(t)+b(t)\\
+<p>在这些运算下，<span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+构成一个实数域 <span
+class="math inline">\(\displaystyle\mathbb{R}\)</span>
+上的<strong>向量空间（vector
+space）</strong>，该向量空间中的零向量是零函数，即对所有 <span
+class="math inline">\(\displaystyle t \in I\)</span>，满足 <span
+class="math inline">\(\displaystyle t \mapsto 0\)</span> 的函数</p>
+<h3 id="子空间">子空间</h3>
+<p><span class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+的一个子集 <span class="math inline">\(\displaystyle S \subseteq
+\mathbb{R}^{I}\)</span>
+如果满足以下条件，则称其为一个<strong>子空间（subspace）</strong>：</p>
+<ul>
+<li><p><span class="math inline">\(\displaystyle S\)</span> 非空 (<span
+class="math inline">\(\displaystyle S \neq \emptyset\)</span>)</p></li>
+<li><p><span class="math inline">\(\displaystyle S\)</span>
+对向量加法封闭：若 <span class="math inline">\(\displaystyle f, g \in
+S\)</span>，则 <span class="math inline">\(\displaystyle f+g \in
+S\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle S\)</span>
+对标量乘法封闭：若 <span class="math inline">\(\displaystyle f \in
+S\)</span> 且 <span class="math inline">\(\displaystyle c \in
+\mathbb{R}\)</span>，则 <span class="math inline">\(\displaystyle cf \in
+S\)</span> for all <span class="math inline">\(\displaystyle c \in
+\mathbb{R}\)</span></p></li>
+</ul>
+<p>函数空间 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span> （其中 <span
+class="math inline">\(\displaystyle I\)</span>
+是一个包含正长度区间的无限集）与我们熟悉的 <span
+class="math inline">\(\displaystyle\mathbb{R}^{n}\)</span>
+的一个主要区别在于 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+是<strong>无限维的</strong></p>
+<p>例如，对于 <span class="math inline">\(\displaystyle s \in
+I\)</span>，定义函数 <span class="math inline">\(\displaystyle
+\delta_s(t)\)</span> 如下： <span class="math display">\[
+\displaystyle\delta_s(t) = \begin{cases} 1 &amp; \text{如果 } t=s \\ 0
+&amp; \text{如果 } t \neq s \end{cases}\\
+\]</span> 集合 <span class="math inline">\(\displaystyle \{\delta_s : s
+\in I\}\)</span> 是线性无关的，但它并不能张成整个 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span></p>
+<p>在微分方程中，我们更常关注 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+的某些特定子空间，例如 <span class="math inline">\(\displaystyle
+C^{\infty}(I)\)</span>，它由所有在 <span
+class="math inline">\(\displaystyle I\)</span>
+上具有任意阶导数的函数构成</p>
+<h3 id="线性无关性基与维度">线性无关性、基与维度</h3>
+<p>这些概念与在 <span
+class="math inline">\(\displaystyle\mathbb{R}^{n}\)</span>
+中的定义类似</p>
+<ul>
+<li><p><strong>线性无关</strong>： 函数集 <span
+class="math inline">\(\displaystyle \{f_1, f_2, \dots, f_k\} \subseteq
+\mathbb{R}^{I}\)</span> 是线性无关的，如果方程 <span
+class="math inline">\(\displaystyle c_1 f_1 + c_2 f_2 + \dots + c_k f_k
+= \mathbf{0}\)</span> (其中 <span
+class="math inline">\(\displaystyle\mathbf{0}\)</span> 是零函数) 仅当
+<span class="math inline">\(\displaystyle c_1 = c_2 = \dots = c_k =
+0\)</span> 时成立</p></li>
+<li><p><strong>生成集（张成集）</strong>：
+一个函数集可以张成一个子空间</p></li>
+<li><p><strong>基</strong>： 一个子空间的线性无关的生成集</p></li>
+<li><p><strong>维度</strong>： 一个子空间的基中元素的个数</p></li>
+</ul>
+<p>一个重要的例子是函数族 <span class="math display">\[
+\displaystyle \{f_{\lambda}(t) = e^{\lambda t} : \lambda \in
+\mathbb{R}\}
+\]</span> 这个集合在 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+中是线性无关的，这意味着即使是 <span class="math inline">\(\displaystyle
+C^{\infty}(I)\)</span> 这样的子空间也是无限维的</p>
+<p>尽管 <span class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+及其许多子空间是无限维的，但线性常微分方程的解集通常会形成<strong>有限维</strong>的子空间，这使得线性代数的许多结论能够得以应用</p>
+<h2 id="线性微分方程解集的代数结构">线性微分方程解集的代数结构</h2>
+<h3 id="齐次线性一阶微分方程">齐次线性一阶微分方程</h3>
+<p>考虑齐次线性一阶微分方程 <span class="math display">\[
+\displaystyle y&#39; = a(t)y
 \]</span> 其中 <span class="math inline">\(\displaystyle a(t)\)</span>
-是实数，如果 <span class="math inline">\(\displaystyle b(t)\)</span>
-例如是 <span class="math inline">\(\displaystyle \sin(\omega
-t)\)</span>，我们可以使用<strong>复化（Complexification）</strong>方法</p>
-<p>令 <span class="math inline">\(\displaystyle
-b(t)=\text{Im}(B(t))\)</span>，其中 <span
-class="math inline">\(\displaystyle B(t)\)</span>
-是一个复函数(例如，如果 <span class="math inline">\(\displaystyle
-b(t)=\sin(\omega t)\)</span> 可以选择 <span
-class="math inline">\(\displaystyle B(t)=e^{i\omega t}\)</span>，因为
-<span class="math inline">\(\displaystyle \text{Im}(e^{i\omega
-t})=\sin(\omega t))\)</span></p>
-<p>解复系数 ODE</p>
+在区间 <span class="math inline">\(\displaystyle I\)</span>上连续</p>
+<p>那么，该方程的解集 <span class="math inline">\(\displaystyle
+S\)</span> 构成 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+的一个<strong>一维子空间</strong></p>
+<p>并且对于任意选定的 <span class="math inline">\(\displaystyle t_0 \in
+I\)</span>，函数 <span class="math inline">\(\displaystyle y_h(t) =
+\exp\left(\int_{t_0}^{t} a(s)ds\right)\)</span> 是这个子空间的一个基</p>
+<p>这意味着所有解都可以表示为 <span class="math inline">\(\displaystyle
+c \cdot y_h(t)\)</span> 的形式，其中 <span
+class="math inline">\(\displaystyle c\)</span> 是一个常数</p>
+<p>解集 <span class="math inline">\(\displaystyle S\)</span>
+是一维的这一事实可能有些令人惊讶，因为在 <span
+class="math inline">\(\displaystyle\mathbb{R}^n\)</span>
+中，一个（非平凡的）线性方程的解空间维度是 <span
+class="math inline">\(\displaystyle n-1\)</span></p>
+<h3 id="非齐次线性一阶微分方程">非齐次线性一阶微分方程</h3>
+<p>考虑非齐次线性一阶微分方程 <span class="math display">\[
+\displaystyle y&#39; = a(t)y + b(t)
+\]</span> 其中 <span class="math inline">\(\displaystyle a(t)\)</span>
+和 <span class="math inline">\(\displaystyle b(t)\)</span> 在区间 <span
+class="math inline">\(\displaystyle I\)</span> 上连续</p>
+<p>那么，该方程的解集 <span class="math inline">\(\displaystyle
+S\)</span> 构成 <span
+class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
+中的一条<strong>线</strong>（即一维仿射子空间 affine subspace）</p>
+<p>这条线可以表示为 <span class="math inline">\(\displaystyle y_p(t) +
+\text{span}\{y_h(t)\}\)</span>，其中 <span
+class="math inline">\(\displaystyle y_p(t)\)</span>
+是非齐次方程的一个特解，而 <span class="math inline">\(\displaystyle
+y_h(t)\)</span> 是对应的齐次方程 <span
+class="math inline">\(\displaystyle y&#39; = a(t)y\)</span> 的一个非零解
+具体而言，我们可以取 <span class="math display">\[
+\displaystyle A(t) = \int_{t_0}^{t} a(s)ds
+\]</span> 则方向向量为 <span class="math display">\[
+\displaystyle y_h(t) = e^{A(t)}
+\]</span> “起点”可以取为特解 <span class="math display">\[
+\displaystyle y_p(t) = e^{A(t)}\int_{t_0}^{t} b(s)e^{-A(s)}ds
+\]</span> 解集 <span class="math inline">\(\displaystyle S\)</span>
+也可以看作是对应的齐次方程解空间 <span
+class="math inline">\(\displaystyle D = \{y_1 - y_2 : y_1, y_2 \in
+S\}\)</span> 的一个<strong>陪集(translate/coset)</strong></p>
+<blockquote>
+<p>例：<span class="math inline">\(\displaystyle y&#39;&#39; + y =
+0\)</span></p>
+<p>方程 <span class="math inline">\(\displaystyle y&#39;&#39; + y =
+0\)</span> 在 <span
+class="math inline">\(\displaystyle\mathbb{R}\)</span> 上的解集 <span
+class="math inline">\(\displaystyle S\)</span> 构成 <span
+class="math inline">\(\displaystyle\mathbb{R}^{\mathbb{R}}\)</span>
+的一个<strong>二维子空间</strong>，且函数集合 <span
+class="math inline">\(\displaystyle \{\cos t, \sin t\}\)</span>
+是这个子空间的一个基</p>
+<p><strong>求值映射</strong> (evaluation map) <span
+class="math inline">\(\displaystyle E: S \rightarrow
+\mathbb{R}^2\)</span> 定义为 <span class="math inline">\(\displaystyle
+E(y) = (y(0), y&#39;(0))\)</span>，它将一个解映射到其在 <span
+class="math inline">\(\displaystyle t=0\)</span> 处的初始值
+(函数值和导数值)</p>
+<p>这个映射是一个<strong>线性双射</strong> (linear
+bijection)，其逆映射为 <span class="math inline">\(\displaystyle (A,B)
+\mapsto A \cos t + B \sin t\)</span></p>
+</blockquote>
+<h2 id="函数线性无关性的判定">函数线性无关性的判定</h2>
+<p>要判断一组函数 <span class="math inline">\(\displaystyle f_1, f_2,
+\dots, f_n \in \mathbb{R}^{I}\)</span>
+是否线性无关，可以使用以下定理：</p>
+<p><strong>定理</strong>： 函数 <span
+class="math inline">\(\displaystyle f_1, \dots, f_n \in
+\mathbb{R}^{I}\)</span> 线性无关当且仅当存在点 <span
+class="math inline">\(\displaystyle t_1, \dots, t_n \in I\)</span>
+使得如下行列式非零：</p>
 <p><span class="math display">\[
-\displaystyle z^{\prime}(t)=a(t)z(t)+B(t)\\
-\]</span> 那么 <span class="math inline">\(\displaystyle
-y(t)=\text{Im}(z(t))\)</span> 将是原始实系数 ODE 的一个解</p>
-<p>类似地，如果 <span class="math inline">\(\displaystyle
-b(t)=\text{Re}(B(t))\)</span>，那么 <span
-class="math inline">\(\displaystyle y(t)=\text{Re}(z(t))\)</span>
-是解</p>
+\displaystyle
+\begin{vmatrix}
+f_1(t_1) &amp; f_1(t_2) &amp; \cdots &amp; f_1(t_n) \\
+f_2(t_1) &amp; f_2(t_2) &amp; \cdots &amp; f_2(t_n) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+f_n(t_1) &amp; f_n(t_2) &amp; \cdots &amp; f_n(t_n)
+\end{vmatrix}
+\neq 0
+\\
+\]</span> 证明思路：</p>
+<ul>
+<li><strong>充分性</strong>： 如果存在这样的 <span
+class="math inline">\(\displaystyle t_1, \dots, t_n\)</span>
+使得行列式非零假设 <span class="math inline">\(\displaystyle
+\sum_{i=1}^{n} \lambda_i f_i(t) = 0\)</span> 对所有 <span
+class="math inline">\(\displaystyle t \in I\)</span> 成立，那么它对
+<span class="math inline">\(\displaystyle t_1, \dots, t_n\)</span>
+也成立，这导出一个关于 <span class="math inline">\(\displaystyle
+\lambda_i\)</span>
+的齐次线性方程组，其系数矩阵就是上述行列式不为零的矩阵。因此，该方程组只有零解
+<span class="math inline">\(\displaystyle \lambda_1 = \dots = \lambda_n
+= 0\)</span></li>
+<li><strong>必要性</strong>： 可以用数学归纳法证明。对于 <span
+class="math inline">\(\displaystyle n=1\)</span>，条件简化为存在 <span
+class="math inline">\(\displaystyle t_1\)</span> 使得 <span
+class="math inline">\(\displaystyle f_1(t_1) \neq 0\)</span>，这等价于
+<span class="math inline">\(\displaystyle f_1\)</span> 不是零函数，即
+<span class="math inline">\(\displaystyle f_1\)</span> 线性无关
+归纳步骤中，可以构造一个函数 <span class="math inline">\(\displaystyle
+g(t)\)</span>，它是将某个选定矩阵的最后一列替换为 <span
+class="math inline">\(\displaystyle (f_1(t), \dots, f_n(t))^T\)</span>
+后得到的行列式。通过拉普拉斯展开，<span
+class="math inline">\(\displaystyle g(t)\)</span> 可以表示为 <span
+class="math inline">\(\displaystyle f_i(t)\)</span> 的线性组合，其中
+<span class="math inline">\(\displaystyle f_n(t)\)</span>
+的系数非零。由于 <span class="math inline">\(\displaystyle f_1, \dots,
+f_n\)</span> 线性无关，所以 <span class="math inline">\(\displaystyle
+g(t)\)</span> 不是零函数，因此存在 <span
+class="math inline">\(\displaystyle t_n\)</span> 使得 <span
+class="math inline">\(\displaystyle g(t_n) \neq 0\)</span></li>
+</ul>
+<blockquote>
+<p><strong>示例：判断 <span class="math inline">\(\displaystyle \langle
+1, \cos t, \sin t \rangle\)</span> 的维度</strong></p>
+<p>我们要证明 <span class="math inline">\(\displaystyle f_1(t)=1,
+f_2(t)=\cos t, f_3(t)=\sin t\)</span> 是线性无关的</p>
+<p>假设 <span class="math inline">\(\displaystyle \lambda_1 \cdot 1 +
+\lambda_2 \cos t + \lambda_3 \sin t = 0\)</span> 对所有 <span
+class="math inline">\(\displaystyle t \in \mathbb{R}\)</span> 成立</p>
+<p>取 <span class="math inline">\(\displaystyle t_1=0, t_2=\pi/2,
+t_3=\pi\)</span>：</p>
+<ul>
+<li><p><span class="math inline">\(\displaystyle t=0 \implies \lambda_1
++ \lambda_2 = 0\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle t=\pi/2 \implies
+\lambda_1 + \lambda_3 = 0\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle t=\pi \implies
+\lambda_1 - \lambda_2 = 0\)</span></p></li>
+</ul>
+<p>这个线性方程组只有唯一解 <span class="math inline">\(\displaystyle
+\lambda_1 = \lambda_2 = \lambda_3 = 0\)</span>
+因此，这三个函数线性无关，它们张成的子空间的维度是 3</p>
+<p>或者，我们可以计算行列式：</p>
+<p><span class="math display">\[
+\displaystyle
+\begin{vmatrix}
+f_1(0) &amp; f_1(\pi/2) &amp; f_1(\pi) \\
+f_2(0) &amp; f_2(\pi/2) &amp; f_2(\pi) \\
+f_3(0) &amp; f_3(\pi/2) &amp; f_3(\pi)
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 &amp; 1 &amp; 1 \\
+\cos 0 &amp; \cos (\pi/2) &amp; \cos \pi \\
+\sin 0 &amp; \sin (\pi/2) &amp; \sin \pi
+\end{vmatrix}
+= 2 \neq 0
+\\
+\]</span> 这表明这些函数是线性无关的</p>
+</blockquote>
 
                 
               </div>
@@ -514,8 +549,8 @@ class="math inline">\(\displaystyle y(t)=\text{Re}(z(t))\)</span>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>实系数与复系数的一阶线性常微分方程</div>
-      <div>http://hmnkapa.github.io/2025/06/02/实系数与复系数的一阶线性常微分方程/</div>
+      <div>线性代数视角下的微分方程</div>
+      <div>http://hmnkapa.github.io/2025/06/02/线性代数视角下的微分方程/</div>
     </div>
     <div class="license-meta">
       
@@ -559,18 +594,12 @@ class="math inline">\(\displaystyle y(t)=\text{Re}(z(t))\)</span>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/02/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="线性代数视角下的微分方程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性代数视角下的微分方程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/05/16/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E3%80%81%E5%88%9D%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E6%96%B9%E5%90%91%E5%9C%BA/" title="常微分方程、初值问题与方向场">
-                        <span class="hidden-mobile">常微分方程、初值问题与方向场</span>
+                      <a href="/2025/06/02/%E5%AE%9E%E7%B3%BB%E6%95%B0%E4%B8%8E%E5%A4%8D%E7%B3%BB%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E7%BA%BF%E6%80%A7%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="实系数与复系数的一阶线性常微分方程">
+                        <span class="hidden-mobile">实系数与复系数的一阶线性常微分方程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
