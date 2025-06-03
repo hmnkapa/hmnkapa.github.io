@@ -16,21 +16,21 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="函数空间与线性微分方程解集的代数结构">
+    <meta name="description" content="可分离的一阶常微分方程的定义与解法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性代数视角下的微分方程">
-<meta property="og:url" content="http://hmnkapa.github.io/2025/06/02/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
+<meta property="og:title" content="可分离的一阶常微分方程">
+<meta property="og:url" content="http://hmnkapa.github.io/2025/06/03/%E5%8F%AF%E5%88%86%E7%A6%BB%E7%9A%84%E4%B8%80%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="函数空间与线性微分方程解集的代数结构">
+<meta property="og:description" content="可分离的一阶常微分方程的定义与解法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-02T14:50:00.000Z">
-<meta property="article:modified_time" content="2025-06-02T15:32:57.386Z">
+<meta property="article:published_time" content="2025-06-03T09:07:14.000Z">
+<meta property="article:modified_time" content="2025-06-03T09:31:43.833Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>线性代数视角下的微分方程 - 呼姆呼姆</title>
+  <title>可分离的一阶常微分方程 - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="线性代数视角下的微分方程"></span>
+            <span id="subtitle" data-typed-text="可分离的一阶常微分方程"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-02 22:50" pubdate>
-          2025年6月2日 晚上
+        <time datetime="2025-06-03 17:07" pubdate>
+          2025年6月3日 下午
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          1.2k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          15 分钟
+          10 分钟
         
       </span>
     
@@ -271,267 +271,186 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">线性代数视角下的微分方程</h1>
+            <h1 id="seo-header">可分离的一阶常微分方程</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="线性代数视角下的微分方程">线性代数视角下的微分方程</h1>
-<p>在微分方程的研究中，视函数为向量空间中的元素，可以更深刻地理解线性微分方程解的结构</p>
-<h2 id="函数空间-displaystylemathbbri">函数空间 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span></h2>
-<p>给定一个定义域 <span class="math inline">\(\displaystyle
-I\)</span>（通常是一个区间），所有定义在 <span
-class="math inline">\(\displaystyle I\)</span> 上的实值函数 <span
-class="math inline">\(\displaystyle f: I \rightarrow \mathbb{R}\)</span>
-的集合，记作 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span></p>
-<p>对于任意函数 <span class="math inline">\(\displaystyle f, g \in
-\mathbb{R}^{I}\)</span> 和任意实数 <span
-class="math inline">\(\displaystyle c \in
-\mathbb{R}\)</span>，我们定义“逐点”（point-wise）的加法和标量乘法：</p>
-<ul>
-<li><p><strong>函数加法</strong>： <span
-class="math inline">\(\displaystyle (f+g)(t) = f(t) +
-g(t)\)</span></p></li>
-<li><p><strong>标量乘法</strong>： <span
-class="math inline">\(\displaystyle (cf)(t) = c \cdot
-f(t)\)</span></p></li>
-</ul>
-<p>在这些运算下，<span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-构成一个实数域 <span
-class="math inline">\(\displaystyle\mathbb{R}\)</span>
-上的<strong>向量空间（vector
-space）</strong>，该向量空间中的零向量是零函数，即对所有 <span
-class="math inline">\(\displaystyle t \in I\)</span>，满足 <span
-class="math inline">\(\displaystyle t \mapsto 0\)</span> 的函数</p>
-<h3 id="子空间">子空间</h3>
-<p><span class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-的一个子集 <span class="math inline">\(\displaystyle S \subseteq
-\mathbb{R}^{I}\)</span>
-如果满足以下条件，则称其为一个<strong>子空间（subspace）</strong>：</p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle S\)</span> 非空 (<span
-class="math inline">\(\displaystyle S \neq \emptyset\)</span>)</p></li>
-<li><p><span class="math inline">\(\displaystyle S\)</span>
-对向量加法封闭：若 <span class="math inline">\(\displaystyle f, g \in
-S\)</span>，则 <span class="math inline">\(\displaystyle f+g \in
-S\)</span></p></li>
-<li><p><span class="math inline">\(\displaystyle S\)</span>
-对标量乘法封闭：若 <span class="math inline">\(\displaystyle f \in
-S\)</span> 且 <span class="math inline">\(\displaystyle c \in
-\mathbb{R}\)</span>，则 <span class="math inline">\(\displaystyle cf \in
-S\)</span> for all <span class="math inline">\(\displaystyle c \in
-\mathbb{R}\)</span></p></li>
-</ul>
-<p>函数空间 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span> （其中 <span
-class="math inline">\(\displaystyle I\)</span>
-是一个包含正长度区间的无限集）与我们熟悉的 <span
-class="math inline">\(\displaystyle\mathbb{R}^{n}\)</span>
-的一个主要区别在于 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-是<strong>无限维的</strong></p>
-<p>例如，对于 <span class="math inline">\(\displaystyle s \in
-I\)</span>，定义函数 <span class="math inline">\(\displaystyle
-\delta_s(t)\)</span> 如下： <span class="math display">\[
-\displaystyle\delta_s(t) = \begin{cases} 1 &amp; \text{if } t=s \\ 0
-&amp; \text{if } t \neq s \end{cases}\\
-\]</span> 集合 <span class="math inline">\(\displaystyle \{\delta_s : s
-\in I\}\)</span> 是线性无关的，但它并不能张成整个 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span></p>
-<p>在微分方程中，我们更常关注 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-的某些特定子空间，例如 <span class="math inline">\(\displaystyle
-C^{\infty}(I)\)</span>，它由所有在 <span
-class="math inline">\(\displaystyle I\)</span>
-上具有任意阶导数的函数构成</p>
-<h3 id="线性无关性基与维度">线性无关性、基与维度</h3>
-<p>这些概念与在 <span
-class="math inline">\(\displaystyle\mathbb{R}^{n}\)</span>
-中的定义类似</p>
-<ul>
-<li><p><strong>线性无关</strong>： 函数集 <span
-class="math inline">\(\displaystyle \{f_1, f_2, \dots, f_k\} \subseteq
-\mathbb{R}^{I}\)</span> 是线性无关的，如果方程 <span
-class="math inline">\(\displaystyle c_1 f_1 + c_2 f_2 + \dots + c_k f_k
-= \mathbf{0}\)</span> (其中 <span
-class="math inline">\(\displaystyle\mathbf{0}\)</span> 是零函数) 仅当
-<span class="math inline">\(\displaystyle c_1 = c_2 = \dots = c_k =
-0\)</span> 时成立</p></li>
-<li><p><strong>生成集（张成集）</strong>：
-一个函数集可以张成一个子空间</p></li>
-<li><p><strong>基</strong>： 一个子空间的线性无关的生成集</p></li>
-<li><p><strong>维度</strong>： 一个子空间的基中元素的个数</p></li>
-</ul>
-<p>一个重要的例子是函数族 <span class="math display">\[
-\displaystyle \{f_{\lambda}(t) = e^{\lambda t} : \lambda \in
-\mathbb{R}\}
-\]</span> 这个集合在 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-中是线性无关的，这意味着即使是 <span class="math inline">\(\displaystyle
-C^{\infty}(I)\)</span> 这样的子空间也是无限维的</p>
-<p>尽管 <span class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-及其许多子空间是无限维的，但线性常微分方程的解集通常会形成<strong>有限维</strong>的子空间，这使得线性代数的许多结论能够得以应用</p>
-<h2 id="线性微分方程解集的代数结构">线性微分方程解集的代数结构</h2>
-<h3 id="齐次线性一阶微分方程">齐次线性一阶微分方程</h3>
-<p>考虑齐次线性一阶微分方程 <span class="math display">\[
-\displaystyle y&#39; = a(t)y
-\]</span> 其中 <span class="math inline">\(\displaystyle a(t)\)</span>
-在区间 <span class="math inline">\(\displaystyle I\)</span>上连续</p>
-<p>那么，该方程的解集 <span class="math inline">\(\displaystyle
-S\)</span> 构成 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-的一个<strong>一维子空间</strong></p>
-<p>并且对于任意选定的 <span class="math inline">\(\displaystyle t_0 \in
-I\)</span>，函数 <span class="math inline">\(\displaystyle y_h(t) =
-\exp\left(\int_{t_0}^{t} a(s)ds\right)\)</span> 是这个子空间的一个基</p>
-<p>这意味着所有解都可以表示为 <span class="math inline">\(\displaystyle
-c \cdot y_h(t)\)</span> 的形式，其中 <span
-class="math inline">\(\displaystyle c\)</span> 是一个常数</p>
-<p>解集 <span class="math inline">\(\displaystyle S\)</span>
-是一维的这一事实可能有些令人惊讶，因为在 <span
-class="math inline">\(\displaystyle\mathbb{R}^n\)</span>
-中，一个（非平凡的）线性方程的解空间维度是 <span
-class="math inline">\(\displaystyle n-1\)</span></p>
-<h3 id="非齐次线性一阶微分方程">非齐次线性一阶微分方程</h3>
-<p>考虑非齐次线性一阶微分方程 <span class="math display">\[
-\displaystyle y&#39; = a(t)y + b(t)
-\]</span> 其中 <span class="math inline">\(\displaystyle a(t)\)</span>
-和 <span class="math inline">\(\displaystyle b(t)\)</span> 在区间 <span
-class="math inline">\(\displaystyle I\)</span> 上连续</p>
-<p>那么，该方程的解集 <span class="math inline">\(\displaystyle
-S\)</span> 构成 <span
-class="math inline">\(\displaystyle\mathbb{R}^{I}\)</span>
-中的一条<strong>线</strong>（即一维仿射子空间 affine subspace）</p>
-<p>这条线可以表示为 <span class="math inline">\(\displaystyle y_p(t) +
-\text{span}\{y_h(t)\}\)</span>，其中 <span
-class="math inline">\(\displaystyle y_p(t)\)</span>
-是非齐次方程的一个特解，而 <span class="math inline">\(\displaystyle
-y_h(t)\)</span> 是对应的齐次方程 <span
-class="math inline">\(\displaystyle y&#39; = a(t)y\)</span> 的一个非零解
-具体而言，我们可以取 <span class="math display">\[
-\displaystyle A(t) = \int_{t_0}^{t} a(s)ds
-\]</span> 则方向向量为 <span class="math display">\[
-\displaystyle y_h(t) = e^{A(t)}
-\]</span> “起点”可以取为特解 <span class="math display">\[
-\displaystyle y_p(t) = e^{A(t)}\int_{t_0}^{t} b(s)e^{-A(s)}ds
-\]</span> 解集 <span class="math inline">\(\displaystyle S\)</span>
-也可以看作是对应的齐次方程解空间 <span
-class="math inline">\(\displaystyle D = \{y_1 - y_2 : y_1, y_2 \in
-S\}\)</span> 的一个<strong>陪集(translate/coset)</strong></p>
-<blockquote>
-<p>例：<span class="math inline">\(\displaystyle y&#39;&#39; + y =
-0\)</span></p>
-<p>方程 <span class="math inline">\(\displaystyle y&#39;&#39; + y =
-0\)</span> 在 <span
-class="math inline">\(\displaystyle\mathbb{R}\)</span> 上的解集 <span
-class="math inline">\(\displaystyle S\)</span> 构成 <span
-class="math inline">\(\displaystyle\mathbb{R}^{\mathbb{R}}\)</span>
-的一个<strong>二维子空间</strong>，且函数集合 <span
-class="math inline">\(\displaystyle \{\cos t, \sin t\}\)</span>
-是这个子空间的一个基</p>
-<p><strong>求值映射</strong> (evaluation map) <span
-class="math inline">\(\displaystyle E: S \rightarrow
-\mathbb{R}^2\)</span> 定义为 <span class="math inline">\(\displaystyle
-E(y) = (y(0), y&#39;(0))\)</span>，它将一个解映射到其在 <span
-class="math inline">\(\displaystyle t=0\)</span> 处的初始值
-(函数值和导数值)</p>
-<p>这个映射是一个<strong>线性双射</strong> (linear
-bijection)，其逆映射为 <span class="math inline">\(\displaystyle (A,B)
-\mapsto A \cos t + B \sin t\)</span></p>
-</blockquote>
-<h2 id="函数线性无关性的判定">函数线性无关性的判定</h2>
-<p>要判断一组函数 <span class="math inline">\(\displaystyle f_1, f_2,
-\dots, f_n \in \mathbb{R}^{I}\)</span>
-是否线性无关，可以使用以下定理：</p>
-<p><strong>定理</strong>： 函数 <span
-class="math inline">\(\displaystyle f_1, \dots, f_n \in
-\mathbb{R}^{I}\)</span> 线性无关当且仅当存在点 <span
-class="math inline">\(\displaystyle t_1, \dots, t_n \in I\)</span>
-使得如下行列式非零：</p>
+                <h1 id="可分离的一阶常微分方程">可分离的一阶常微分方程</h1>
+<h2 id="可分离的一阶常微分方程-1">可分离的一阶常微分方程</h2>
+<p>一个形如 <span class="math display">\[
+\displaystyle y&#39; = f(x,y)
+\]</span> 的一阶常微分方程，如果其右端函数 <span
+class="math inline">\(\displaystyle f(x,y)\)</span>
+可以分解为两个分别只依赖于 <span class="math inline">\(\displaystyle
+x\)</span> 和只依赖于 <span class="math inline">\(\displaystyle
+y\)</span> 的函数之积，即 <span class="math display">\[
+\displaystyle f(x,y) = f_1(x)f_2(y)
+\]</span> 则称该方程为<strong>可分离方程</strong>（Separable
+Equation）</p>
+<p>我们通常假设 <span class="math inline">\(\displaystyle f_1\)</span>
+和 <span class="math inline">\(\displaystyle f_2\)</span> 的定义域 <span
+class="math inline">\(\displaystyle I\)</span> 和 <span
+class="math inline">\(\displaystyle J\)</span> 分别是开区间</p>
+<p>特别地，如果 <span class="math inline">\(\displaystyle
+f_2(y)\)</span> 在区间 <span class="math inline">\(\displaystyle
+J\)</span> 上没有零点，那么函数 <span
+class="math inline">\(\displaystyle N(y) = 1/f_2(y)\)</span> 在 <span
+class="math inline">\(\displaystyle J\)</span>
+上是良定义的，并且也没有零点令 <span class="math inline">\(\displaystyle
+M(x) = f_1(x)\)</span>，则原方程 <span
+class="math inline">\(\displaystyle y&#39; = f_1(x)f_2(y)\)</span>
+可以改写为： <span class="math display">\[
+\displaystyle \frac{dy}{dx} = \frac{M(x)}{N(y)}\\
+\]</span> 或者写作微分形式： <span class="math display">\[
+\displaystyle M(x)dx - N(y)dy = 0\\
+\]</span></p>
+<h2 id="解法定理">解法定理</h2>
+<p>可分离方程的解法通常由以下定理给出：</p>
+<h3 id="定理">定理</h3>
+<p>假设函数 <span class="math inline">\(\displaystyle M: I \rightarrow
+\mathbb{R}\)</span> 和 <span class="math inline">\(\displaystyle N: J
+\rightarrow \mathbb{R}\)</span> 均连续，并且 <span
+class="math inline">\(\displaystyle N(y)\)</span> 在开区间 <span
+class="math inline">\(\displaystyle J\)</span> 上没有零点</p>
+<p>设 <span class="math inline">\(\displaystyle (x_0, y_0) \in I \times
+J\)</span>定义函数 <span class="math inline">\(\displaystyle H_1: I
+\rightarrow \mathbb{R}\)</span> 和 <span
+class="math inline">\(\displaystyle H_2: J \rightarrow
+\mathbb{R}\)</span> 如下： <span class="math display">\[
+\displaystyle H_1(x) = \int_{x_0}^{x} M(\xi) d\xi\\
+\]</span></p>
 <p><span class="math display">\[
-\displaystyle
-\begin{vmatrix}
-f_1(t_1) &amp; f_1(t_2) &amp; \cdots &amp; f_1(t_n) \\
-f_2(t_1) &amp; f_2(t_2) &amp; \cdots &amp; f_2(t_n) \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-f_n(t_1) &amp; f_n(t_2) &amp; \cdots &amp; f_n(t_n)
-\end{vmatrix}
-\neq 0
-\\
-\]</span> 证明思路：</p>
-<ul>
-<li><strong>充分性</strong>： 如果存在这样的 <span
-class="math inline">\(\displaystyle t_1, \dots, t_n\)</span>
-使得行列式非零假设 <span class="math inline">\(\displaystyle
-\sum_{i=1}^{n} \lambda_i f_i(t) = 0\)</span> 对所有 <span
-class="math inline">\(\displaystyle t \in I\)</span> 成立，那么它对
-<span class="math inline">\(\displaystyle t_1, \dots, t_n\)</span>
-也成立，这导出一个关于 <span class="math inline">\(\displaystyle
-\lambda_i\)</span>
-的齐次线性方程组，其系数矩阵就是上述行列式不为零的矩阵。因此，该方程组只有零解
-<span class="math inline">\(\displaystyle \lambda_1 = \dots = \lambda_n
-= 0\)</span></li>
-<li><strong>必要性</strong>： 可以用数学归纳法证明。对于 <span
-class="math inline">\(\displaystyle n=1\)</span>，条件简化为存在 <span
-class="math inline">\(\displaystyle t_1\)</span> 使得 <span
-class="math inline">\(\displaystyle f_1(t_1) \neq 0\)</span>，这等价于
-<span class="math inline">\(\displaystyle f_1\)</span> 不是零函数，即
-<span class="math inline">\(\displaystyle f_1\)</span> 线性无关
-归纳步骤中，可以构造一个函数 <span class="math inline">\(\displaystyle
-g(t)\)</span>，它是将某个选定矩阵的最后一列替换为 <span
-class="math inline">\(\displaystyle (f_1(t), \dots, f_n(t))^T\)</span>
-后得到的行列式。通过拉普拉斯展开，<span
-class="math inline">\(\displaystyle g(t)\)</span> 可以表示为 <span
-class="math inline">\(\displaystyle f_i(t)\)</span> 的线性组合，其中
-<span class="math inline">\(\displaystyle f_n(t)\)</span>
-的系数非零。由于 <span class="math inline">\(\displaystyle f_1, \dots,
-f_n\)</span> 线性无关，所以 <span class="math inline">\(\displaystyle
-g(t)\)</span> 不是零函数，因此存在 <span
-class="math inline">\(\displaystyle t_n\)</span> 使得 <span
-class="math inline">\(\displaystyle g(t_n) \neq 0\)</span></li>
-</ul>
-<blockquote>
-<p><strong>示例：判断 <span class="math inline">\(\displaystyle \langle
-1, \cos t, \sin t \rangle\)</span> 的维度</strong></p>
-<p>我们要证明 <span class="math inline">\(\displaystyle f_1(t)=1,
-f_2(t)=\cos t, f_3(t)=\sin t\)</span> 是线性无关的</p>
-<p>假设 <span class="math inline">\(\displaystyle \lambda_1 \cdot 1 +
-\lambda_2 \cos t + \lambda_3 \sin t = 0\)</span> 对所有 <span
-class="math inline">\(\displaystyle t \in \mathbb{R}\)</span> 成立</p>
-<p>取 <span class="math inline">\(\displaystyle t_1=0, t_2=\pi/2,
-t_3=\pi\)</span>：</p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle t=0 \implies \lambda_1
-+ \lambda_2 = 0\)</span></p></li>
-<li><p><span class="math inline">\(\displaystyle t=\pi/2 \implies
-\lambda_1 + \lambda_3 = 0\)</span></p></li>
-<li><p><span class="math inline">\(\displaystyle t=\pi \implies
-\lambda_1 - \lambda_2 = 0\)</span></p></li>
-</ul>
-<p>这个线性方程组只有唯一解 <span class="math inline">\(\displaystyle
-\lambda_1 = \lambda_2 = \lambda_3 = 0\)</span>
-因此，这三个函数线性无关，它们张成的子空间的维度是 3</p>
-<p>或者，我们可以计算行列式：</p>
-<p><span class="math display">\[
-\displaystyle
-\begin{vmatrix}
-f_1(0) &amp; f_1(\pi/2) &amp; f_1(\pi) \\
-f_2(0) &amp; f_2(\pi/2) &amp; f_2(\pi) \\
-f_3(0) &amp; f_3(\pi/2) &amp; f_3(\pi)
-\end{vmatrix}
-=
-\begin{vmatrix}
-1 &amp; 1 &amp; 1 \\
-\cos 0 &amp; \cos (\pi/2) &amp; \cos \pi \\
-\sin 0 &amp; \sin (\pi/2) &amp; \sin \pi
-\end{vmatrix}
-= 2 \neq 0
-\\
-\]</span> 这表明这些函数是线性无关的</p>
-</blockquote>
+\displaystyle H_2(y) = \int_{y_0}^{y} N(\eta) d\eta\\
+\]</span></p>
+<p>再设 <span class="math inline">\(\displaystyle I&#39; \subseteq
+I\)</span> 是一个包含 <span class="math inline">\(\displaystyle
+x_0\)</span> 的区间，并且满足 <span class="math inline">\(\displaystyle
+H_1(I&#39;) \subseteq H_2(J)\)</span></p>
+<p>那么，初值问题： <span class="math display">\[
+\displaystyle y&#39; = \frac{M(x)}{N(y)} \quad \land \quad y(x_0) =
+y_0\\
+\]</span> 存在唯一的解 <span class="math inline">\(\displaystyle y:
+I&#39; \rightarrow \mathbb{R}\)</span>，该解由下式给出： <span
+class="math display">\[
+\displaystyle y(x) = H_2^{-1}(H_1(x)) \quad \text{for } x \in I&#39;\\
+\]</span> 这个解也可以隐式地表示为 <span
+class="math inline">\(\displaystyle H_2(y) = H_1(x)\)</span></p>
+<h3 id="证明">证明</h3>
+<p>由于 <span class="math inline">\(\displaystyle N(y)\)</span> 连续且在
+<span class="math inline">\(\displaystyle J\)</span> 上无零点，所以
+<span class="math inline">\(\displaystyle N(y)\)</span> 在 <span
+class="math inline">\(\displaystyle J\)</span> 上恒大于零或恒小于零</p>
+<p>这意味着 <span class="math inline">\(\displaystyle H_2(y)\)</span> 在
+<span class="math inline">\(\displaystyle J\)</span> 上是严格单调的</p>
+<p>因此，<span class="math inline">\(\displaystyle H_2: J \rightarrow
+H_2(J)\)</span> 是一个双射函数，其反函数 <span
+class="math inline">\(\displaystyle H_2^{-1}\)</span> 存在且定义在 <span
+class="math inline">\(\displaystyle H_2(J)\)</span> 上</p>
+<p>定义的 <span class="math display">\[
+\displaystyle y(x) = H_2^{-1}(H_1(x))
+\]</span> 是良定义的</p>
+<p>通过求导可以验证它满足微分方程： <span class="math display">\[
+\displaystyle y&#39;(x) = (H_2^{-1})&#39;(H_1(x)) \cdot H_1&#39;(x) =
+\frac{H_1&#39;(x)}{H_2&#39;(H_2^{-1}(H_1(x)))} = \frac{M(x)}{N(y(x))}
+\]</span> 同时，由于 <span class="math inline">\(\displaystyle H_1(x_0)
+= 0\)</span> 且 <span class="math inline">\(\displaystyle H_2(y_0) =
+0\)</span>，所以 <span class="math display">\[
+\displaystyle y(x_0) = H_2^{-1}(H_1(x_0)) = H_2^{-1}(0) = y_0
+\]</span> 满足初始条件</p>
+<p>若 <span class="math inline">\(\displaystyle y(x)\)</span>
+是该初值问题的任一解，将方程改写为 <span class="math display">\[
+\displaystyle N(y(x))y&#39;(x) = M(x)
+\]</span> 然后从 <span class="math inline">\(\displaystyle x_0\)</span>
+到 <span class="math inline">\(\displaystyle x\)</span> 积分： <span
+class="math display">\[
+\displaystyle \int_{x_0}^{x} N(y(\xi))y&#39;(\xi)d\xi = \int_{x_0}^{x}
+M(\xi)d\xi
+\]</span> 左边进行换元 <span class="math inline">\(\displaystyle \eta =
+y(\xi)\)</span>，<span class="math inline">\(\displaystyle d\eta =
+y&#39;(\xi)d\xi\)</span>，得到 <span class="math display">\[
+\displaystyle \int_{y(x_0)}^{y(x)} N(\eta)d\eta = \int_{y_0}^{y(x)}
+N(\eta)d\eta = H_2(y(x))
+\]</span> 右边即为 <span class="math inline">\(\displaystyle
+H_1(x)\)</span></p>
+<p>因此，任何解都必须满足 <span class="math inline">\(\displaystyle
+H_2(y(x)) = H_1(x)\)</span></p>
+<h3 id="注记">注记</h3>
+<p>证明过程显示 <span class="math inline">\(\displaystyle
+H_2(J)\)</span> 是一个包含 <span class="math inline">\(\displaystyle 0 =
+H_2(y_0)\)</span> 的开区间</p>
+<p>由于 <span class="math inline">\(\displaystyle H_1\)</span> 连续且
+<span class="math inline">\(\displaystyle H_1(x_0)=0\)</span>，因此存在
+<span class="math inline">\(\displaystyle \delta &gt; 0\)</span> 使得当
+<span class="math inline">\(\displaystyle x \in (x_0-\delta,
+x_0+\delta)\)</span> 时，<span class="math inline">\(\displaystyle
+H_1(x) \in H_2(J)\)</span></p>
+<p>这意味着初值问题在 <span class="math inline">\(\displaystyle (x_0,
+y_0)\)</span> 附近局部存在唯一解</p>
+<p>条件 <span class="math display">\[
+\displaystyle H_1(I&#39;) \subseteq H_2(J)
+\]</span> 保证了对于每个 <span class="math inline">\(\displaystyle x \in
+I&#39;\)</span>，方程 <span class="math inline">\(\displaystyle H_2(y) =
+H_1(x)\)</span> 都有一个解 <span class="math inline">\(\displaystyle y
+\in J\)</span></p>
+<p>如果幸运的话，我们或许能够从中显式解出 <span
+class="math inline">\(\displaystyle y\)</span> 得到 <span
+class="math inline">\(\displaystyle y(x)\)</span> 的表达式</p>
+<h2 id="关于-displaystyle-y-f_1xf_2y-的一般性讨论">关于 <span
+class="math inline">\(\displaystyle y&#39; = f_1(x)f_2(y)\)</span>
+的一般性讨论</h2>
+<p>假设 <span class="math inline">\(\displaystyle f_1: I \rightarrow
+\mathbb{R}\)</span> 和 <span class="math inline">\(\displaystyle f_2: J
+\rightarrow \mathbb{R}\)</span> 是定义在开区间 <span
+class="math inline">\(\displaystyle I, J \subseteq \mathbb{R}\)</span>
+上的连续函数</p>
+<h3 id="displaystyle-f_2y-的零点"><span
+class="math inline">\(\displaystyle f_2(y)\)</span> 的零点</h3>
+<p>如果 <span class="math inline">\(\displaystyle y_0\)</span> 是 <span
+class="math inline">\(\displaystyle f_2(y)\)</span> 的一个零点 (即 <span
+class="math inline">\(\displaystyle f_2(y_0)=0\)</span>)</p>
+<p>那么 <span class="math inline">\(\displaystyle y(x) \equiv
+y_0\)</span> 是方程的一个<strong>稳态解</strong> (或平衡解、常数解)</p>
+<p>这些零点会将区间 <span class="math inline">\(\displaystyle J\)</span>
+分割成若干开子区间，在这些子区间上 <span
+class="math inline">\(\displaystyle f_2(y)\)</span> 没有零点</p>
+<h3 id="局部存在性与唯一性">局部存在性与唯一性</h3>
+<p>在由 <span class="math inline">\(\displaystyle I\)</span> 和 <span
+class="math inline">\(\displaystyle f_2(y)\)</span> 无零点的子区间 <span
+class="math inline">\(\displaystyle J&#39;\)</span> 构成的开矩形区域
+<span class="math inline">\(\displaystyle I \times J&#39;\)</span>
+内</p>
+<p>对于任何初始点 <span class="math inline">\(\displaystyle (x_0, y_0)
+\in I \times J&#39;\)</span>，初值问题 <span class="math display">\[
+\displaystyle y&#39; = f_1(x)f_2(y) \land y(x_0)=y_0
+\]</span> 的解是局部存在且唯一的</p>
+<h3 id="隐式解">隐式解</h3>
+<p>在 <span class="math inline">\(\displaystyle I \times J&#39;\)</span>
+区域内的解 <span class="math inline">\(\displaystyle y(x)\)</span>
+可以隐式地表示为 <span class="math display">\[
+\displaystyle F(x,y) = C
+\]</span> 其中 <span class="math display">\[
+\displaystyle F(x,y) = \int_{x_0}^{x} M(\xi)d\xi - \int_{y_0}^{y}
+N(\eta)d\eta
+\]</span> 此处 <span class="math inline">\(\displaystyle M(x)=f_1(x),
+N(y)=1/f_2(y)\)</span></p>
+<p>这表明微分形式 <span class="math display">\[
+\displaystyle M(x)dx - N(y)dy = 0
+\]</span> 在 <span class="math inline">\(\displaystyle I \times
+J&#39;\)</span> 上是<strong>恰当（exact）</strong>的，这是因为 <span
+class="math display">\[
+\displaystyle \frac{\partial M}{\partial y} = 0 = \frac{\partial
+N}{\partial x}
+\]</span> 且 <span class="math inline">\(\displaystyle I \times
+J&#39;\)</span> 是矩形区域，因此是单连通的</p>
+<h3 id="全局唯一性">全局唯一性</h3>
+<p>在整个定义域 <span class="math inline">\(\displaystyle I \times
+J\)</span> 上的解并不能保证具有唯一性</p>
+<p>除非对常微分方程有额外的假设</p>
+<p>例如，<span class="math inline">\(\displaystyle y&#39;=y^2\)</span>
+的初值问题解是全局唯一的（在其定义域内），而 <span
+class="math inline">\(\displaystyle y&#39;=\sqrt{|y|}\)</span>
+则不是</p>
 
                 
               </div>
@@ -549,8 +468,8 @@ f_3(0) &amp; f_3(\pi/2) &amp; f_3(\pi)
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>线性代数视角下的微分方程</div>
-      <div>http://hmnkapa.github.io/2025/06/02/线性代数视角下的微分方程/</div>
+      <div>可分离的一阶常微分方程</div>
+      <div>http://hmnkapa.github.io/2025/06/03/可分离的一阶常微分方程/</div>
     </div>
     <div class="license-meta">
       
@@ -562,7 +481,7 @@ f_3(0) &amp; f_3(\pi/2) &amp; f_3(\pi)
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年6月2日</div>
+          <div>2025年6月3日</div>
         </div>
       
       
@@ -594,18 +513,12 @@ f_3(0) &amp; f_3(\pi/2) &amp; f_3(\pi)
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/03/%E5%8F%AF%E5%88%86%E7%A6%BB%E7%9A%84%E4%B8%80%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="可分离的一阶常微分方程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">可分离的一阶常微分方程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/06/02/%E5%AE%9E%E7%B3%BB%E6%95%B0%E4%B8%8E%E5%A4%8D%E7%B3%BB%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E7%BA%BF%E6%80%A7%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="实系数与复系数的一阶线性常微分方程">
-                        <span class="hidden-mobile">实系数与复系数的一阶线性常微分方程</span>
+                      <a href="/2025/06/02/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="线性代数视角下的微分方程">
+                        <span class="hidden-mobile">线性代数视角下的微分方程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
