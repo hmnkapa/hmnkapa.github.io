@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/a.png">
+  <link rel="icon" href="/img/a.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#af9ca6">
+  <meta name="author" content="呼姆奴库">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="复幂级数的定义、连续性与可微性及一些应用，复对数的概念，Abel求和法及三角级数的计算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复幂级数、复对数与Abel求和法">
+<meta property="og:url" content="http://hmnkapa.github.io/2025/06/05/%E5%A4%8D%E5%B9%82%E7%BA%A7%E6%95%B0%E3%80%81%E5%A4%8D%E5%AF%B9%E6%95%B0%E4%B8%8EAbel%E6%B1%82%E5%92%8C%E6%B3%95/index.html">
+<meta property="og:site_name" content="呼姆呼姆">
+<meta property="og:description" content="复幂级数的定义、连续性与可微性及一些应用，复对数的概念，Abel求和法及三角级数的计算">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-05T12:28:24.000Z">
+<meta property="article:modified_time" content="2025-06-10T02:57:36.483Z">
+<meta property="article:author" content="呼姆奴库">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>复幂级数、复对数与Abel求和法 - 呼姆呼姆</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hmnkapa.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"♡","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>呼姆呼姆</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/home.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="复幂级数、复对数与Abel求和法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-05 20:28" pubdate>
+          2025年6月5日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">复幂级数、复对数与Abel求和法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="复幂级数复对数与abel求和法">复幂级数、复对数与Abel求和法</h1>
+<h2 id="复幂级数">复幂级数</h2>
+<p>一个中心为 <span class="math inline">\(\displaystyle a \in
+\mathbb{C}\)</span> 的复幂级数是指以下形式的表达式：</p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=0}^{\infty}a_{n}(z-a)^{n}
+\]</span></p>
+<p>其中系数 <span class="math inline">\(\displaystyle a_n \in
+\mathbb{C}\)</span>，变量 <span class="math inline">\(\displaystyle z
+\in \mathbb{C}\)</span></p>
+<p>幂级数的一个核心特性是其收敛域对于任意幂级数，其收敛域必然是以下三种情况之一：</p>
+<ul>
+<li>仅在中心点 <span class="math inline">\(\displaystyle z=a\)</span>
+收敛</li>
+<li>在整个复平面 <span class="math inline">\(\displaystyle
+\mathbb{C}\)</span> 上收敛</li>
+<li>在一个以 <span class="math inline">\(\displaystyle a\)</span>
+为中心的开圆盘内收敛，这个圆盘的半径被称为<strong>收敛半径 (Radius of
+Convergence)</strong>，记为 <span class="math inline">\(\displaystyle
+R\)</span></li>
+</ul>
+<p>对于复幂级数 <span class="math inline">\(\displaystyle
+\sum_{n=0}^{\infty}a_{n}(z-a)^{n}\)</span>，存在一个唯一的 <span
+class="math inline">\(\displaystyle R \in [0,
+\infty]\)</span>，使得：</p>
+<ul>
+<li><p>当 <span class="math inline">\(\displaystyle |z-a| &lt;
+R\)</span> 时，级数绝对收敛</p></li>
+<li><p>当 <span class="math inline">\(\displaystyle |z-a| &gt;
+R\)</span> 时，级数发散</p></li>
+</ul>
+<p>在边界 <span class="math inline">\(\displaystyle |z-a|=R\)</span>
+上，级数的收敛性需要单独讨论</p>
+<p>收敛半径 <span class="math inline">\(\displaystyle R\)</span>
+可以通过 <strong>柯西-阿达马 (Cauchy-Hadamard) 公式</strong> 计算：</p>
+<p><span class="math display">\[
+\displaystyle R = \frac{1}{L}, \quad \text{where} \quad L =
+\limsup_{n\to\infty} \sqrt[n]{|a_n|}
+\]</span></p>
+<p>当极限<span class="math inline">\(\displaystyle\lim_{n\to\infty}
+\left| \frac{a_n}{a_{n+1}}
+\right|\)</span>存在时，也可以使用更简便的比值判别法计算：</p>
+<p><span class="math display">\[
+\displaystyle R = \lim_{n\to\infty} \left| \frac{a_n}{a_{n+1}} \right|
+\]</span></p>
+<h2 id="复幂级数的连续性与可微性">复幂级数的连续性与可微性</h2>
+<h3 id="连续性">连续性</h3>
+<p>一个收敛半径为 <span class="math inline">\(\displaystyle
+R&gt;0\)</span> 的幂级数 <span class="math display">\[
+\displaystyle f(z) = \sum_{n=0}^{\infty}a_{n}(z-a)^{n}
+\]</span> 在其收敛圆盘 <span class="math inline">\(\displaystyle B_R(a)
+= \{z \in \mathbb{C} : |z-a| &lt; R\}\)</span> 内定义了一个连续函数</p>
+<p>原因在于，幂级数在任何半径为 <span
+class="math inline">\(\displaystyle R&#39; &lt; R\)</span> 的闭圆盘
+<span class="math inline">\(\displaystyle
+\overline{B_{R&#39;}(a)}\)</span> 上都是 <strong>一致收敛</strong>
+的</p>
+<p>由于幂级数的部分和多项式是连续的，根据一致收敛的连续性定理，极限函数
+<span class="math inline">\(\displaystyle f(z)\)</span> 也是连续的</p>
+<h3 id="复可微性-全纯性-holomorphic">复可微性 (全纯性 holomorphic)</h3>
+<p>幂级数 <span class="math inline">\(\displaystyle f(z)\)</span>
+在其收敛圆盘 <span class="math inline">\(\displaystyle B_R(a)\)</span>
+内是复可微的（即全纯的），其导数可以通过逐项求导得到：</p>
+<p><span class="math display">\[
+\displaystyle f&#39;(z) = \sum_{n=1}^{\infty} n a_n (z-a)^{n-1}
+\]</span></p>
+<p>求导后得到的幂级数与原级数有相同的收敛半径 <span
+class="math inline">\(\displaystyle R\)</span></p>
+<p>由于可以反复进行逐项求导，一个幂级数在其收敛域内是无穷次可微的 (<span
+class="math inline">\(\displaystyle C^\infty\)</span>)其 <span
+class="math inline">\(\displaystyle k\)</span> 阶导数为：</p>
+<p><span class="math display">\[
+\displaystyle f^{(k)}(z) = \sum_{n=k}^{\infty} n(n-1)\cdots(n-k+1) a_n
+(z-a)^{n-k}
+\]</span></p>
+<p>由此可得，幂级数的系数与其在中心点 <span
+class="math inline">\(\displaystyle a\)</span> 的各阶导数满足关系 <span
+class="math display">\[
+\displaystyle a_k = \frac{f^{(k)}(a)}{k!}
+\]</span> 这意味着一个幂级数就是它自身的泰勒级数</p>
+<h2 id="复对数-the-complex-logarithm">复对数 (The Complex
+Logarithm)</h2>
+<p>复对数函数是复指数函数 <span class="math inline">\(\displaystyle
+e^z\)</span> 的反函数</p>
+<p>其<strong>主分支 (principal branch)</strong>定义在 <span
+class="math inline">\(\displaystyle Re(z)&gt;0\)</span>
+的右半平面上，为： <span class="math display">\[
+\displaystyle \ln z = \ln|z| + i \arg z
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle \arg z \in (-\pi,
+\pi]\)</span> 是主辐角</p>
+<p>通过柯西-黎曼方程可以证明，<span class="math inline">\(\displaystyle
+\ln z\)</span> 是复可微的，其导数为：</p>
+<p><span class="math display">\[
+\displaystyle (\ln z)&#39; = \frac{1}{z}
+\]</span></p>
+<p>在 <span class="math inline">\(\displaystyle |z-1|&lt;1\)</span>
+的圆盘内，<span class="math inline">\(\displaystyle \ln z\)</span>
+可以展开为幂级数：</p>
+<p><span class="math display">\[
+\displaystyle \ln z = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}(z-1)^n
+\]</span></p>
+<h2 id="幂级数的一些应用">幂级数的一些应用</h2>
+<h3 id="三角函数与正弦积分">三角函数与正弦积分</h3>
+<p>在严格的数学体系中，三角函数可以通过幂级数来定义</p>
+<p>例如，基于欧拉公式 <span class="math inline">\(\displaystyle e^{ix} =
+\cos x + i \sin x\)</span>，可以得到： <span class="math display">\[
+\displaystyle \cos x = \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}x^{2k}
+\]</span></p>
+<p><span class="math display">\[
+\sin x = \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!}x^{2k+1}
+\]</span></p>
+<p>这两个级数的收敛半径均为 <span class="math inline">\(\displaystyle
+R=\infty\)</span></p>
+<p>利用逐项求导法则，可以轻松验证它们的基本性质，如 <span
+class="math inline">\(\displaystyle (\sin x)&#39; = \cos x\)</span></p>
+<p>对于 <strong>正弦积分函数 (Sine Integral)</strong> <span
+class="math inline">\(\displaystyle Si(x)\)</span>，</p>
+<p>可以利用 <span class="math inline">\(\displaystyle \sin t\)</span>
+的幂级数展开，并通过逐项积分得到其自身的幂级数表示： <span
+class="math display">\[
+\begin{align}
+\displaystyle Si(x) &amp;= \int_0^x \frac{\sin t}{t} dt \\
+&amp;= \int_0^x \sum_{n=0}^{\infty} (-1)^n \frac{t^{2n}}{(2n+1)!} dt \\
+&amp;= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!(2n+1)}
+\end{align}
+\]</span></p>
+<h3 id="生成函数与平方和">生成函数与平方和</h3>
+<p>幂级数是组合数学中强大的工具，其应用之一是求数列的和</p>
+<p>例如，求前 <span class="math inline">\(\displaystyle n\)</span>
+个正整数的平方和 <span class="math inline">\(\displaystyle s_n =
+\sum_{k=1}^n k^2\)</span></p>
+<p>从几何级数出发，我们有 <span class="math display">\[
+\displaystyle \sum_{n=0}^\infty x^n = \frac{1}{1-x}
+\]</span> 通过微分算子 <span class="math inline">\(\displaystyle x
+\frac{d}{dx}\)</span> 作用于系数，可以得到 <span class="math display">\[
+\displaystyle \sum_{n=1}^\infty n^2 x^n = \frac{x+x^2}{(1-x)^3}
+\]</span> 数列 <span class="math inline">\(\displaystyle (s_n)\)</span>
+的生成函数是 <span class="math display">\[
+\displaystyle \sum_{n=1}^\infty s_n x^n = \frac{1}{1-x}
+\sum_{n=1}^\infty n^2 x^n = \frac{x+x^2}{(1-x)^4}
+\]</span> 将右侧函数展开为幂级数并比较系数，即可得到 <span
+class="math inline">\(\displaystyle s_n\)</span> 的封闭形式：</p>
+<p><span class="math display">\[
+\displaystyle s_n = \binom{n+2}{3} + \binom{n+1}{3} =
+\frac{n(n+1)(2n+1)}{6}
+\]</span></p>
+<h2 id="abel求和法">Abel求和法</h2>
+<p>阿贝尔求和法，又称为偏和分或分部求和法，可以看作是离散形式的“分部积分法”</p>
+<p>它主要用于处理非绝对收敛的级数，特别是证明级数的（一致）收敛性</p>
+<p>考虑两个函数序列 <span class="math inline">\((\displaystyle
+f_n(x))\)</span> 和 <span class="math inline">\((\displaystyle
+g_n(x))\)</span></p>
+<p>设 <span class="math inline">\(\displaystyle G_n(x)\)</span> 是 <span
+class="math inline">\(\displaystyle g_k(x)\)</span> 的部分和，即 <span
+class="math display">\[
+\displaystyle G_n(x) = \sum_{k=m}^n g_k(x)
+\]</span> 通过代入 <span class="math inline">\(\displaystyle g_k = G_k -
+G_{k-1}\)</span> 并重新整理求和项，可以得到以下恒等式</p>
+<p><span class="math display">\[
+\displaystyle \sum_{k=m}^{n}f_{k}(x)g_{k}(x) = f_{n}(x)G_{n}(x) -
+f_{m}(x)G_{m-1}(x) + \sum_{k=m}^{n-1}[f_{k}(x)-f_{k+1}(x)]G_{k}(x)
+\]</span></p>
+<h3 id="三角级数">三角级数</h3>
+<p>考虑幂级数 <span class="math display">\[
+\displaystyle f(z) = \sum_{n=1}^{\infty} \frac{z^n}{n}
+\]</span> 其收敛半径为 <span class="math inline">\(\displaystyle
+R=1\)</span></p>
+<p>在收敛域 <span class="math inline">\(\displaystyle |z|&lt;1\)</span>
+内，我们知道 <span class="math display">\[
+\displaystyle f(z) = -\ln(1-z)
+\]</span> 我们的目标是研究当 <span class="math inline">\(\displaystyle
+z\)</span> 趋近于单位圆边界 <span class="math inline">\(\displaystyle
+S^1 = \{z \in \mathbb{C} : |z|=1\}\)</span> 时级数的行为</p>
+<p>令 <span class="math inline">\(\displaystyle
+z=e^{ix}\)</span>，则级数变为： <span class="math display">\[
+\displaystyle f(e^{ix}) = \sum_{n=1}^{\infty} \frac{e^{inx}}{n} =
+\sum_{n=1}^{\infty} \frac{\cos(nx)}{n} + i \sum_{n=1}^{\infty}
+\frac{\sin(nx)}{n}
+\]</span></p>
+<p>当 <span class="math inline">\(\displaystyle x=0\)</span> (即 <span
+class="math inline">\(\displaystyle z=1\)</span>)
+时，级数为调和级数，发散</p>
+<p>我们需要证明级数在单位圆上其他点处是一致收敛的</p>
+<p>记集合 <span class="math display">\[
+\displaystyle D_r = \{z \in \mathbb{C} : |z| \le 1 \land|z-1| \ge
+r\}\text{ where }r&gt;0
+\]</span> 我们首先对级数的尾部进行变换</p>
+<p>设 <span class="math inline">\(\displaystyle s_n(z) = \sum_{k=1}^{n}
+z^k\)</span> 为几何级数的部分和</p>
+<p>对于 <span class="math inline">\(\displaystyle m &lt;
+n\)</span>，我们有： <span class="math display">\[
+\displaystyle \sum_{k=m+1}^{n} \frac{z^k}{k} = \sum_{k=m+1}^{n}
+\frac{s_k(z) - s_{k-1}(z)}{k}
+\]</span> 利用Abel求和法，我们得到： <span class="math display">\[
+\displaystyle \sum_{k=m+1}^{n} \frac{s_k(z) - s_{k-1}(z)}{k} =
+\frac{s_n(z)}{n} - \frac{s_m(z)}{m+1} + \sum_{k=m+1}^{n-1} s_k(z) \left(
+\frac{1}{k} - \frac{1}{k+1} \right)
+\]</span> 接下来，我们需要证明部分和 <span
+class="math inline">\(\displaystyle s_n(z)\)</span> 在我们定义的区域
+<span class="math inline">\(\displaystyle D_r\)</span>
+上是一致有界的</p>
+<p>对于 <span class="math inline">\(\displaystyle z \ne
+1\)</span>，我们有等比数列求和公式： <span class="math display">\[
+\displaystyle s_n(z) = \sum_{k=1}^{n} z^k = \frac{z(1-z^n)}{1-z}
+\]</span> 对于任意 <span class="math inline">\(\displaystyle z \in
+D_r\)</span>，我们有 <span class="math inline">\(\displaystyle |z| \le
+1\)</span> 且 <span class="math inline">\(\displaystyle |z-1| \ge
+r\)</span></p>
+<p>因此： <span class="math display">\[
+\begin{align}
+\displaystyle |s_n(z)| &amp;= \left| \frac{z(1-z^n)}{1-z} \right| =
+\frac{|z||1-z^n|}{|1-z|}\\ &amp;\le \frac{1 \cdot (|1| + |-z^n|)}{|1-z|}
+\le \frac{1+1}{r} \\&amp;= \frac{2}{r}
+\end{align}
+\]</span> 令 <span class="math inline">\(\displaystyle M =
+\frac{2}{r}\)</span>，我们便得到了一个不依赖于 <span
+class="math inline">\(\displaystyle n\)</span> 和 <span
+class="math inline">\(\displaystyle z\)</span> 的一致界<span
+class="math inline">\(\displaystyle |s_n(z)| \le M\)</span> 对所有 <span
+class="math inline">\(\displaystyle z \in D_r\)</span> 和所有 <span
+class="math inline">\(\displaystyle n \in \mathbb{N}\)</span> 均成立</p>
+<p>现在我们可以估计级数尾部的大小，利用第1步的结果和第2步的界 <span
+class="math inline">\(\displaystyle M\)</span>：</p>
+<p><span class="math display">\[
+\begin{align}
+\displaystyle \left| \sum_{k=m}^{n} \frac{z^k}{k} \right|
+&amp;\le \frac{|s_{m-1}(z)|}{m} + \sum_{k=m}^{n-1} |s_k(z)|
+\left(\frac{1}{k} - \frac{1}{k+1}\right) + \frac{|s_n(z)|}{n}\\
+\displaystyle &amp;\le \frac{M}{m} + M \sum_{k=m}^{n-1}
+\left(\frac{1}{k} - \frac{1}{k+1}\right) + \frac{M}{n}
+\end{align}
+\]</span> 注意到中间的和是一个伸缩级数 (telescoping sum)： <span
+class="math display">\[
+\displaystyle \sum_{k=m}^{n-1} \left(\frac{1}{k} - \frac{1}{k+1}\right)
+= \left(\frac{1}{m} - \frac{1}{m+1}\right) + \dots + \left(\frac{1}{n-1}
+- \frac{1}{n}\right) = \frac{1}{m} - \frac{1}{n}
+\]</span> 因此，估计式变为： <span class="math display">\[
+\displaystyle \left| \sum_{k=m}^{n} \frac{z^k}{k} \right| \le
+\frac{M}{m} + M\left(\frac{1}{m} - \frac{1}{n}\right) + \frac{M}{n} =
+\frac{2M}{m}
+\]</span> 对于任意给定的 <span class="math inline">\(\displaystyle
+\epsilon &gt; 0\)</span>，我们总能选择一个足够大的 <span
+class="math inline">\(\displaystyle N\)</span>，使得当 <span
+class="math inline">\(\displaystyle m &gt; N\)</span> 时，<span
+class="math inline">\(\displaystyle \frac{2M}{m} &lt;
+\epsilon\)</span></p>
+<p>具体来说，我们可以取 <span class="math inline">\(\displaystyle N =
+\lceil \frac{2M}{\epsilon} \rceil = \lceil \frac{4}{r\epsilon}
+\rceil\)</span></p>
+<p>这样，对于任意 <span class="math inline">\(\displaystyle n \ge m &gt;
+N\)</span>，我们都有 <span class="math inline">\(\displaystyle \left|
+\sum_{k=m}^{n} \frac{z^k}{k} \right| &lt; \epsilon\)</span> 对所有 <span
+class="math inline">\(\displaystyle z \in D_r\)</span> 成立</p>
+<p>根据柯西一致收敛准则，级数 <span class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty} \frac{z^n}{n}\)</span> 在区域 <span
+class="math inline">\(\displaystyle D_r = \{z \in \mathbb{C} : |z| \le
+1, |z-1| \ge r\}\)</span> 上是一致收敛的</p>
+<p>由于 <span class="math inline">\(\displaystyle r&gt;0\)</span>
+可以是任意小的正数，这表明级数在任何不包含 <span
+class="math inline">\(\displaystyle z=1\)</span>
+点的闭单位圆盘的紧子集上都是一致收敛的</p>
+<p>这一结论（也是<strong>狄利克雷一致收敛判别法</strong>的一个应用）非常重要，因为它允许我们应用连续性定理，从而证明
+<span class="math inline">\(\displaystyle f(z)\)</span> 在其收敛域 <span
+class="math inline">\(\displaystyle \overline{B_1(0)} \setminus
+\{1\}\)</span> 上是一个连续函数</p>
+<p>由于级数在 <span class="math inline">\(\displaystyle S^1 \setminus
+\{1\}\)</span> 上一致收敛，其和函数 <span
+class="math inline">\(\displaystyle f(z)\)</span> 在此区域连续</p>
+<p>因此，我们可以通过取径向极限来计算边界上的值： <span
+class="math display">\[
+\displaystyle f(e^{i\phi}) = \lim_{r \to 1^-} f(re^{i\phi}) = \lim_{r
+\to 1^-} [-\ln(1-re^{i\phi})]
+\]</span></p>
+<p>计算此极限并分离实部和虚部，可得以下著名的三角级数求和公式（对于
+<span class="math inline">\(\displaystyle 0 &lt; x &lt;
+2\pi\)</span>）：</p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=1}^{\infty} \frac{\cos(nx)}{n} =
+-\ln\left(2\sin\frac{x}{2}\right)
+\]</span></p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=1}^{\infty} \frac{\sin(nx)}{n} = \frac{\pi - x}{2}
+\]</span></p>
+<h3 id="计算-displaystyle-zeta2-sum_n1infty-frac1n2">计算 <span
+class="math inline">\(\displaystyle \zeta(2) = \sum_{n=1}^{\infty}
+\frac{1}{n^2}\)</span></h3>
+<p>利用上述结果，可以进一步计算其他重要级数考虑函数 <span
+class="math inline">\(\displaystyle g(x) = \sum_{n=1}^{\infty}
+\frac{\cos(nx)}{n^2}\)</span></p>
+<p>该级数在整个 <span class="math inline">\(\displaystyle
+\mathbb{R}\)</span> 上一致收敛（由 Weierstrass 判别法可知）</p>
+<p>其导数级数为 <span class="math display">\[
+\displaystyle -\sum \frac{\sin(nx)}{n}
+\]</span> 根据微分定理，在 <span class="math inline">\(\displaystyle (0,
+2\pi)\)</span> 内，我们有：</p>
+<p><span class="math display">\[
+\displaystyle g&#39;(x) = - \sum_{n=1}^{\infty} \frac{\sin(nx)}{n} = -
+\left(\frac{\pi-x}{2}\right) = \frac{x-\pi}{2}
+\]</span></p>
+<p>对 <span class="math inline">\(\displaystyle g&#39;(x)\)</span>
+积分可得 <span class="math inline">\(\displaystyle g(x) =
+\frac{(x-\pi)^2}{4} + C\)</span>通过计算 <span
+class="math inline">\(\displaystyle \int_0^{2\pi} g(x) dx =
+0\)</span>，可以定出常数 <span class="math inline">\(\displaystyle C =
+-\frac{\pi^2}{12}\)</span></p>
+<p>最终得到：</p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=1}^{\infty} \frac{\cos(nx)}{n^2} =
+\frac{(x-\pi)^2}{4} - \frac{\pi^2}{12}, \quad \text{for } 0 \le x \le
+2\pi
+\]</span></p>
+<p>将 <span class="math inline">\(\displaystyle x=0\)</span>
+代入上式，即可得到巴塞尔问题的解：</p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{(0-\pi)^2}{4} -
+\frac{\pi^2}{12} = \frac{\pi^2}{4} - \frac{\pi^2}{12} = \frac{\pi^2}{6}
+\]</span></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>复幂级数、复对数与Abel求和法</div>
+      <div>http://hmnkapa.github.io/2025/06/05/复幂级数、复对数与Abel求和法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>呼姆奴库</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/06/05/%E5%A4%8D%E5%8F%AF%E5%BE%AE%E6%80%A7%E4%B8%8E%E6%9F%AF%E8%A5%BF-%E9%BB%8E%E6%9B%BC%E6%96%B9%E7%A8%8B/" title="复可微性与柯西-黎曼方程">
+                        <span class="hidden-mobile">复可微性与柯西-黎曼方程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <script src="https://giscus.app/client.js" data-repo="hmnkapa/hmnkapa.github.io" data-repo-id="R_kgDOLoJFHw" data-category="Announcements" data-category-id="DIC_kwDOLoJFH84CfrxZ" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async> </script>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
