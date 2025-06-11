@@ -1,0 +1,930 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/a.png">
+  <link rel="icon" href="/img/a.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#af9ca6">
+  <meta name="author" content="呼姆奴库">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="多变量函数与含参反常积分的一致收敛性 Dirichlet 判别法与 Abel 判别法 定理： 设 \((\displaystyle f_n)\) 是定义在集合 \(\displaystyle D\) 上的单调递减实值函数序列（即对任意 \(\displaystyle x \in D\)，都有 \(\displaystyle f_1(x) \ge f_2(x) \ge f_3(x) \g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多变量函数与含参反常积分的一致收敛性">
+<meta property="og:url" content="http://hmnkapa.github.io/2025/06/11/%E5%A4%9A%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E4%B8%8E%E5%90%AB%E5%8F%82%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E8%87%B4%E6%94%B6%E6%95%9B%E6%80%A7/index.html">
+<meta property="og:site_name" content="呼姆呼姆">
+<meta property="og:description" content="多变量函数与含参反常积分的一致收敛性 Dirichlet 判别法与 Abel 判别法 定理： 设 \((\displaystyle f_n)\) 是定义在集合 \(\displaystyle D\) 上的单调递减实值函数序列（即对任意 \(\displaystyle x \in D\)，都有 \(\displaystyle f_1(x) \ge f_2(x) \ge f_3(x) \g">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-11T11:45:57.000Z">
+<meta property="article:modified_time" content="2025-06-11T14:34:14.619Z">
+<meta property="article:author" content="呼姆奴库">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>多变量函数与含参反常积分的一致收敛性 - 呼姆呼姆</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hmnkapa.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"♡","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>呼姆呼姆</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/home.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="多变量函数与含参反常积分的一致收敛性"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-11 19:45" pubdate>
+          2025年6月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">多变量函数与含参反常积分的一致收敛性</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1
+id="多变量函数与含参反常积分的一致收敛性">多变量函数与含参反常积分的一致收敛性</h1>
+<h2 id="dirichlet-判别法与-abel-判别法">Dirichlet 判别法与 Abel
+判别法</h2>
+<p><strong>定理：</strong></p>
+<p>设 <span class="math inline">\((\displaystyle f_n)\)</span>
+是定义在集合 <span class="math inline">\(\displaystyle D\)</span>
+上的单调递减实值函数序列（即对任意 <span
+class="math inline">\(\displaystyle x \in D\)</span>，都有 <span
+class="math inline">\(\displaystyle f_1(x) \ge f_2(x) \ge f_3(x) \ge
+\dots\)</span>），<span class="math inline">\((\displaystyle
+g_n)\)</span> 是定义在 <span class="math inline">\(\displaystyle
+D\)</span> 上的复值函数序列</p>
+<p>在满足以下两个准则之一时，函数级数 <span
+class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty}f_{n}g_{n}\)</span> 在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致收敛：</p>
+<ol type="1">
+<li><strong>Dirichlet 判别法</strong>
+<ul>
+<li><span class="math inline">\((\displaystyle f_n)\)</span> 在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致收敛到 <span
+class="math inline">\(\displaystyle 0\)</span></li>
+<li>级数 <span class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty}g_{n}\)</span> 的部分和序列 <span
+class="math inline">\(\displaystyle G_n = \sum_{k=1}^{n}g_k\)</span> 在
+<span class="math inline">\(\displaystyle D\)</span>
+上一致有界（即存在常数 <span class="math inline">\(\displaystyle
+M&gt;0\)</span>，使得对所有 <span class="math inline">\(\displaystyle
+n\)</span> 和所有 <span class="math inline">\(\displaystyle x \in
+D\)</span>，都有 <span class="math inline">\(\displaystyle |G_n(x)| \le
+M\)</span>）</li>
+</ul></li>
+<li><strong>Abel 判别法</strong>
+<ul>
+<li><span class="math inline">\((\displaystyle f_n)\)</span> 在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致有界</li>
+<li>级数 <span class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty}g_{n}\)</span> 在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致收敛</li>
+</ul></li>
+</ol>
+<p>这两个判别法的证明都依赖于<strong>分部求和法</strong>（或称<strong>Abel求和法</strong>）和<strong>柯西一致收敛准则</strong></p>
+<p>柯西准则指出，一个函数级数一致收敛的充要条件是，其部分和序列是满足一致柯西条件的</p>
+<h3 id="abel-极限定理-abels-limit-theorem">Abel 极限定理 (Abel's Limit
+Theorem)</h3>
+<p>Abel判别法的一个重要推论是Abel极限定理，它描述了幂级数在其收敛圆边界上的连续性</p>
+<p><strong>定理 :</strong></p>
+<p>假设幂级数 <span class="math inline">\(\displaystyle
+\sum_{n=0}^{\infty}a_{n}(z-a)^{n}\)</span> 的收敛半径为 <span
+class="math inline">\(\displaystyle R\)</span>，<span
+class="math inline">\(\displaystyle 0 &lt; R &lt; \infty\)</span></p>
+<p>如果该幂级数在其收敛圆边界上的某一点 <span
+class="math inline">\(\displaystyle z_1 = a + Re^{i\phi}\)</span>
+收敛</p>
+<p>则该级数在连接中心 <span class="math inline">\(\displaystyle
+a\)</span> 与 <span class="math inline">\(\displaystyle z_1\)</span>
+的闭合线段 <span class="math inline">\(\displaystyle [a, z_1]\)</span>
+上一致收敛</p>
+<p>因此，由该级数定义的函数在 <span class="math inline">\(\displaystyle
+[a, z_1]\)</span> 上是连续的</p>
+<p><strong>证明：</strong></p>
+<p>将级数在点 <span class="math inline">\(\displaystyle z = a +
+re^{i\phi}\)</span> (<span class="math inline">\(\displaystyle 0 \le r
+\le R\)</span>) 处写作</p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=0}^{\infty} \left(\frac{r}{R}\right)^n (a_n R^n
+e^{in\phi})
+\]</span></p>
+<p>令 <span class="math inline">\(\displaystyle f_n(r) =
+(r/R)^n\)</span>，<span class="math inline">\(\displaystyle g_n(r) = a_n
+R^n e^{in\phi}\)</span></p>
+<p>序列 <span class="math inline">\(\displaystyle f_n(r)\)</span> 对
+<span class="math inline">\(\displaystyle r \in [0,R]\)</span>
+是单调递减且一致有界的（<span class="math inline">\(\displaystyle 0 \le
+f_n(r) \le 1\)</span>）</p>
+<p>而级数 <span class="math inline">\(\displaystyle \sum g_n\)</span>
+根据假设收敛，且其项与 <span class="math inline">\(\displaystyle
+r\)</span> 无关，因此它在 <span class="math inline">\(\displaystyle
+[0,R]\)</span> 上一致收敛</p>
+<p>应用Abel判别法，即可证明原级数在 <span
+class="math inline">\(\displaystyle [a, z_1]\)</span> 上一致收敛</p>
+<h2 id="多变量函数的一致收敛">多变量函数的一致收敛</h2>
+<p>一致收敛的理论可以自然地推广到多变量函数</p>
+<p>这里我们只叙述微分定理的多变量形式</p>
+<p><strong>定理：</strong></p>
+<p>假设函数序列 <span class="math inline">\(\displaystyle f_k: D
+\rightarrow \mathbb{R}\)</span>（其中 <span
+class="math inline">\(\displaystyle D \subseteq
+\mathbb{R}^n\)</span>）满足：</p>
+<ul>
+<li>每个 <span class="math inline">\(\displaystyle f_k\)</span> 都是
+<span class="math inline">\(\displaystyle C^1\)</span> 函数</li>
+<li>序列 <span class="math inline">\((\displaystyle f_k)\)</span> 在
+<span class="math inline">\(\displaystyle D\)</span> 上逐点收敛于函数
+<span class="math inline">\(\displaystyle f\)</span></li>
+<li>对于每一个 <span class="math inline">\(\displaystyle i=1, \dots,
+n\)</span>，偏导数序列 <span class="math inline">\((\displaystyle
+\partial f_k / \partial x_i)\)</span> 都在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致收敛</li>
+</ul>
+<p>那么，极限函数 <span class="math inline">\(\displaystyle f(x) =
+\lim_{k\rightarrow\infty} f_k(x)\)</span> 也是一个 <span
+class="math inline">\(\displaystyle C^1\)</span>
+函数，并且其偏导数可以和极限运算交换顺序：</p>
+<p><span class="math display">\[
+\displaystyle \frac{\partial f}{\partial x_i}(x) =
+\lim_{k\rightarrow\infty} \frac{\partial f_k}{\partial x_i}(x) \quad
+\text{for } 1 \le i \le n \text{ and } x \in D
+\]</span></p>
+<h2 id="含参反常积分的一致收敛性">含参反常积分的一致收敛性</h2>
+<p>函数级数的理论有其连续的对应物，即含参反常积分</p>
+<h3 id="含参反常积分的收敛性定义">含参反常积分的收敛性定义</h3>
+<ul>
+<li><p><strong>逐点收敛:</strong> 含参反常积分 <span
+class="math inline">\(\displaystyle \int_a^\infty f(x,t) dt\)</span> 在
+<span class="math inline">\(\displaystyle D\)</span>
+上逐点收敛，是指对每一个固定的 <span class="math inline">\(\displaystyle
+x \in D\)</span>，极限 <span class="math inline">\(\displaystyle
+\lim_{R\rightarrow\infty} \int_a^R f(x,t) dt\)</span> 都存在</p></li>
+<li><p><strong>一致收敛:</strong> 如果积分逐点收敛于 <span
+class="math inline">\(\displaystyle F(x)\)</span>，并且对于任意 <span
+class="math inline">\(\displaystyle \epsilon &gt; 0\)</span>，存在一个与
+<span class="math inline">\(\displaystyle x\)</span> 无关的 <span
+class="math inline">\(\displaystyle R_0\)</span>，使得当 <span
+class="math inline">\(\displaystyle R &gt; R_0\)</span> 时，对所有 <span
+class="math inline">\(\displaystyle x \in D\)</span> 都有：</p>
+<p><span class="math display">\[
+  \displaystyle \left| F(x) - \int_a^R f(x,t) dt \right| = \left|
+\int_R^\infty f(x,t) dt \right| &lt; \epsilon
+  \]</span></p>
+<p>则称该积分在 <span class="math inline">\(\displaystyle D\)</span>
+上一致收敛</p></li>
+</ul>
+<h2 id="主要定理">主要定理</h2>
+<p>与函数序列相类似，我们有关于连续性和可微性的核心定理</p>
+<h3 id="连续性定理">连续性定理</h3>
+<p>若 <span class="math inline">\(\displaystyle f(x,t)\)</span>
+是一个连续的双变量函数，且积分<span class="math inline">\(\displaystyle
+\int_a^\infty f(x,t) dt\)</span> 在区间 <span
+class="math inline">\(\displaystyle I\)</span> 上一致收敛</p>
+<p>则其极限函数 <span class="math inline">\(\displaystyle F(x) =
+\int_a^\infty f(x,t) dt\)</span> 在 <span
+class="math inline">\(\displaystyle I\)</span> 上是连续的</p>
+<h3 id="可微性定理leibniz积分法则">可微性定理（Leibniz积分法则）</h3>
+<p>若 <span class="math inline">\(\displaystyle f(x,t)\)</span>
+及其偏导数 <span class="math inline">\(\displaystyle f_x(x,t)\)</span>
+都是连续的双变量函数</p>
+<p>积分 <span class="math inline">\(\displaystyle \int_a^\infty f(x,t)
+dt\)</span> 逐点收敛，且导数积分 <span
+class="math inline">\(\displaystyle \int_a^\infty f_x(x,t) dt\)</span>
+在区间 <span class="math inline">\(\displaystyle I\)</span>
+上一致收敛</p>
+<p>则 <span class="math inline">\(\displaystyle F(x) = \int_a^\infty
+f(x,t) dt\)</span> 在 <span class="math inline">\(\displaystyle
+I\)</span> 上可微，并且可以交换微分与积分的次序： <span
+class="math display">\[
+\displaystyle F&#39;(x) = \frac{d}{dx} \int_a^\infty f(x,t) dt =
+\int_a^\infty \frac{\partial f}{\partial x}(x,t) dt
+\]</span></p>
+<h3 id="一致收敛判别法"><strong>一致收敛判别法</strong></h3>
+<ol type="1">
+<li><p><strong>Cauchy 判别法:</strong></p>
+<p><span class="math inline">\(\displaystyle \int_a^\infty f(x,t)
+dt\)</span> 在 <span class="math inline">\(\displaystyle D\)</span>
+上一致收敛的充要条件是：对任意 <span class="math inline">\(\displaystyle
+\epsilon &gt; 0\)</span>，存在 <span class="math inline">\(\displaystyle
+R_0 &gt; 0\)</span>，使得对所有 <span
+class="math inline">\(\displaystyle R&#39; &gt; R &gt; R_0\)</span>
+和所有 <span class="math inline">\(\displaystyle x \in D\)</span>，都有
+<span class="math inline">\(\displaystyle |\int_R^{R&#39;} f(x,t) dt|
+&lt; \epsilon\)</span></p></li>
+<li><p><strong>Weierstrass 判别法:</strong></p>
+<p>如果存在一个函数 <span class="math inline">\(\displaystyle
+\Phi(t)\)</span> 使得对所有 <span class="math inline">\(\displaystyle
+(x,t) \in D \times [a, \infty)\)</span> 都有 <span
+class="math inline">\(\displaystyle |f(x,t)| \le \Phi(t)\)</span>，且
+<span class="math inline">\(\displaystyle \int_a^\infty \Phi(t)
+dt\)</span> 收敛，则 <span class="math inline">\(\displaystyle
+\int_a^\infty f(x,t) dt\)</span> 在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致且绝对收敛</p></li>
+<li><p><strong>Dirichlet 判别法与 Abel 判别法:</strong></p>
+<p>假设 <span class="math inline">\(\displaystyle t \mapsto
+f(x,t)\)</span> 对每个 <span class="math inline">\(\displaystyle
+x\)</span> 都是单调函数，而 <span class="math inline">\(\displaystyle t
+\mapsto g(x,t)\)</span> 是连续函数积分 <span
+class="math inline">\(\displaystyle \int_a^\infty f(x,t)g(x,t)
+dt\)</span> 在满足以下条件之一时一致收敛：</p>
+<ul>
+<li><strong>Dirichlet:</strong> <span
+class="math inline">\(\displaystyle f(x,t)\)</span> 随着 <span
+class="math inline">\(\displaystyle t \to \infty\)</span> 在 <span
+class="math inline">\(\displaystyle D\)</span> 上一致收敛到 <span
+class="math inline">\(\displaystyle 0\)</span>，且积分 <span
+class="math inline">\(\displaystyle \int_a^R g(x,t)dt\)</span> 对所有
+<span class="math inline">\(\displaystyle R\)</span> 和 <span
+class="math inline">\(\displaystyle x\)</span> 一致有界</li>
+<li><strong>Abel:</strong> <span class="math inline">\(\displaystyle
+f(x,t)\)</span> 在 <span class="math inline">\(\displaystyle D \times
+[a, \infty)\)</span> 上一致有界，且积分 <span
+class="math inline">\(\displaystyle \int_a^\infty g(x,t) dt\)</span> 在
+<span class="math inline">\(\displaystyle D\)</span> 上一致收敛</li>
+</ul></li>
+</ol>
+<h2 id="计算-dirichlet-积分">计算 Dirichlet 积分</h2>
+<p>利用含参变量积分的一致收敛性来计算Dirichlet 积分： <span
+class="math display">\[
+\displaystyle F(0) = \int_0^\infty \frac{\sin t}{t} dt
+\]</span> 构造一个含参积分 <span class="math display">\[
+\displaystyle F(x) = \int_0^\infty \frac{\sin t}{t} e^{-xt} dt
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle x \in [0,
+\infty)\)</span></p>
+<p>对于 <span class="math inline">\(\displaystyle x &gt;
+0\)</span>，利用 Weierstrass 判别法可以证明，可以对 <span
+class="math inline">\(\displaystyle F(x)\)</span> 在积分号下求导：</p>
+<p><span class="math display">\[
+\displaystyle F&#39;(x) = -\int_0^\infty e^{-xt} \sin t \, dt =
+-\frac{1}{1+x^2}
+\]</span> 对 <span class="math inline">\(\displaystyle
+F&#39;(x)\)</span> 积分得到 <span class="math display">\[
+\displaystyle F(x) = -\arctan x + C
+\]</span> 由于 <span class="math inline">\(\displaystyle
+\lim_{x\to\infty} F(x) = 0\)</span>（可以证明），可得 <span
+class="math inline">\(\displaystyle C = \pi/2\)</span></p>
+<p>所以对 <span class="math inline">\(\displaystyle x &gt;
+0\)</span>，<span class="math inline">\(\displaystyle F(x) = \pi/2 -
+\arctan x\)</span></p>
+<p>最关键的一步是证明 <span class="math inline">\(\displaystyle
+F(x)\)</span> 在 <span class="math inline">\(\displaystyle x=0\)</span>
+处是连续的，这样我们就能通过取极限来求 <span
+class="math inline">\(\displaystyle F(0)\)</span>：</p>
+<p><span class="math display">\[
+\displaystyle F(0) = \lim_{x \to 0^+} F(x) = \lim_{x \to 0^+} (\pi/2 -
+\arctan x) = \pi/2
+\]</span> 为了证明在 <span class="math inline">\(\displaystyle
+x=0\)</span> 的连续性，需要证明积分： <span class="math display">\[
+\displaystyle \int_0^\infty \frac{\sin t}{t} e^{-xt} dt
+\]</span> 在 <span class="math inline">\(\displaystyle [0,
+\infty)\)</span> 上是一致收敛的</p>
+<p>由于该积分不是绝对收敛的，Weierstrass 判别法失效，但我们可以使用
+<strong>Dirichlet 判别法</strong> 将积分写为 <span
+class="math display">\[
+\displaystyle \int_0^1 \dots dt + \int_1^\infty \dots dt
+\]</span> 第一部分是正常积分，其连续性容易证明</p>
+<p>对于第二部分 <span class="math inline">\(\displaystyle \int_1^\infty
+e^{-xt} \frac{\sin t}{t} dt\)</span>，令 <span
+class="math inline">\(\displaystyle f(x,t) = e^{-xt}/t\)</span> 和 <span
+class="math inline">\(\displaystyle g(x,t) = \sin t\)</span></p>
+<p>函数 <span class="math inline">\(\displaystyle f(x,t)\)</span> 对
+<span class="math inline">\(\displaystyle t \ge 1\)</span>
+单调递减，并一致收敛到0，而 <span class="math inline">\(\displaystyle
+\int_1^R \sin t \, dt\)</span> 是一致有界的</p>
+<p>因此，根据 Dirichlet 判别法，该积分在 <span
+class="math inline">\(\displaystyle [0, \infty)\)</span>
+上一致收敛，从而 <span class="math inline">\(\displaystyle F(x)\)</span>
+在 <span class="math inline">\(\displaystyle x=0\)</span> 处连续</p>
+<p>所以，</p>
+<p><span class="math display">\[
+\displaystyle \int_0^\infty \frac{\sin t}{t} dt = \frac{\pi}{2}
+\]</span></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>多变量函数与含参反常积分的一致收敛性</div>
+      <div>http://hmnkapa.github.io/2025/06/11/多变量函数与含参反常积分的一致收敛性/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>呼姆奴库</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/06/05/%E5%A4%8D%E5%B9%82%E7%BA%A7%E6%95%B0%E3%80%81%E5%A4%8D%E5%AF%B9%E6%95%B0%E4%B8%8EAbel%E6%B1%82%E5%92%8C%E6%B3%95/" title="复幂级数、复对数与Abel求和法">
+                        <span class="hidden-mobile">复幂级数、复对数与Abel求和法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <script src="https://giscus.app/client.js" data-repo="hmnkapa/hmnkapa.github.io" data-repo-id="R_kgDOLoJFHw" data-category="Announcements" data-category-id="DIC_kwDOLoJFH84CfrxZ" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async> </script>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
