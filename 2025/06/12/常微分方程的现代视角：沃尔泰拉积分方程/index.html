@@ -16,21 +16,21 @@
   <meta name="author" content="呼姆奴库">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Dirichlet判别法与Abel判别法，将函数序列的一致收敛性推广至多变量函数与含参反常积分">
+    <meta name="description" content="将常微分方程 (ODE) 及其初值问题 (IVP) 转化为更适合现代数学分析的形式：沃尔泰拉积分方程与高阶微分方程的降解法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多变量函数与含参反常积分的一致收敛性">
-<meta property="og:url" content="http://hmnkapa.github.io/2025/06/11/%E5%A4%9A%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E4%B8%8E%E5%90%AB%E5%8F%82%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E8%87%B4%E6%94%B6%E6%95%9B%E6%80%A7/index.html">
+<meta property="og:title" content="常微分方程的现代视角：沃尔泰拉积分方程">
+<meta property="og:url" content="http://hmnkapa.github.io/2025/06/12/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E7%8E%B0%E4%BB%A3%E8%A7%86%E8%A7%92%EF%BC%9A%E6%B2%83%E5%B0%94%E6%B3%B0%E6%8B%89%E7%A7%AF%E5%88%86%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="呼姆呼姆">
-<meta property="og:description" content="Dirichlet判别法与Abel判别法，将函数序列的一致收敛性推广至多变量函数与含参反常积分">
+<meta property="og:description" content="将常微分方程 (ODE) 及其初值问题 (IVP) 转化为更适合现代数学分析的形式：沃尔泰拉积分方程与高阶微分方程的降解法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-11T11:45:57.000Z">
-<meta property="article:modified_time" content="2025-06-12T09:34:50.498Z">
+<meta property="article:published_time" content="2025-06-12T09:26:09.000Z">
+<meta property="article:modified_time" content="2025-06-12T09:36:04.651Z">
 <meta property="article:author" content="呼姆奴库">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>多变量函数与含参反常积分的一致收敛性 - 呼姆呼姆</title>
+  <title>常微分方程的现代视角：沃尔泰拉积分方程 - 呼姆呼姆</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="多变量函数与含参反常积分的一致收敛性"></span>
+            <span id="subtitle" data-typed-text="常微分方程的现代视角：沃尔泰拉积分方程"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-11 19:45" pubdate>
-          2025年6月11日 晚上
+        <time datetime="2025-06-12 17:26" pubdate>
+          2025年6月12日 下午
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.2k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          15 分钟
+          10 分钟
         
       </span>
     
@@ -271,272 +271,162 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">多变量函数与含参反常积分的一致收敛性</h1>
+            <h1 id="seo-header">常微分方程的现代视角：沃尔泰拉积分方程</h1>
             
             
               <div class="markdown-body">
                 
                 <h1
-id="多变量函数与含参反常积分的一致收敛性">多变量函数与含参反常积分的一致收敛性</h1>
-<h2 id="dirichlet-判别法与-abel-判别法">Dirichlet 判别法与 Abel
-判别法</h2>
-<p><strong>定理：</strong></p>
-<p>设 <span class="math inline">\((\displaystyle f_n)\)</span>
-是定义在集合 <span class="math inline">\(\displaystyle D\)</span>
-上的单调递减实值函数序列（即对任意 <span
-class="math inline">\(\displaystyle x \in D\)</span>，都有 <span
-class="math inline">\(\displaystyle f_1(x) \ge f_2(x) \ge f_3(x) \ge
-\dots\)</span>），<span class="math inline">\((\displaystyle
-g_n)\)</span> 是定义在 <span class="math inline">\(\displaystyle
-D\)</span> 上的复值函数序列</p>
-<p>在满足以下两个准则之一时，函数级数 <span
+id="常微分方程的现代视角沃尔泰拉积分方程">常微分方程的现代视角：沃尔泰拉积分方程</h1>
+<h2 id="沃尔泰拉volterra积分方程">沃尔泰拉（Volterra）积分方程</h2>
+<p>考虑一个标准的一阶常微分方程初值问题 (IVP)，其形式如下：</p>
+<p><span class="math display">\[
+\displaystyle y&#39; = f(t, y) \quad \land \quad y(t_0) = y_0
+\]</span></p>
+<p>其中函数 <span class="math inline">\(\displaystyle f: D \rightarrow
+\mathbb{R}\)</span> 在开集 <span class="math inline">\(\displaystyle D
+\subseteq \mathbb{R}^2\)</span> 上连续，且点 <span
+class="math inline">\(\displaystyle (t_0, y_0)\)</span> 属于 <span
+class="math inline">\(\displaystyle D\)</span>。</p>
+<p>我们可以通过对该微分方程从 <span class="math inline">\(\displaystyle
+t_0\)</span> 到 <span class="math inline">\(\displaystyle t\)</span>
+进行积分，将其转化为一个等价的积分方程。</p>
+<p>若 <span class="math inline">\(\displaystyle \phi(t)\)</span> 是该
+IVP 在某个包含 <span class="math inline">\(\displaystyle t_0\)</span>
+的区间 <span class="math inline">\(\displaystyle I\)</span>
+上的解，那么它必须满足： <span class="math display">\[
+\displaystyle \phi(t) = y_0 + \int_{t_0}^{t} \phi&#39;(s) \, ds
+\]</span></p>
+<p>由于 <span class="math inline">\(\displaystyle \phi&#39;(s) = f(s,
+\phi(s))\)</span>，我们可以将上式改写为：</p>
+<p><span class="math display">\[
+\displaystyle \phi(t) = y_0 + \int_{t_0}^{t} f(s, \phi(s)) \, ds \quad
+\text{(IE)}
+\]</span></p>
+<p>这个方程被称为<strong>沃尔泰拉（Volterra）积分方程</strong>。</p>
+<p>反之，任何满足此积分方程 (IE) 的连续函数 <span
 class="math inline">\(\displaystyle
-\sum_{n=1}^{\infty}f_{n}g_{n}\)</span> 在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致收敛：</p>
-<ol type="1">
-<li><strong>Dirichlet 判别法</strong>
-<ul>
-<li><span class="math inline">\((\displaystyle f_n)\)</span> 在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致收敛到 <span
-class="math inline">\(\displaystyle 0\)</span></li>
-<li>级数 <span class="math inline">\(\displaystyle
-\sum_{n=1}^{\infty}g_{n}\)</span> 的部分和序列 <span
-class="math inline">\(\displaystyle G_n = \sum_{k=1}^{n}g_k\)</span> 在
-<span class="math inline">\(\displaystyle D\)</span>
-上一致有界（即存在常数 <span class="math inline">\(\displaystyle
-M&gt;0\)</span>，使得对所有 <span class="math inline">\(\displaystyle
-n\)</span> 和所有 <span class="math inline">\(\displaystyle x \in
-D\)</span>，都有 <span class="math inline">\(\displaystyle |G_n(x)| \le
-M\)</span>）</li>
-</ul></li>
-<li><strong>Abel 判别法</strong>
-<ul>
-<li><span class="math inline">\((\displaystyle f_n)\)</span> 在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致有界</li>
-<li>级数 <span class="math inline">\(\displaystyle
-\sum_{n=1}^{\infty}g_{n}\)</span> 在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致收敛</li>
-</ul></li>
-</ol>
-<p>这两个判别法的证明都依赖于<strong>分部求和法</strong>（或称<strong>Abel求和法</strong>）和<strong>柯西一致收敛准则</strong></p>
-<p>柯西准则指出，一个函数级数一致收敛的充要条件是，其部分和序列是满足一致柯西条件的</p>
-<h3 id="abel-极限定理-abels-limit-theorem">Abel 极限定理 (Abel's Limit
-Theorem)</h3>
-<p>Abel判别法的一个重要推论是Abel极限定理，它描述了幂级数在其收敛圆边界上的连续性</p>
-<p><strong>定理 :</strong></p>
-<p>假设幂级数 <span class="math inline">\(\displaystyle
-\sum_{n=0}^{\infty}a_{n}(z-a)^{n}\)</span> 的收敛半径为 <span
-class="math inline">\(\displaystyle R\)</span>，<span
-class="math inline">\(\displaystyle 0 &lt; R &lt; \infty\)</span></p>
-<p>如果该幂级数在其收敛圆边界上的某一点 <span
-class="math inline">\(\displaystyle z_1 = a + Re^{i\phi}\)</span>
-收敛</p>
-<p>则该级数在连接中心 <span class="math inline">\(\displaystyle
-a\)</span> 与 <span class="math inline">\(\displaystyle z_1\)</span>
-的闭合线段 <span class="math inline">\(\displaystyle [a, z_1]\)</span>
-上一致收敛</p>
-<p>因此，由该级数定义的函数在 <span class="math inline">\(\displaystyle
-[a, z_1]\)</span> 上是连续的</p>
-<p><strong>证明：</strong></p>
-<p>将级数在点 <span class="math inline">\(\displaystyle z = a +
-re^{i\phi}\)</span> (<span class="math inline">\(\displaystyle 0 \le r
-\le R\)</span>) 处写作</p>
-<p><span class="math display">\[
-\displaystyle \sum_{n=0}^{\infty} \left(\frac{r}{R}\right)^n (a_n R^n
-e^{in\phi})
+\phi(t)\)</span>，其函数图像包含于定义域 <span
+class="math inline">\(\displaystyle D\)</span>
+内，也必然是原初值问题的解。</p>
+<p>因此，求解一个一阶 IVP
+的问题被完全转化为了求解一个等价的积分方程的问题。</p>
+<h2 id="算子与不动点">算子与不动点</h2>
+<p>积分方程的表述引出了一种非常有力的分析工具：<strong>算子（Operator）</strong></p>
+<p>我们可以定义一个作用于函数空间上的算子 <span
+class="math inline">\(\displaystyle T\)</span> 如下： <span
+class="math display">\[
+\displaystyle (T\psi)(t) = y_0 + \int_{t_0}^{t} f(s, \psi(s)) \, ds
 \]</span></p>
-<p>令 <span class="math inline">\(\displaystyle f_n(r) =
-(r/R)^n\)</span>，<span class="math inline">\(\displaystyle g_n(r) = a_n
-R^n e^{in\phi}\)</span></p>
-<p>序列 <span class="math inline">\(\displaystyle f_n(r)\)</span> 对
-<span class="math inline">\(\displaystyle r \in [0,R]\)</span>
-是单调递减且一致有界的（<span class="math inline">\(\displaystyle 0 \le
-f_n(r) \le 1\)</span>）</p>
-<p>而级数 <span class="math inline">\(\displaystyle \sum g_n\)</span>
-根据假设收敛，且其项与 <span class="math inline">\(\displaystyle
-r\)</span> 无关，因此它在 <span class="math inline">\(\displaystyle
-[0,R]\)</span> 上一致收敛</p>
-<p>应用Abel判别法，即可证明原级数在 <span
-class="math inline">\(\displaystyle [a, z_1]\)</span> 上一致收敛</p>
-<h2 id="多变量函数的一致收敛">多变量函数的一致收敛</h2>
-<p>一致收敛的理论可以自然地推广到多变量函数</p>
-<p>这里我们只叙述微分定理的多变量形式</p>
-<p><strong>定理：</strong></p>
-<p>假设函数序列 <span class="math inline">\(\displaystyle f_k: D
-\rightarrow \mathbb{R}\)</span>（其中 <span
-class="math inline">\(\displaystyle D \subseteq
-\mathbb{R}^n\)</span>）满足：</p>
+<p>此算子 <span class="math inline">\(\displaystyle T\)</span>
+将一个定义在区间 <span class="math inline">\(\displaystyle I\)</span>
+上的连续函数 <span class="math inline">\(\displaystyle \psi\)</span>
+映射到另一个函数 <span class="math inline">\(\displaystyle
+T\psi\)</span>。</p>
+<p>借助这个算子，积分方程 (IE) 可以被简洁地表示为：</p>
+<p><span class="math display">\[
+\displaystyle T\phi = \phi
+\]</span></p>
+<p>满足这个条件的函数 <span class="math inline">\(\displaystyle
+\phi\)</span> 被称为算子 <span class="math inline">\(\displaystyle
+T\)</span> 的 <strong>不动点</strong> (Fixed Point)。</p>
+<p>这个发现至关重要，因为它将微分方程的求解问题转化为了一个在函数空间中寻找算子不动点的问题。</p>
+<p>这使得我们可以应用强大的不动点理论（如巴拿赫不动点定理）来证明解的存在性和唯一性。</p>
+<blockquote>
+<p>考虑以下初值问题：</p>
+<p><span class="math display">\[
+\displaystyle y&#39; = 2y \quad \land \quad y(1) = 3
+\]</span></p>
+<p>其对应的算子 <span class="math inline">\(\displaystyle T\)</span>
+为：</p>
+<p><span class="math display">\[
+\displaystyle (T\psi)(t) = 3 + \int_{1}^{t} 2\psi(s) \, ds
+\]</span></p>
+<p>该 IVP 的解是 <span class="math inline">\(\displaystyle \phi(t) =
+3e^{2(t-1)}\)</span>。我们可以验证 <span
+class="math inline">\(\displaystyle \phi(t)\)</span> 确实是算子 <span
+class="math inline">\(\displaystyle T\)</span> 的一个不动点：</p>
+<p><span class="math display">\[
+\displaystyle
+\begin{aligned}
+(T\phi)(t) &amp;= 3 + \int_{1}^{t} 2 \cdot (3e^{2(s-1)}) \, ds \\
+&amp;= 3 + \int_{1}^{t} 6e^{2s-2} \, ds \\
+&amp;= 3 + [3e^{2s-2}]_{1}^{t} \\
+&amp;= 3 + (3e^{2t-2} - 3e^{2(1)-2}) \\
+&amp;= 3e^{2t-2} = \phi(t)
+\end{aligned}
+\]</span></p>
+<p>由于 <span class="math inline">\(\displaystyle T\phi =
+\phi\)</span>，函数 <span class="math inline">\(\displaystyle
+\phi(t)\)</span> 是算子 <span class="math inline">\(\displaystyle
+T\)</span> 的不动点，从而也是原 IVP 的解。</p>
+</blockquote>
+<h2 id="高阶常微分方程的降阶">高阶常微分方程的降阶</h2>
+<p>我们可以将一个 n
+阶常微分方程转化为一个等价的一阶常微分方程组，从而将高阶问题简化为我们已经熟悉的一阶系统问题。</p>
+<p>考虑一个一般的 n 阶显式常微分方程：</p>
+<p><span class="math display">\[
+\displaystyle y^{(n)} = f(t, y, y&#39;, \dots, y^{(n-1)})
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle f\)</span>
+是一个在其定义域上连续的函数。</p>
+<p>为了实现降阶，我们引入一个向量 <span
+class="math inline">\(\displaystyle
+\mathbf{y}\)</span>，其分量由未知函数 <span
+class="math inline">\(\displaystyle y\)</span> 及其直到 <span
+class="math inline">\(\displaystyle (n-1)\)</span> 阶的导数构成：</p>
+<p><span class="math display">\[
+\displaystyle \mathbf{y}(t) = \begin{pmatrix} y_0(t) \\ y_1(t) \\ \vdots
+\\ y_{n-1}(t) \end{pmatrix} = \begin{pmatrix} y(t) \\ y&#39;(t) \\
+\vdots \\ y^{(n-1)}(t) \end{pmatrix}
+\]</span></p>
+<p>对该向量求导，我们得到：</p>
+<p><span class="math display">\[
+\displaystyle \mathbf{y}&#39;(t) = \begin{pmatrix} y_0&#39; \\ y_1&#39;
+\\ \vdots \\ y_{n-2}&#39; \\ y_{n-1}&#39; \end{pmatrix} =
+\begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_{n-1} \\ y^{(n)} \end{pmatrix}
+= \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_{n-1} \\ f(t, y_0, y_1,
+\dots, y_{n-1}) \end{pmatrix}
+\]</span></p>
+<p>这样，我们就得到了一个一阶向量微分方程 <span
+class="math inline">\(\displaystyle \mathbf{y}&#39; = \mathbf{f}(t,
+\mathbf{y})\)</span>，其中函数 <span class="math inline">\(\displaystyle
+\mathbf{f}\)</span> 定义为：</p>
+<p><span class="math display">\[
+\displaystyle \mathbf{f}(t, y_0, \dots, y_{n-1}) = \begin{pmatrix} y_1
+\\ \vdots \\ y_{n-1} \\ f(t, y_0, y_1, \dots, y_{n-1}) \end{pmatrix}
+\]</span></p>
+<p>原 n 阶方程的解 <span class="math inline">\(\displaystyle
+y(t)\)</span> 正是这个一阶方程组解向量 <span
+class="math inline">\(\displaystyle \mathbf{y}(t)\)</span> 的第一个分量
+<span class="math inline">\(\displaystyle
+y_0(t)\)</span>。同样的降阶方法也适用于相应的初值问题。</p>
+<blockquote>
+<p>考虑二阶线性方程 <span class="math inline">\(\displaystyle
+y&#39;&#39; + y = 0\)</span>。</p>
+<p>我们令 <span class="math inline">\(\displaystyle y_0 = y\)</span> 和
+<span class="math inline">\(\displaystyle y_1 =
+y&#39;\)</span>。那么可以得到：</p>
 <ul>
-<li>每个 <span class="math inline">\(\displaystyle f_k\)</span> 都是
-<span class="math inline">\(\displaystyle C^1\)</span> 函数</li>
-<li>序列 <span class="math inline">\((\displaystyle f_k)\)</span> 在
-<span class="math inline">\(\displaystyle D\)</span> 上逐点收敛于函数
-<span class="math inline">\(\displaystyle f\)</span></li>
-<li>对于每一个 <span class="math inline">\(\displaystyle i=1, \dots,
-n\)</span>，偏导数序列 <span class="math inline">\((\displaystyle
-\partial f_k / \partial x_i)\)</span> 都在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致收敛</li>
+<li><span class="math inline">\(\displaystyle y_0&#39; =
+y_1\)</span></li>
+<li><span class="math inline">\(\displaystyle y_1&#39; = y&#39;&#39; =
+-y = -y_0\)</span></li>
 </ul>
-<p>那么，极限函数 <span class="math inline">\(\displaystyle f(x) =
-\lim_{k\rightarrow\infty} f_k(x)\)</span> 也是一个 <span
-class="math inline">\(\displaystyle C^1\)</span>
-函数，并且其偏导数可以和极限运算交换顺序：</p>
+<p>因此，原二阶方程等价于以下一阶方程组：</p>
 <p><span class="math display">\[
-\displaystyle \frac{\partial f}{\partial x_i}(x) =
-\lim_{k\rightarrow\infty} \frac{\partial f_k}{\partial x_i}(x) \quad
-\text{for } 1 \le i \le n \text{ and } x \in D
+\displaystyle \begin{pmatrix} y_0 \\ y_1 \end{pmatrix}&#39; =
+\begin{pmatrix} y_1 \\ -y_0 \end{pmatrix}
 \]</span></p>
-<h2 id="含参反常积分的一致收敛性">含参反常积分的一致收敛性</h2>
-<p>函数级数的理论有其连续的对应物，即含参反常积分</p>
-<h3 id="含参反常积分的收敛性定义">含参反常积分的收敛性定义</h3>
-<ul>
-<li><p><strong>逐点收敛:</strong> 含参反常积分 <span
-class="math inline">\(\displaystyle \int_a^\infty f(x,t) dt\)</span> 在
-<span class="math inline">\(\displaystyle D\)</span>
-上逐点收敛，是指对每一个固定的 <span class="math inline">\(\displaystyle
-x \in D\)</span>，极限 <span class="math inline">\(\displaystyle
-\lim_{R\rightarrow\infty} \int_a^R f(x,t) dt\)</span> 都存在</p></li>
-<li><p><strong>一致收敛:</strong> 如果积分逐点收敛于 <span
-class="math inline">\(\displaystyle F(x)\)</span>，并且对于任意 <span
-class="math inline">\(\displaystyle \epsilon &gt; 0\)</span>，存在一个与
-<span class="math inline">\(\displaystyle x\)</span> 无关的 <span
-class="math inline">\(\displaystyle R_0\)</span>，使得当 <span
-class="math inline">\(\displaystyle R &gt; R_0\)</span> 时，对所有 <span
-class="math inline">\(\displaystyle x \in D\)</span> 都有：</p>
+<p>我们知道原方程的通解是 <span class="math inline">\(\displaystyle y(t)
+= A\cos t + B\sin t\)</span>。因此，对应系统的解向量为：</p>
 <p><span class="math display">\[
-  \displaystyle \left| F(x) - \int_a^R f(x,t) dt \right| = \left|
-\int_R^\infty f(x,t) dt \right| &lt; \epsilon
-  \]</span></p>
-<p>则称该积分在 <span class="math inline">\(\displaystyle D\)</span>
-上一致收敛</p></li>
-</ul>
-<h2 id="主要定理">主要定理</h2>
-<p>与函数序列相类似，我们有关于连续性和可微性的核心定理</p>
-<h3 id="连续性定理">连续性定理</h3>
-<p>若 <span class="math inline">\(\displaystyle f(x,t)\)</span>
-是一个连续的双变量函数，且积分<span class="math inline">\(\displaystyle
-\int_a^\infty f(x,t) dt\)</span> 在区间 <span
-class="math inline">\(\displaystyle I\)</span> 上一致收敛</p>
-<p>则其极限函数 <span class="math inline">\(\displaystyle F(x) =
-\int_a^\infty f(x,t) dt\)</span> 在 <span
-class="math inline">\(\displaystyle I\)</span> 上是连续的</p>
-<h3 id="可微性定理leibniz积分法则">可微性定理（Leibniz积分法则）</h3>
-<p>若 <span class="math inline">\(\displaystyle f(x,t)\)</span>
-及其偏导数 <span class="math inline">\(\displaystyle f_x(x,t)\)</span>
-都是连续的双变量函数</p>
-<p>积分 <span class="math inline">\(\displaystyle \int_a^\infty f(x,t)
-dt\)</span> 逐点收敛，且导数积分 <span
-class="math inline">\(\displaystyle \int_a^\infty f_x(x,t) dt\)</span>
-在区间 <span class="math inline">\(\displaystyle I\)</span>
-上一致收敛</p>
-<p>则 <span class="math inline">\(\displaystyle F(x) = \int_a^\infty
-f(x,t) dt\)</span> 在 <span class="math inline">\(\displaystyle
-I\)</span> 上可微，并且可以交换微分与积分的次序： <span
-class="math display">\[
-\displaystyle F&#39;(x) = \frac{d}{dx} \int_a^\infty f(x,t) dt =
-\int_a^\infty \frac{\partial f}{\partial x}(x,t) dt
+\displaystyle \mathbf{y}(t) = \begin{pmatrix} y_0(t) \\ y_1(t)
+\end{pmatrix} = \begin{pmatrix} A\cos t + B\sin t \\ -A\sin t + B\cos t
+\end{pmatrix}
 \]</span></p>
-<h3 id="一致收敛判别法"><strong>一致收敛判别法</strong></h3>
-<ol type="1">
-<li><p><strong>Cauchy 判别法:</strong></p>
-<p><span class="math inline">\(\displaystyle \int_a^\infty f(x,t)
-dt\)</span> 在 <span class="math inline">\(\displaystyle D\)</span>
-上一致收敛的充要条件是：对任意 <span class="math inline">\(\displaystyle
-\epsilon &gt; 0\)</span>，存在 <span class="math inline">\(\displaystyle
-R_0 &gt; 0\)</span>，使得对所有 <span
-class="math inline">\(\displaystyle R&#39; &gt; R &gt; R_0\)</span>
-和所有 <span class="math inline">\(\displaystyle x \in D\)</span>，都有
-<span class="math inline">\(\displaystyle |\int_R^{R&#39;} f(x,t) dt|
-&lt; \epsilon\)</span></p></li>
-<li><p><strong>Weierstrass 判别法:</strong></p>
-<p>如果存在一个函数 <span class="math inline">\(\displaystyle
-\Phi(t)\)</span> 使得对所有 <span class="math inline">\(\displaystyle
-(x,t) \in D \times [a, \infty)\)</span> 都有 <span
-class="math inline">\(\displaystyle |f(x,t)| \le \Phi(t)\)</span>，且
-<span class="math inline">\(\displaystyle \int_a^\infty \Phi(t)
-dt\)</span> 收敛，则 <span class="math inline">\(\displaystyle
-\int_a^\infty f(x,t) dt\)</span> 在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致且绝对收敛</p></li>
-<li><p><strong>Dirichlet 判别法与 Abel 判别法:</strong></p>
-<p>假设 <span class="math inline">\(\displaystyle t \mapsto
-f(x,t)\)</span> 对每个 <span class="math inline">\(\displaystyle
-x\)</span> 都是单调函数，而 <span class="math inline">\(\displaystyle t
-\mapsto g(x,t)\)</span> 是连续函数积分 <span
-class="math inline">\(\displaystyle \int_a^\infty f(x,t)g(x,t)
-dt\)</span> 在满足以下条件之一时一致收敛：</p>
-<ul>
-<li><strong>Dirichlet:</strong> <span
-class="math inline">\(\displaystyle f(x,t)\)</span> 随着 <span
-class="math inline">\(\displaystyle t \to \infty\)</span> 在 <span
-class="math inline">\(\displaystyle D\)</span> 上一致收敛到 <span
-class="math inline">\(\displaystyle 0\)</span>，且积分 <span
-class="math inline">\(\displaystyle \int_a^R g(x,t)dt\)</span> 对所有
-<span class="math inline">\(\displaystyle R\)</span> 和 <span
-class="math inline">\(\displaystyle x\)</span> 一致有界</li>
-<li><strong>Abel:</strong> <span class="math inline">\(\displaystyle
-f(x,t)\)</span> 在 <span class="math inline">\(\displaystyle D \times
-[a, \infty)\)</span> 上一致有界，且积分 <span
-class="math inline">\(\displaystyle \int_a^\infty g(x,t) dt\)</span> 在
-<span class="math inline">\(\displaystyle D\)</span> 上一致收敛</li>
-</ul></li>
-</ol>
-<h2 id="计算-dirichlet-积分">计算 Dirichlet 积分</h2>
-<p>利用含参变量积分的一致收敛性来计算Dirichlet 积分： <span
-class="math display">\[
-\displaystyle F(0) = \int_0^\infty \frac{\sin t}{t} dt
-\]</span> 构造一个含参积分 <span class="math display">\[
-\displaystyle F(x) = \int_0^\infty \frac{\sin t}{t} e^{-xt} dt
-\]</span></p>
-<p>其中 <span class="math inline">\(\displaystyle x \in [0,
-\infty)\)</span></p>
-<p>对于 <span class="math inline">\(\displaystyle x &gt;
-0\)</span>，利用 Weierstrass 判别法可以证明，可以对 <span
-class="math inline">\(\displaystyle F(x)\)</span> 在积分号下求导：</p>
-<p><span class="math display">\[
-\displaystyle F&#39;(x) = -\int_0^\infty e^{-xt} \sin t \, dt =
--\frac{1}{1+x^2}
-\]</span> 对 <span class="math inline">\(\displaystyle
-F&#39;(x)\)</span> 积分得到 <span class="math display">\[
-\displaystyle F(x) = -\arctan x + C
-\]</span> 由于 <span class="math inline">\(\displaystyle
-\lim_{x\to\infty} F(x) = 0\)</span>（可以证明），可得 <span
-class="math inline">\(\displaystyle C = \pi/2\)</span></p>
-<p>所以对 <span class="math inline">\(\displaystyle x &gt;
-0\)</span>，<span class="math inline">\(\displaystyle F(x) = \pi/2 -
-\arctan x\)</span></p>
-<p>最关键的一步是证明 <span class="math inline">\(\displaystyle
-F(x)\)</span> 在 <span class="math inline">\(\displaystyle x=0\)</span>
-处是连续的，这样我们就能通过取极限来求 <span
-class="math inline">\(\displaystyle F(0)\)</span>：</p>
-<p><span class="math display">\[
-\displaystyle F(0) = \lim_{x \to 0^+} F(x) = \lim_{x \to 0^+} (\pi/2 -
-\arctan x) = \pi/2
-\]</span> 为了证明在 <span class="math inline">\(\displaystyle
-x=0\)</span> 的连续性，需要证明积分： <span class="math display">\[
-\displaystyle \int_0^\infty \frac{\sin t}{t} e^{-xt} dt
-\]</span> 在 <span class="math inline">\(\displaystyle [0,
-\infty)\)</span> 上是一致收敛的</p>
-<p>由于该积分不是绝对收敛的，Weierstrass 判别法失效，但我们可以使用
-<strong>Dirichlet 判别法</strong> 将积分写为 <span
-class="math display">\[
-\displaystyle \int_0^1 \dots dt + \int_1^\infty \dots dt
-\]</span> 第一部分是正常积分，其连续性容易证明</p>
-<p>对于第二部分 <span class="math inline">\(\displaystyle \int_1^\infty
-e^{-xt} \frac{\sin t}{t} dt\)</span>，令 <span
-class="math inline">\(\displaystyle f(x,t) = e^{-xt}/t\)</span> 和 <span
-class="math inline">\(\displaystyle g(x,t) = \sin t\)</span></p>
-<p>函数 <span class="math inline">\(\displaystyle f(x,t)\)</span> 对
-<span class="math inline">\(\displaystyle t \ge 1\)</span>
-单调递减，并一致收敛到0，而 <span class="math inline">\(\displaystyle
-\int_1^R \sin t \, dt\)</span> 是一致有界的</p>
-<p>因此，根据 Dirichlet 判别法，该积分在 <span
-class="math inline">\(\displaystyle [0, \infty)\)</span>
-上一致收敛，从而 <span class="math inline">\(\displaystyle F(x)\)</span>
-在 <span class="math inline">\(\displaystyle x=0\)</span> 处连续</p>
-<p>所以，</p>
-<p><span class="math display">\[
-\displaystyle \int_0^\infty \frac{\sin t}{t} dt = \frac{\pi}{2}
-\]</span></p>
+</blockquote>
+<p>通过这种降阶技术，包括高阶方程和方程组在内的大多数问题都可以被转化为一阶系统问题进行研究，这极大地统一了微分方程的理论体系。</p>
 
                 
               </div>
@@ -554,8 +444,8 @@ class="math inline">\(\displaystyle [0, \infty)\)</span>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>多变量函数与含参反常积分的一致收敛性</div>
-      <div>http://hmnkapa.github.io/2025/06/11/多变量函数与含参反常积分的一致收敛性/</div>
+      <div>常微分方程的现代视角：沃尔泰拉积分方程</div>
+      <div>http://hmnkapa.github.io/2025/06/12/常微分方程的现代视角：沃尔泰拉积分方程/</div>
     </div>
     <div class="license-meta">
       
@@ -567,7 +457,7 @@ class="math inline">\(\displaystyle [0, \infty)\)</span>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年6月11日</div>
+          <div>2025年6月12日</div>
         </div>
       
       
@@ -599,18 +489,12 @@ class="math inline">\(\displaystyle [0, \infty)\)</span>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/12/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E7%8E%B0%E4%BB%A3%E8%A7%86%E8%A7%92%EF%BC%9A%E6%B2%83%E5%B0%94%E6%B3%B0%E6%8B%89%E7%A7%AF%E5%88%86%E6%96%B9%E7%A8%8B/" title="常微分方程的现代视角：沃尔泰拉积分方程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">常微分方程的现代视角：沃尔泰拉积分方程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/06/05/%E5%A4%8D%E5%B9%82%E7%BA%A7%E6%95%B0%E3%80%81%E5%A4%8D%E5%AF%B9%E6%95%B0%E4%B8%8EAbel%E6%B1%82%E5%92%8C%E6%B3%95/" title="复幂级数、复对数与Abel求和法">
-                        <span class="hidden-mobile">复幂级数、复对数与Abel求和法</span>
+                      <a href="/2025/06/11/%E5%A4%9A%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E4%B8%8E%E5%90%AB%E5%8F%82%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E8%87%B4%E6%94%B6%E6%95%9B%E6%80%A7/" title="多变量函数与含参反常积分的一致收敛性">
+                        <span class="hidden-mobile">多变量函数与含参反常积分的一致收敛性</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
